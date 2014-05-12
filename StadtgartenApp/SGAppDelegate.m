@@ -8,6 +8,8 @@
 
 #import "SGAppDelegate.h"
 
+//test comment
+
 @implementation SGAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
