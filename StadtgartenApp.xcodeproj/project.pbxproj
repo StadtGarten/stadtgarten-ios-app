@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		04749FE01922707C0086F258 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04749FDF1922707C0086F258 /* Storyboard.storyboard */; };
-		0474A027192274920086F258 /* SGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474A026192274920086F258 /* SGViewController.m */; };
-		0474A02A192274A80086F258 /* SGViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0474A029192274A80086F258 /* SGViewController2.m */; };
 		56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		7092DB90191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
@@ -41,10 +39,6 @@
 
 /* Begin PBXFileReference section */
 		04749FDF1922707C0086F258 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		0474A025192274920086F258 /* SGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGViewController.h; sourceTree = "<group>"; };
-		0474A026192274920086F258 /* SGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGViewController.m; sourceTree = "<group>"; };
-		0474A028192274A80086F258 /* SGViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGViewController2.h; sourceTree = "<group>"; };
-		0474A029192274A80086F258 /* SGViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGViewController2.m; sourceTree = "<group>"; };
 		56B53D2A19238FF200FEDFDA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		56B53D2B19238FF200FEDFDA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		56B53D2D1923904900FEDFDA /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
@@ -134,10 +128,6 @@
 				7092DBA6191A55B500190338 /* Images.xcassets */,
 				7092DBA3191A55B500190338 /* StadtgartenApp.xcdatamodeld */,
 				7092DB98191A55B500190338 /* Supporting Files */,
-				0474A025192274920086F258 /* SGViewController.h */,
-				0474A026192274920086F258 /* SGViewController.m */,
-				0474A028192274A80086F258 /* SGViewController2.h */,
-				0474A029192274A80086F258 /* SGViewController2.m */,
 			);
 			path = StadtgartenApp;
 			sourceTree = "<group>";
@@ -276,9 +266,7 @@
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
-				0474A027192274920086F258 /* SGViewController.m in Sources */,
 				56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */,
-				0474A02A192274A80086F258 /* SGViewController2.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
