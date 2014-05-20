@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04749FE01922707C0086F258 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04749FDF1922707C0086F258 /* Storyboard.storyboard */; };
+		56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
+		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
+		7092DB90191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
+		7092DB92191A55B500190338 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB91191A55B500190338 /* CoreGraphics.framework */; };
+		7092DB94191A55B500190338 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB93191A55B500190338 /* UIKit.framework */; };
+		7092DB96191A55B500190338 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB95191A55B500190338 /* CoreData.framework */; };
+		7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7092DB9A191A55B500190338 /* InfoPlist.strings */; };
+		7092DB9E191A55B500190338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DB9D191A55B500190338 /* main.m */; };
+		7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBA1191A55B500190338 /* SGAppDelegate.m */; };
+		7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBA3191A55B500190338 /* StadtgartenApp.xcdatamodeld */; };
+		7092DBA7191A55B500190338 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7092DBA6191A55B500190338 /* Images.xcassets */; };
+		7092DBAE191A55B500190338 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DBAD191A55B500190338 /* XCTest.framework */; };
+		7092DBAF191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
+		7092DBB0191A55B500190338 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB93191A55B500190338 /* UIKit.framework */; };
+		7092DBB1191A55B500190338 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB95191A55B500190338 /* CoreData.framework */; };
+		7092DBB9191A55B500190338 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7092DBB7191A55B500190338 /* InfoPlist.strings */; };
+		7092DBBB191A55B500190338 /* StadtgartenAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBBA191A55B500190338 /* StadtgartenAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7092DBB2191A55B500190338 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7092DB84191A55B500190338 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7092DB8B191A55B500190338;
+			remoteInfo = StadtgartenApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04749FDF1922707C0086F258 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		56B53D2A19238FF200FEDFDA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		56B53D2B19238FF200FEDFDA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		56B53D2D1923904900FEDFDA /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
+		56B53D2E1923904900FEDFDA /* SetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLocationViewController.m; sourceTree = "<group>"; };
+		7092DB8C191A55B500190338 /* StadtgartenApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StadtgartenApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7092DB8F191A55B500190338 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7092DB91191A55B500190338 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7092DB93191A55B500190338 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7092DB95191A55B500190338 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StadtgartenApp-Info.plist"; sourceTree = "<group>"; };
+		7092DB9B191A55B500190338 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7092DB9D191A55B500190338 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7092DB9F191A55B500190338 /* StadtgartenApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StadtgartenApp-Prefix.pch"; sourceTree = "<group>"; };
+		7092DBA0191A55B500190338 /* SGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGAppDelegate.h; sourceTree = "<group>"; };
+		7092DBA1191A55B500190338 /* SGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGAppDelegate.m; sourceTree = "<group>"; };
+		7092DBA4191A55B500190338 /* StadtgartenApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StadtgartenApp.xcdatamodel; sourceTree = "<group>"; };
+		7092DBA6191A55B500190338 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7092DBAC191A55B500190338 /* StadtgartenAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StadtgartenAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7092DBAD191A55B500190338 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7092DBB6191A55B500190338 /* StadtgartenAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StadtgartenAppTests-Info.plist"; sourceTree = "<group>"; };
+		7092DBB8191A55B500190338 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7092DBBA191A55B500190338 /* StadtgartenAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StadtgartenAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7092DB89191A55B500190338 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7092DB92191A55B500190338 /* CoreGraphics.framework in Frameworks */,
+				7092DB96191A55B500190338 /* CoreData.framework in Frameworks */,
+				7092DB94191A55B500190338 /* UIKit.framework in Frameworks */,
+				7092DB90191A55B500190338 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7092DBA9191A55B500190338 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7092DBAE191A55B500190338 /* XCTest.framework in Frameworks */,
+				7092DBB1191A55B500190338 /* CoreData.framework in Frameworks */,
+				7092DBB0191A55B500190338 /* UIKit.framework in Frameworks */,
+				7092DBAF191A55B500190338 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7092DB83191A55B500190338 = {
+			isa = PBXGroup;
+			children = (
+				7092DB97191A55B500190338 /* StadtgartenApp */,
+				7092DBB4191A55B500190338 /* StadtgartenAppTests */,
+				7092DB8E191A55B500190338 /* Frameworks */,
+				7092DB8D191A55B500190338 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7092DB8D191A55B500190338 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7092DB8C191A55B500190338 /* StadtgartenApp.app */,
+				7092DBAC191A55B500190338 /* StadtgartenAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7092DB8E191A55B500190338 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7092DB8F191A55B500190338 /* Foundation.framework */,
+				7092DB91191A55B500190338 /* CoreGraphics.framework */,
+				7092DB93191A55B500190338 /* UIKit.framework */,
+				7092DB95191A55B500190338 /* CoreData.framework */,
+				7092DBAD191A55B500190338 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7092DB97191A55B500190338 /* StadtgartenApp */ = {
+			isa = PBXGroup;
+			children = (
+				7092DBA0191A55B500190338 /* SGAppDelegate.h */,
+				7092DBA1191A55B500190338 /* SGAppDelegate.m */,
+				7092DBA6191A55B500190338 /* Images.xcassets */,
+				7092DBA3191A55B500190338 /* StadtgartenApp.xcdatamodeld */,
+				7092DB98191A55B500190338 /* Supporting Files */,
+			);
+			path = StadtgartenApp;
+			sourceTree = "<group>";
+		};
+		7092DB98191A55B500190338 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
+				7092DB9A191A55B500190338 /* InfoPlist.strings */,
+				04749FDF1922707C0086F258 /* Storyboard.storyboard */,
+				56B53D2D1923904900FEDFDA /* SetLocationViewController.h */,
+				56B53D2E1923904900FEDFDA /* SetLocationViewController.m */,
+				56B53D2A19238FF200FEDFDA /* MapViewController.h */,
+				56B53D2B19238FF200FEDFDA /* MapViewController.m */,
+				7092DB9D191A55B500190338 /* main.m */,
+				7092DB9F191A55B500190338 /* StadtgartenApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7092DBB4191A55B500190338 /* StadtgartenAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				7092DBBA191A55B500190338 /* StadtgartenAppTests.m */,
+				7092DBB5191A55B500190338 /* Supporting Files */,
+			);
+			path = StadtgartenAppTests;
+			sourceTree = "<group>";
+		};
+		7092DBB5191A55B500190338 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7092DBB6191A55B500190338 /* StadtgartenAppTests-Info.plist */,
+				7092DBB7191A55B500190338 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7092DB8B191A55B500190338 /* StadtgartenApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7092DBBE191A55B500190338 /* Build configuration list for PBXNativeTarget "StadtgartenApp" */;
+			buildPhases = (
+				7092DB88191A55B500190338 /* Sources */,
+				7092DB89191A55B500190338 /* Frameworks */,
+				7092DB8A191A55B500190338 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StadtgartenApp;
+			productName = StadtgartenApp;
+			productReference = 7092DB8C191A55B500190338 /* StadtgartenApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7092DBAB191A55B500190338 /* StadtgartenAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7092DBC1191A55B500190338 /* Build configuration list for PBXNativeTarget "StadtgartenAppTests" */;
+			buildPhases = (
+				7092DBA8191A55B500190338 /* Sources */,
+				7092DBA9191A55B500190338 /* Frameworks */,
+				7092DBAA191A55B500190338 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7092DBB3191A55B500190338 /* PBXTargetDependency */,
+			);
+			name = StadtgartenAppTests;
+			productName = StadtgartenAppTests;
+			productReference = 7092DBAC191A55B500190338 /* StadtgartenAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7092DB84191A55B500190338 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SG;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = StadtGarten;
+				TargetAttributes = {
+					7092DBAB191A55B500190338 = {
+						TestTargetID = 7092DB8B191A55B500190338;
+					};
+				};
+			};
+			buildConfigurationList = 7092DB87191A55B500190338 /* Build configuration list for PBXProject "StadtgartenApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7092DB83191A55B500190338;
+			productRefGroup = 7092DB8D191A55B500190338 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7092DB8B191A55B500190338 /* StadtgartenApp */,
+				7092DBAB191A55B500190338 /* StadtgartenAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7092DB8A191A55B500190338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
+				7092DBA7191A55B500190338 /* Images.xcassets in Resources */,
+				04749FE01922707C0086F258 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7092DBAA191A55B500190338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7092DBB9191A55B500190338 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7092DB88191A55B500190338 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
+				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
+				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
+				56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */,
+				7092DB9E191A55B500190338 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7092DBA8191A55B500190338 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7092DBBB191A55B500190338 /* StadtgartenAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7092DBB3191A55B500190338 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7092DB8B191A55B500190338 /* StadtgartenApp */;
+			targetProxy = 7092DBB2191A55B500190338 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7092DB9A191A55B500190338 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7092DB9B191A55B500190338 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7092DBB7191A55B500190338 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7092DBB8191A55B500190338 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7092DBBC191A55B500190338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7092DBBD191A55B500190338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7092DBBF191A55B500190338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StadtgartenApp/StadtgartenApp-Prefix.pch";
+				INFOPLIST_FILE = "StadtgartenApp/StadtgartenApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7092DBC0191A55B500190338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StadtgartenApp/StadtgartenApp-Prefix.pch";
+				INFOPLIST_FILE = "StadtgartenApp/StadtgartenApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7092DBC2191A55B500190338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StadtgartenApp.app/StadtgartenApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StadtgartenApp/StadtgartenApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "StadtgartenAppTests/StadtgartenAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7092DBC3191A55B500190338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StadtgartenApp.app/StadtgartenApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StadtgartenApp/StadtgartenApp-Prefix.pch";
+				INFOPLIST_FILE = "StadtgartenAppTests/StadtgartenAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7092DB87191A55B500190338 /* Build configuration list for PBXProject "StadtgartenApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7092DBBC191A55B500190338 /* Debug */,
+				7092DBBD191A55B500190338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7092DBBE191A55B500190338 /* Build configuration list for PBXNativeTarget "StadtgartenApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7092DBBF191A55B500190338 /* Debug */,
+				7092DBC0191A55B500190338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7092DBC1191A55B500190338 /* Build configuration list for PBXNativeTarget "StadtgartenAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7092DBC2191A55B500190338 /* Debug */,
+				7092DBC3191A55B500190338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7092DBA3191A55B500190338 /* StadtgartenApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7092DBA4191A55B500190338 /* StadtgartenApp.xcdatamodel */,
+			);
+			currentVersion = 7092DBA4191A55B500190338 /* StadtgartenApp.xcdatamodel */;
+			path = StadtgartenApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7092DB84191A55B500190338 /* Project object */;
+}
