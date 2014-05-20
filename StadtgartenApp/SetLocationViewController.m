@@ -1,18 +1,18 @@
 //
-//  SGViewController2.m
+//  SetLocationViewController.m
 //  StadtgartenApp
 //
-//  Created by Tobias Keinath on 13.05.14.
+//  Created by Ka Wi on 14.05.14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
 
-#import "SGViewController2.h"
+#import "SetLocationViewController.h"
 
-@interface SGViewController2 ()
+@interface SetLocationViewController ()
 
 @end
 
-@implementation SGViewController2
+@implementation SetLocationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
