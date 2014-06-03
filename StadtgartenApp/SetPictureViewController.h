@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface SetPictureViewController : UIViewController
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+// Methoden der Delegates benutzen
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
+-  (IBAction) takePicture:(id) sender;
+-  (IBAction) selectPhoto:(id)sender;
 @end

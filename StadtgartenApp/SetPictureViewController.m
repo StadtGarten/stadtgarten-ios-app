@@ -14,6 +14,41 @@
 
 @implementation SetPictureViewController
 
+
+- (IBAction)takePicture:(UIButton *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init]; picker.delegate = self; // Delegate ist unsere ViewController Klasse picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+- (IBAction)selectPhoto:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing =YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
+    self.imageView.image = chosenImage;
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    //Cancle Button Methode
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+/*if (![UIImagePickerController
+      isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    UIAlertView *myAlertView =
+    [[UIAlertView alloc] initWithTitle:@„Fehler“ message:@„Device besitzt keine Kamera“
+                              delegate:nil
+                     cancelButtonTitle::@"OK"
+                     otherButtonTitles:nil];
+     [myAlertView show];
+     }*/
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
