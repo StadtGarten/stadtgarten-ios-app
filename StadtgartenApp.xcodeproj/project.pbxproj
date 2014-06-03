@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		04749FE01922707C0086F258 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04749FDF1922707C0086F258 /* Storyboard.storyboard */; };
+		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
+		34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */; };
+		34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */; };
 		56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		7092DB90191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
@@ -39,6 +42,12 @@
 
 /* Begin PBXFileReference section */
 		04749FDF1922707C0086F258 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
+		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
+		34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewConntroller.h; sourceTree = "<group>"; };
+		34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemViewConntroller.m; sourceTree = "<group>"; };
+		34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewItemViewController.h; sourceTree = "<group>"; };
+		34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewItemViewController.m; sourceTree = "<group>"; };
 		56B53D2A19238FF200FEDFDA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		56B53D2B19238FF200FEDFDA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		56B53D2D1923904900FEDFDA /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
@@ -144,6 +153,12 @@
 				56B53D2B19238FF200FEDFDA /* MapViewController.m */,
 				7092DB9D191A55B500190338 /* main.m */,
 				7092DB9F191A55B500190338 /* StadtgartenApp-Prefix.pch */,
+				34D3263B193DF219008B1D2F /* SetPictureViewController.h */,
+				34D3263C193DF219008B1D2F /* SetPictureViewController.m */,
+				34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */,
+				34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */,
+				34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */,
+				34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,8 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
+				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
+				34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
