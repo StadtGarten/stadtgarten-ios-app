@@ -16,9 +16,24 @@
 
 
 - (IBAction)takePicture:(UIButton *)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init]; picker.delegate = self; // Delegate ist unsere ViewController Klasse picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:picker animated:YES completion:NULL];
+    
+    
+    if (![UIImagePickerController
+          isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        UIAlertView *myAlertView =
+        [[UIAlertView alloc] initWithTitle:@"Fehler"
+                                   message:@"iPhone besitzt keine Kamerafunktion" delegate:nil cancelButtonTitle:@"OK"
+                         otherButtonTitles:nil];
+        
+        [myAlertView show];
+    }else{
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init]; picker.delegate = self; // Delegate ist unsere ViewController Klasse picker.allowsEditing = YES;
+    
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self presentViewController:picker animated:YES completion:NULL];
+    }
+    
+    
 }
 - (IBAction)selectPhoto:(id)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -39,15 +54,6 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
-/*if (![UIImagePickerController
-      isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-    UIAlertView *myAlertView =
-    [[UIAlertView alloc] initWithTitle:@„Fehler“ message:@„Device besitzt keine Kamera“
-                              delegate:nil
-                     cancelButtonTitle::@"OK"
-                     otherButtonTitles:nil];
-     [myAlertView show];
-     }*/
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -62,6 +68,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
