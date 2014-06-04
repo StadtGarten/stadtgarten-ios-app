@@ -7,6 +7,7 @@
 //
 
 #import "SGAppDelegate.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 //test comment 
 
@@ -23,6 +24,9 @@
     //self.window.backgroundColor = [UIColor whiteColor];
     //[self.window makeKeyAndVisible];
     //hallo
+    
+    [FBLoginView class];
+    [FBProfilePictureView class];
     return YES;
 }
 
@@ -147,6 +151,13 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+//Facebook Login
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication];
 }
 
 @end

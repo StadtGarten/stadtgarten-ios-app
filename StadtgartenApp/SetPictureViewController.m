@@ -33,7 +33,6 @@
         [self presentViewController:picker animated:YES completion:NULL];
     }
     
-    
 }
 - (IBAction)selectPhoto:(id)sender {
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
