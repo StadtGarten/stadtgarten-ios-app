@@ -17,7 +17,7 @@
 
 - (IBAction)takePicture:(UIButton *)sender {
     
-    
+    // test if camerafunction is available
     if (![UIImagePickerController
           isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIAlertView *myAlertView =
