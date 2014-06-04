@@ -3,7 +3,7 @@
 //  StadtgartenApp
 //
 //  Created by Jule Zigeler on 6/3/14.
-//  Copyright (c) 2014 StadtGarten. All rights reserved.
+//  Copyright (c) 2014 StadtGarten. All rights reserved. test
 //
 
 #import "SetPictureViewController.h"
