@@ -16,7 +16,7 @@
 
 @implementation MapViewController
 
-
+//test
 //Muenchen
 float lat = 48.133;
 float lon = 11.567;
