@@ -42,6 +42,29 @@ bool testSession = YES;
     
     [self.view addSubview:_mapView];
     
+
+    
+    // Create a search bar - you can add this in the viewDidLoad
+	//self.searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)] autorelease];
+    //self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
+   
+	self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+	self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+	self.searchBar.keyboardType = UIKeyboardTypeAlphabet;
+	self.searchBar.delegate = self;
+	//self.tableView.tableHeaderView = self.searchBar;
+    
+    
+    
+    
+    // Create the search display controller
+	//self.searchDC = [[[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self] autorelease];
+    //self.searchDC = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
+	//self.searchDC.searchResultsDataSource = self;
+	//self.searchDC.searchResultsDelegate = self;
+    
+    [self.view addSubview:_searchBar];
+
     
     //Button ohne Storyboard
     /*
@@ -53,6 +76,8 @@ bool testSession = YES;
      button.frame = CGRectMake(180.0, 430.0, 160.0, 40.0);
      [self.view addSubview:button];
      */
+    
+    //[_mapView release];
 }
 
 

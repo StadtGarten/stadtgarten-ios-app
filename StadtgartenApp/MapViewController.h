@@ -10,15 +10,22 @@
 //#import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 //#import <CoreLocation/CoreLocation.h>
+//<UISearchBarDelegate>
 
 
-@interface MapViewController : UIViewController < MKMapViewDelegate>
+@interface MapViewController : UIViewController < MKMapViewDelegate, UISearchBarDelegate>
 
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutletCollection(MKMapView) NSArray *test;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
+
+@property (nonatomic) IBOutlet UISearchBar *searchBar;
+
 //-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)uloc;
+
+//UISearchBar *searchBar;
+@property ( nonatomic) UISearchDisplayController *searchDC;
 
 @end
