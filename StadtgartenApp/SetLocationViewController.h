@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import	<CoreLocation/CoreLocation.h>
+#import "MKMapView+ZoomLevel.h"
 
-@interface SetLocationViewController : UIViewController
+@interface SetLocationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *myLocationButton;
+@property (weak, nonatomic) IBOutlet UIImageView *crossHair;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property	(strong,	nonatomic)	CLLocationManager	*locationManager;
 
 @end

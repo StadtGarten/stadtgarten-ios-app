@@ -11,7 +11,7 @@
 		0461FE7A193F15C40005251D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE77193F15C40005251D /* AdSupport.framework */; };
 		0461FE7B193F15C40005251D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE78193F15C40005251D /* Social.framework */; };
 		0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461FE81193F19250005251D /* AuthentificationViewController.m */; };
-		04749FE01922707C0086F258 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04749FDF1922707C0086F258 /* Storyboard.storyboard */; };
+		04749FE01922707C0086F258 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04749FDF1922707C0086F258 /* imag.storyboard */; };
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */; };
 		34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */; };
@@ -19,6 +19,9 @@
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
 		56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
+		700645F019419BD500DF6281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700645EF19419BD500DF6281 /* CoreLocation.framework */; };
+		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
+		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
 		7092DB90191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
 		7092DB92191A55B500190338 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB91191A55B500190338 /* CoreGraphics.framework */; };
 		7092DB94191A55B500190338 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB93191A55B500190338 /* UIKit.framework */; };
@@ -52,7 +55,7 @@
 		0461FE78193F15C40005251D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0461FE80193F19250005251D /* AuthentificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentificationViewController.h; sourceTree = "<group>"; };
 		0461FE81193F19250005251D /* AuthentificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentificationViewController.m; sourceTree = "<group>"; };
-		04749FDF1922707C0086F258 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		04749FDF1922707C0086F258 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
 		34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewConntroller.h; sourceTree = "<group>"; };
@@ -65,6 +68,10 @@
 		56B53D2B19238FF200FEDFDA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		56B53D2D1923904900FEDFDA /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
 		56B53D2E1923904900FEDFDA /* SetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLocationViewController.m; sourceTree = "<group>"; };
+		700645EF19419BD500DF6281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
+		70329A6D1941AE74002F7742 /* cross-hair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross-hair.png"; sourceTree = "<group>"; };
 		7092DB8C191A55B500190338 /* StadtgartenApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StadtgartenApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7092DB8F191A55B500190338 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7092DB91191A55B500190338 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				700645F019419BD500DF6281 /* CoreLocation.framework in Frameworks */,
 				0461FE79193F15C40005251D /* Accounts.framework in Frameworks */,
 				0461FE7A193F15C40005251D /* AdSupport.framework in Frameworks */,
 				0461FE7B193F15C40005251D /* Social.framework in Frameworks */,
@@ -115,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70329A6F1941AE7D002F7742 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				70329A6D1941AE74002F7742 /* cross-hair.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		7092DB83191A55B500190338 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +153,7 @@
 		7092DB8E191A55B500190338 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				700645EF19419BD500DF6281 /* CoreLocation.framework */,
 				5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */,
 				5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */,
 				0461FE76193F15C40005251D /* Accounts.framework */,
@@ -154,6 +171,7 @@
 		7092DB97191A55B500190338 /* StadtgartenApp */ = {
 			isa = PBXGroup;
 			children = (
+				70329A6F1941AE7D002F7742 /* Assets */,
 				7092DBA0191A55B500190338 /* SGAppDelegate.h */,
 				7092DBA1191A55B500190338 /* SGAppDelegate.m */,
 				7092DBA6191A55B500190338 /* Images.xcassets */,
@@ -168,7 +186,7 @@
 			children = (
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
-				04749FDF1922707C0086F258 /* Storyboard.storyboard */,
+				04749FDF1922707C0086F258 /* imag.storyboard */,
 				56B53D2D1923904900FEDFDA /* SetLocationViewController.h */,
 				56B53D2E1923904900FEDFDA /* SetLocationViewController.m */,
 				56B53D2A19238FF200FEDFDA /* MapViewController.h */,
@@ -183,6 +201,8 @@
 				34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */,
 				0461FE80193F19250005251D /* AuthentificationViewController.h */,
 				0461FE81193F19250005251D /* AuthentificationViewController.m */,
+				700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */,
+				700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -281,9 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
 				7092DBA7191A55B500190338 /* Images.xcassets in Resources */,
-				04749FE01922707C0086F258 /* Storyboard.storyboard in Resources */,
+				04749FE01922707C0086F258 /* imag.storyboard in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +329,7 @@
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
 				34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */,
+				700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
