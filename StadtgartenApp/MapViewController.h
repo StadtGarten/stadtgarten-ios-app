@@ -17,11 +17,13 @@
 
 
 @property (nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) IBOutletCollection(MKMapView) NSArray *test;
+//@property (strong, nonatomic) IBOutletCollection(MKMapView) NSArray *test;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UIToolbar *navigationBar;
 
 
 @property (nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 //@property ( nonatomic) UISearchDisplayController *searchDC;
 

@@ -11,10 +11,10 @@
 		0461FE7A193F15C40005251D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE77193F15C40005251D /* AdSupport.framework */; };
 		0461FE7B193F15C40005251D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE78193F15C40005251D /* Social.framework */; };
 		0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461FE81193F19250005251D /* AuthentificationViewController.m */; };
-		04749FE01922707C0086F258 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04749FDF1922707C0086F258 /* imag.storyboard */; };
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */; };
 		34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */; };
+		564F433B1947696B00F7EEB0 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564F433D1947696B00F7EEB0 /* imag.storyboard */; };
 		5676F2E0193F4CDD003846F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */; };
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
 		56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
@@ -55,13 +55,13 @@
 		0461FE78193F15C40005251D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		0461FE80193F19250005251D /* AuthentificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentificationViewController.h; sourceTree = "<group>"; };
 		0461FE81193F19250005251D /* AuthentificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentificationViewController.m; sourceTree = "<group>"; };
-		04749FDF1922707C0086F258 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
 		34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewConntroller.h; sourceTree = "<group>"; };
 		34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemViewConntroller.m; sourceTree = "<group>"; };
 		34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewItemViewController.h; sourceTree = "<group>"; };
 		34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewItemViewController.m; sourceTree = "<group>"; };
+		564F433C1947696B00F7EEB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
 		5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		56B53D2A19238FF200FEDFDA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 			children = (
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
-				04749FDF1922707C0086F258 /* imag.storyboard */,
+				564F433D1947696B00F7EEB0 /* imag.storyboard */,
 				56B53D2D1923904900FEDFDA /* SetLocationViewController.h */,
 				56B53D2E1923904900FEDFDA /* SetLocationViewController.m */,
 				56B53D2A19238FF200FEDFDA /* MapViewController.h */,
@@ -304,7 +304,7 @@
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
 				7092DBA7191A55B500190338 /* Images.xcassets in Resources */,
-				04749FE01922707C0086F258 /* imag.storyboard in Resources */,
+				564F433B1947696B00F7EEB0 /* imag.storyboard in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +356,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		564F433D1947696B00F7EEB0 /* imag.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				564F433C1947696B00F7EEB0 /* en */,
+			);
+			name = imag.storyboard;
+			sourceTree = "<group>";
+		};
 		7092DB9A191A55B500190338 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

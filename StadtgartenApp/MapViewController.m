@@ -54,6 +54,13 @@ bool testSession = NO;
     [self setMap];
 
     [self setMarker];
+    
+    
+    
+    [self.view addSubview:_navigationBar];
+
+    
+
 
     
     //Button ohne Storyboard
@@ -77,12 +84,14 @@ bool testSession = NO;
 - (void)setMap {
     
     //Map
+    
     _mapView = [[MKMapView alloc]
                 initWithFrame:CGRectMake(0,
-                                         -80,
+                                         -170,
                                          self.view.bounds.size.width,
                                          self.view.bounds.size.height)
                 ];
+     
     _mapView.showsUserLocation = YES;
     _mapView.mapType = MKMapTypeStandard;
     _mapView.delegate = self;
