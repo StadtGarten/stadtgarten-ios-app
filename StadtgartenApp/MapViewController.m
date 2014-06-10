@@ -5,6 +5,7 @@
 //  Created by Katharina Winkler on 14.05.14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
+// Setzen der Map und der Marker
 
 
 
@@ -27,6 +28,8 @@ const int LONGITUDE = 1;
 float lat = 48.133;
 float lon = 11.567;
 
+
+//lat, lon, title (Apfelbaum), subtitle
 double markerPosition[][2] = {47.0, 11.0,
     47.1, 11.1,
     47.15, 11.2,
@@ -48,33 +51,9 @@ bool testSession = NO;
     
     [super viewDidLoad];
     
-    
-    //Map
-    _mapView = [[MKMapView alloc]
-                initWithFrame:CGRectMake(0,
-                                         -80,
-                                         self.view.bounds.size.width,
-                                         self.view.bounds.size.height)
-                ];
-    _mapView.showsUserLocation = YES;
-    _mapView.mapType = MKMapTypeStandard;
-    _mapView.delegate = self;
-    
-    [self.view addSubview:_mapView];
-    
+    [self setMap];
 
-    
-    // Create a search bar - you can add this in the viewDidLoad
-	//self.searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)] autorelease];
-    //self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
-   
-	self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
-	self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-	self.searchBar.keyboardType = UIKeyboardTypeAlphabet;
-	self.searchBar.delegate = self;
-
-    
-    [self.view addSubview:_searchBar];
+    [self setMarker];
 
     
     //Button ohne Storyboard
@@ -89,10 +68,28 @@ bool testSession = NO;
      */
     
     //[_mapView release];
-    [self setMarker];
+    
     
     }
 
+
+
+- (void)setMap {
+    
+    //Map
+    _mapView = [[MKMapView alloc]
+                initWithFrame:CGRectMake(0,
+                                         -80,
+                                         self.view.bounds.size.width,
+                                         self.view.bounds.size.height)
+                ];
+    _mapView.showsUserLocation = YES;
+    _mapView.mapType = MKMapTypeStandard;
+    _mapView.delegate = self;
+    
+    [self.view addSubview:_mapView];
+    
+}
 
 
 - (void)setMarker {
@@ -109,15 +106,12 @@ bool testSession = NO;
         annotationPoint.coordinate = annotationCoord;
         annotationPoint.title = @"Apfelbaum";
         annotationPoint.subtitle = @"";
+
         [_mapView addAnnotation:annotationPoint];
     }
-    
-
 
 
 }
-
-
 
 
 - (void)viewWillAppear:(BOOL)animated {

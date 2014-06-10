@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-jB-eGW">
-                                <rect key="frame" x="0.0" y="397" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Profil" id="jRS-9j-BjG">
@@ -31,7 +31,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Standort" id="zbr-dS-9KK"/>
-                                    <barButtonItem title="Add" id="Lsm-Xc-nJ1">
+                                    <barButtonItem title="Add" width="43" id="Lsm-Xc-nJ1">
                                         <connections>
                                             <segue destination="Co4-FB-R3z" kind="modal" id="77R-dE-kYZ"/>
                                         </connections>

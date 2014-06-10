@@ -23,9 +23,6 @@
 
 @property (nonatomic) IBOutlet UISearchBar *searchBar;
 
-//-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)uloc;
-
-//UISearchBar *searchBar;
-@property ( nonatomic) UISearchDisplayController *searchDC;
+//@property ( nonatomic) UISearchDisplayController *searchDC;
 
 @end
