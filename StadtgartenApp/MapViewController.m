@@ -2,7 +2,7 @@
 //  MapViewController.m
 //  StadtgartenApp
 //
-//  Created by Ka Wi on 14.05.14.
+//  Created by Katharina Winkler on 14.05.14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
 
@@ -16,12 +16,32 @@
 
 @implementation MapViewController
 
+
+
+const int LATITUDE = 0;
+const int LONGITUDE = 1;
+
+
 //test
 //Muenchen
 float lat = 48.133;
 float lon = 11.567;
 
-bool testSession = YES;
+double markerPosition[][2] = {47.0, 11.0,
+    47.1, 11.1,
+    47.15, 11.2,
+    48.15, 11.6,
+    48.2, 11.62,
+    48.15, 11.5,
+    48.13, 11.6,
+    48.14, 11.58,
+    48.22, 11.61,
+    48.1, 11.4,
+    48.2, 11.15,
+    48.0, 11.25,
+    47.2, 11.2};
+
+bool testSession = NO;
 
 - (void)viewDidLoad
 {
@@ -37,7 +57,7 @@ bool testSession = YES;
                                          self.view.bounds.size.height)
                 ];
     _mapView.showsUserLocation = YES;
-    _mapView.mapType = MKMapTypeHybrid;
+    _mapView.mapType = MKMapTypeStandard;
     _mapView.delegate = self;
     
     [self.view addSubview:_mapView];
@@ -52,16 +72,7 @@ bool testSession = YES;
 	self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
 	self.searchBar.keyboardType = UIKeyboardTypeAlphabet;
 	self.searchBar.delegate = self;
-	//self.tableView.tableHeaderView = self.searchBar;
-    
-    
-    
-    
-    // Create the search display controller
-	//self.searchDC = [[[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self] autorelease];
-    //self.searchDC = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
-	//self.searchDC.searchResultsDataSource = self;
-	//self.searchDC.searchResultsDelegate = self;
+
     
     [self.view addSubview:_searchBar];
 
@@ -78,7 +89,34 @@ bool testSession = YES;
      */
     
     //[_mapView release];
+    [self setMarker];
+    
+    }
+
+
+
+- (void)setMarker {
+    CLLocationCoordinate2D annotationCoord;
+    
+    
+    
+    for(int i=0; i<(sizeof markerPosition); i++) {
+     
+        annotationCoord.latitude = markerPosition[i][LATITUDE];
+        annotationCoord.longitude = markerPosition[i][LONGITUDE];
+        
+        MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+        annotationPoint.coordinate = annotationCoord;
+        annotationPoint.title = @"Apfelbaum";
+        annotationPoint.subtitle = @"";
+        [_mapView addAnnotation:annotationPoint];
+    }
+    
+
+
+
 }
+
 
 
 
