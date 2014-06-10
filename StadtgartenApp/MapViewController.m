@@ -54,10 +54,8 @@ bool testSession = NO;
     [self setMap];
 
     [self setMarker];
-    
-    
-    
-    [self.view addSubview:_navigationBar];
+
+    //[self.view addSubview:_navigationBar];
 
     
 
@@ -82,9 +80,7 @@ bool testSession = NO;
 
 
 - (void)setMap {
-    
-    //Map
-    
+
     _mapView = [[MKMapView alloc]
                 initWithFrame:CGRectMake(0,
                                          -170,
@@ -103,9 +99,7 @@ bool testSession = NO;
 
 - (void)setMarker {
     CLLocationCoordinate2D annotationCoord;
-    
-    
-    
+ 
     for(int i=0; i<(sizeof markerPosition); i++) {
      
         annotationCoord.latitude = markerPosition[i][LATITUDE];
@@ -125,9 +119,6 @@ bool testSession = NO;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    
-    //NSLog(@"%@", NSStringFromClass(self.class));
     
     if(testSession) {
         MKCoordinateRegion region;

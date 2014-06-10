@@ -9,7 +9,7 @@
 #import "SGAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-//test comment 
+ 
 
 @implementation SGAppDelegate
 
