@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6Mg-Q1-46V">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="i7x-g5-hh1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -20,18 +20,18 @@
                                 <rect key="frame" x="0.0" y="397" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Profil" id="jRS-9j-BjG">
+                                    <barButtonItem image="profile-1_32" id="jRS-9j-BjG">
                                         <connections>
                                             <segue destination="Co4-FB-R3z" kind="modal" id="aQJ-j9-8Cl"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Liste" id="e7v-EH-t93">
+                                    <barButtonItem image="list-2_32" id="e7v-EH-t93">
                                         <connections>
                                             <segue destination="Lre-5J-itR" kind="modal" id="nSv-uw-RMp"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Standort" id="zbr-dS-9KK"/>
-                                    <barButtonItem title="Add" id="Lsm-Xc-nJ1">
+                                    <barButtonItem image="location-1_32" id="zbr-dS-9KK"/>
+                                    <barButtonItem image="add-2_32" id="Lsm-Xc-nJ1">
                                         <connections>
                                             <segue destination="Co4-FB-R3z" kind="modal" id="77R-dE-kYZ"/>
                                         </connections>
@@ -76,6 +76,53 @@
             </objects>
             <point key="canvasLocation" x="-609" y="-281"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Wdc-QA-Hdi">
+            <objects>
+                <viewController id="i7x-g5-hh1" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Vr-HI-ONO"/>
+                        <viewControllerLayoutGuide type="bottom" id="qvR-Jj-MOT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X76-JB-obi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree-1_256" translatesAutoresizingMaskIntoConstraints="NO" id="BBT-tq-SF9">
+                                <rect key="frame" x="72" y="50" width="176" height="176"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stadtgarten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xg-nh-Agd">
+                                <rect key="frame" x="20" y="262" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Willkommen im" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxI-yS-KqV">
+                                <rect key="frame" x="20" y="250" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zvW-r4-RS9" customClass="FBLoginView">
+                                <rect key="frame" x="60" y="350" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.396078431372549" green="0.77647058823529413" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="zvW-r4-RS9" id="tZK-BB-KeU"/>
+                        <segue destination="6Mg-Q1-46V" kind="modal" identifier="showMap" id="7hm-H5-z8T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ra-05-1CZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1709" y="-275"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Znd-Ex-sSK">
             <objects>
@@ -89,7 +136,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5VK-PH-1YQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1153" y="-289"/>
+            <point key="canvasLocation" x="-1201" y="-275"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="QwV-TX-mWS">
@@ -450,7 +497,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-2_32" width="32" height="32"/>
         <image name="cross-hair.png" width="312" height="312"/>
+        <image name="list-2_32" width="32" height="32"/>
+        <image name="location-1_32" width="32" height="32"/>
+        <image name="profile-1_32" width="32" height="34"/>
+        <image name="tree-1_256" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
