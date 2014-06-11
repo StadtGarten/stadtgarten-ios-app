@@ -78,7 +78,6 @@ bool testSession = NO;
     }
 
 
-
 - (void)setMap {
 
     _mapView = [[MKMapView alloc]
