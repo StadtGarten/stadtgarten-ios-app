@@ -28,21 +28,7 @@ const int LONGITUDE = 1;
 float lat = 48.133;
 float lon = 11.567;
 
-NSArray *myColors;
-
-//myColors = [NSArray arrayWithObjects: @"Red", @"Green", @"Blue", @"Yellow", nil];
-
-//NSDictionary *dict;
-/*
- *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-        @"/opt/picture.png", @"Luca",
-        @"/home/nico/birthday.png", @"Birthday Photo",
-        @"/home/nico/birthday.png", @"Birthday Image",
-        @"/home/marghe/pic.jpg", @"My Sister", nil];
-*/
-//NSString *value = [myDictionary objectForKey:@"Bob", "ddd", "ddd"];
-
-//lat, lon, title (Apfelbaum), subtitle
+NSDictionary *baum;
 
 double markerPosition[][2] = {47.0, 11.0,
     47.1, 11.1,
@@ -65,15 +51,20 @@ bool testSession = NO;
 {
     
     [super viewDidLoad];
+
+    baum = [NSDictionary dictionaryWithObjectsAndKeys:
+            @"01", @"id",
+            @"Apfelbaum", @"baumname",
+            @"Das ist eine Beschreibung", @"beschreibung",
+            @"Apfel", @"tag",
+            @"Das ist ein Bild", @"bild",
+            nil];
+    
+    NSLog(@"%@", [baum objectForKey: @"tag"]);
     
     [self setMap];
 
     [self setMarker];
-
-    //[self.view addSubview:_navigationBar];
-
-    
-
 
     
     //Button ohne Storyboard
