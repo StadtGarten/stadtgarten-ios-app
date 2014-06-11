@@ -19,7 +19,6 @@
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
 		56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
-		700645F019419BD500DF6281 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700645EF19419BD500DF6281 /* CoreLocation.framework */; };
 		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
 		7092DB90191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
@@ -48,6 +47,7 @@
 		842877E11948696600533407 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E01948696600533407 /* Security.framework */; };
 		842877E31948697000533407 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E21948697000533407 /* StoreKit.framework */; };
 		842877E51948697A00533407 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E41948697A00533407 /* SystemConfiguration.framework */; };
+		842877E819486F9C00533407 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842877E719486F9C00533407 /* ListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +79,6 @@
 		56B53D2B19238FF200FEDFDA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		56B53D2D1923904900FEDFDA /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
 		56B53D2E1923904900FEDFDA /* SetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLocationViewController.m; sourceTree = "<group>"; };
-		700645EF19419BD500DF6281 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		70329A6D1941AE74002F7742 /* cross-hair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross-hair.png"; sourceTree = "<group>"; };
@@ -111,6 +110,8 @@
 		842877E01948696600533407 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		842877E21948697000533407 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		842877E41948697A00533407 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		842877E619486F9C00533407 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		842877E719486F9C00533407 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +241,8 @@
 				34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */,
 				34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */,
 				0461FE80193F19250005251D /* AuthentificationViewController.h */,
+				842877E619486F9C00533407 /* ListViewController.h */,
+				842877E719486F9C00533407 /* ListViewController.m */,
 				0461FE81193F19250005251D /* AuthentificationViewController.m */,
 				700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */,
 				700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */,
@@ -366,6 +369,7 @@
 			files = (
 				34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
+				842877E819486F9C00533407 /* ListViewController.m in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
 				34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */,
