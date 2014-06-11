@@ -50,6 +50,8 @@
 		842877E31948697000533407 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E21948697000533407 /* StoreKit.framework */; };
 		842877E51948697A00533407 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E41948697A00533407 /* SystemConfiguration.framework */; };
 		842877E819486F9C00533407 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842877E719486F9C00533407 /* ListViewController.m */; };
+		842877EB19487E1700533407 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 842877EA19487E1700533407 /* Database.m */; };
+		842877ED194890EC00533407 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842877EC194890EC00533407 /* tree.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,9 @@
 		842877E41948697A00533407 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		842877E619486F9C00533407 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		842877E719486F9C00533407 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		842877E919487E1700533407 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = ../Database.h; sourceTree = "<group>"; };
+		842877EA19487E1700533407 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Database.m; path = ../Database.m; sourceTree = "<group>"; };
+		842877EC194890EC00533407 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +169,7 @@
 		70329A6F1941AE7D002F7742 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				842877EC194890EC00533407 /* tree.jpg */,
 				70329A6D1941AE74002F7742 /* cross-hair.png */,
 			);
 			name = Assets;
@@ -231,6 +237,8 @@
 		7092DB98191A55B500190338 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				842877E919487E1700533407 /* Database.h */,
+				842877EA19487E1700533407 /* Database.m */,
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
 				042EDEC319486C12008E54DC /* imag.storyboard */,
@@ -355,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
+				842877ED194890EC00533407 /* tree.jpg in Resources */,
 				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
 				042EDEC519486C12008E54DC /* imag.storyboard in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
@@ -379,6 +388,7 @@
 			files = (
 				34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
+				842877EB19487E1700533407 /* Database.m in Sources */,
 				842877E819486F9C00533407 /* ListViewController.m in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,

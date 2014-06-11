@@ -8,12 +8,12 @@
 
 #import "ListViewController.h"
 
-@interface ListViewController () 
+@interface ListViewController ()
 
 @end
 
 @implementation ListViewController
-
+/*
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
@@ -60,7 +60,6 @@
     return cell;
 }
 
-/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -95,7 +94,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+*/
 /*
 #pragma mark - Navigation
 
