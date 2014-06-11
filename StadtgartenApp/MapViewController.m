@@ -28,8 +28,8 @@ const int LONGITUDE = 1;
 float lat = 48.133;
 float lon = 11.567;
 
+NSDictionary *baum;
 
-//lat, lon, title (Apfelbaum), subtitle
 double markerPosition[][2] = {47.0, 11.0,
     47.1, 11.1,
     47.15, 11.2,
@@ -44,21 +44,27 @@ double markerPosition[][2] = {47.0, 11.0,
     48.0, 11.25,
     47.2, 11.2};
 
+
 bool testSession = NO;
 
 - (void)viewDidLoad
 {
     
     [super viewDidLoad];
+
+    baum = [NSDictionary dictionaryWithObjectsAndKeys:
+            @"01", @"id",
+            @"Apfelbaum", @"baumname",
+            @"Das ist eine Beschreibung", @"beschreibung",
+            @"Apfel", @"tag",
+            @"Das ist ein Bild", @"bild",
+            nil];
+    
+    NSLog(@"%@", [baum objectForKey: @"tag"]);
     
     [self setMap];
 
     [self setMarker];
-
-    //[self.view addSubview:_navigationBar];
-
-    
-
 
     
     //Button ohne Storyboard
@@ -76,7 +82,6 @@ bool testSession = NO;
     
     
     }
-
 
 
 - (void)setMap {
@@ -99,8 +104,11 @@ bool testSession = NO;
 
 - (void)setMarker {
     CLLocationCoordinate2D annotationCoord;
- 
-    for(int i=0; i<(1); i++) {
+
+    //Anzahl der Elemente
+    int const numberOfElements = sizeof(markerPosition)/sizeof(double)/2;
+
+    for(int i=0; i<(numberOfElements-1); i++) {
      
         annotationCoord.latitude = markerPosition[i][LATITUDE];
         annotationCoord.longitude = markerPosition[i][LONGITUDE];
