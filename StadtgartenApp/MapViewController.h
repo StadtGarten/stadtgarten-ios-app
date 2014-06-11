@@ -13,7 +13,7 @@
 
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-//@property (weak, nonatomic) IBOutlet UIToolbar *navigationBar;
-@property (nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIToolbar *navigationBar;
+//@property (nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
