@@ -12,6 +12,9 @@
 		0461FE7B193F15C40005251D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE78193F15C40005251D /* Social.framework */; };
 		0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0461FE81193F19250005251D /* AuthentificationViewController.m */; };
 		04749FE01922707C0086F258 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04749FDF1922707C0086F258 /* imag.storyboard */; };
+		0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
+		0489C26519472DEB009BD670 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C26419472DEB009BD670 /* LoginViewController.m */; };
+		0489C26719473CFD009BD670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489C26619473CFD009BD670 /* Images.xcassets */; };
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */; };
 		34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */; };
@@ -30,7 +33,6 @@
 		7092DB9E191A55B500190338 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DB9D191A55B500190338 /* main.m */; };
 		7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBA1191A55B500190338 /* SGAppDelegate.m */; };
 		7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBA3191A55B500190338 /* StadtgartenApp.xcdatamodeld */; };
-		7092DBA7191A55B500190338 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7092DBA6191A55B500190338 /* Images.xcassets */; };
 		7092DBAE191A55B500190338 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DBAD191A55B500190338 /* XCTest.framework */; };
 		7092DBAF191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
 		7092DBB0191A55B500190338 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB93191A55B500190338 /* UIKit.framework */; };
@@ -56,6 +58,11 @@
 		0461FE80193F19250005251D /* AuthentificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentificationViewController.h; sourceTree = "<group>"; };
 		0461FE81193F19250005251D /* AuthentificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentificationViewController.m; sourceTree = "<group>"; };
 		04749FDF1922707C0086F258 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
+		0488C2FF1947B90700EC00DE /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		0488C3001947B90700EC00DE /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		0489C26319472DEB009BD670 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0489C26419472DEB009BD670 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0489C26619473CFD009BD670 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StadtgartenApp/Images.xcassets; sourceTree = "<group>"; };
 		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
 		34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewConntroller.h; sourceTree = "<group>"; };
@@ -84,7 +91,6 @@
 		7092DBA0191A55B500190338 /* SGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGAppDelegate.h; sourceTree = "<group>"; };
 		7092DBA1191A55B500190338 /* SGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGAppDelegate.m; sourceTree = "<group>"; };
 		7092DBA4191A55B500190338 /* StadtgartenApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StadtgartenApp.xcdatamodel; sourceTree = "<group>"; };
-		7092DBA6191A55B500190338 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7092DBAC191A55B500190338 /* StadtgartenAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StadtgartenAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7092DBAD191A55B500190338 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7092DBB6191A55B500190338 /* StadtgartenAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StadtgartenAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -134,6 +140,7 @@
 		7092DB83191A55B500190338 = {
 			isa = PBXGroup;
 			children = (
+				0489C26619473CFD009BD670 /* Images.xcassets */,
 				7092DB97191A55B500190338 /* StadtgartenApp */,
 				7092DBB4191A55B500190338 /* StadtgartenAppTests */,
 				7092DB8E191A55B500190338 /* Frameworks */,
@@ -174,7 +181,6 @@
 				70329A6F1941AE7D002F7742 /* Assets */,
 				7092DBA0191A55B500190338 /* SGAppDelegate.h */,
 				7092DBA1191A55B500190338 /* SGAppDelegate.m */,
-				7092DBA6191A55B500190338 /* Images.xcassets */,
 				7092DBA3191A55B500190338 /* StadtgartenApp.xcdatamodeld */,
 				7092DB98191A55B500190338 /* Supporting Files */,
 			);
@@ -187,6 +193,10 @@
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
 				04749FDF1922707C0086F258 /* imag.storyboard */,
+				0488C2FF1947B90700EC00DE /* ProfileViewController.h */,
+				0488C3001947B90700EC00DE /* ProfileViewController.m */,
+				0489C26319472DEB009BD670 /* LoginViewController.h */,
+				0489C26419472DEB009BD670 /* LoginViewController.m */,
 				56B53D2D1923904900FEDFDA /* SetLocationViewController.h */,
 				56B53D2E1923904900FEDFDA /* SetLocationViewController.m */,
 				56B53D2A19238FF200FEDFDA /* MapViewController.h */,
@@ -302,8 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
+				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
-				7092DBA7191A55B500190338 /* Images.xcassets in Resources */,
 				04749FE01922707C0086F258 /* imag.storyboard in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
@@ -333,6 +343,8 @@
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
+				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
+				0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
