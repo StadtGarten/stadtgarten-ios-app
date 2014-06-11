@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map View Controller - Stadtgarten-->
         <scene sceneID="cP2-b9-yn6">
             <objects>
                 <viewController id="pgQ-g5-dAC" customClass="MapViewController" sceneMemberID="viewController">
@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-jB-eGW">
-                                <rect key="frame" x="0.0" y="397" width="320" height="44"/>
+                            <toolbar autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-jB-eGW">
+                                <rect key="frame" x="0.0" y="516" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Profil" id="jRS-9j-BjG">
@@ -31,7 +31,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Standort" id="zbr-dS-9KK"/>
-                                    <barButtonItem title="Add" id="Lsm-Xc-nJ1">
+                                    <barButtonItem title="aAdd" width="43" style="plain" id="Lsm-Xc-nJ1">
                                         <connections>
                                             <segue destination="Co4-FB-R3z" kind="modal" id="77R-dE-kYZ"/>
                                         </connections>
@@ -42,20 +42,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="1.3877787807814457e-17" y="0.0" width="1" height="1"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NN9-Ch-oIb">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="euV-Uu-YKF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0IQ-1N-hON">
-                                <rect key="frame" x="233" y="5" width="71" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Stadtgarten" id="J0u-MQ-WGL"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="Vbj-jB-eGW" id="Waj-PY-wge"/>
+                        <outlet property="navigationItem" destination="J0u-MQ-WGL" id="QLz-1C-ewF"/>
+                        <outlet property="searchDisplayController" destination="p3v-bx-rFz" id="Nfj-9F-wn5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqW-Gm-fxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="p3v-bx-rFz">
+                    <connections>
+                        <outlet property="delegate" destination="pgQ-g5-dAC" id="PLf-8s-cQo"/>
+                        <outlet property="searchContentsController" destination="pgQ-g5-dAC" id="Shp-vi-L3u"/>
+                        <outlet property="searchResultsDataSource" destination="pgQ-g5-dAC" id="nUI-vo-UWN"/>
+                        <outlet property="searchResultsDelegate" destination="pgQ-g5-dAC" id="sS6-tJ-sxn"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-609" y="-281"/>
         </scene>
@@ -100,7 +102,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ph1-3t-4WM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="346"/>
+            <point key="canvasLocation" x="-60" y="88"/>
         </scene>
         <!--Set Location View Controller-->
         <scene sceneID="HTm-go-G8r">
@@ -114,15 +116,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcS-Wv-Qyd">
-                                <rect key="frame" x="112" y="149" width="97" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-Qq-qvn">
+                                <rect key="frame" x="0.0" y="77" width="320" height="355"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWX-Lj-1au">
-                                <rect key="frame" x="177" y="269" width="74" height="30"/>
+                                <rect key="frame" x="123" y="440" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="take photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,13 +134,32 @@
                                 <rect key="frame" x="0.0" y="33" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Stadtgarten" id="bFk-Pa-Eqh"/>
+                                    <navigationItem title="Wo steht der Baum?" id="bFk-Pa-Eqh"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOa-hF-SUz">
+                                <rect key="frame" x="8" y="440" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="*my loc">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToMyLocationClick:" destination="HX4-ni-7C2" eventType="touchUpInside" id="bY2-EI-iKN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross-hair.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-hi-pb5">
+                                <rect key="frame" x="136" y="231" width="49" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Xf-ho-ESb"/>
+                    <connections>
+                        <outlet property="crossHair" destination="4gb-hi-pb5" id="ZYi-G6-QOZ"/>
+                        <outlet property="mapView" destination="mtH-Qq-qvn" id="n3z-bb-SSS"/>
+                        <outlet property="myLocationButton" destination="YOa-hF-SUz" id="4Cj-wt-HUa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENN-A3-0SS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,31 +415,16 @@
             </objects>
             <point key="canvasLocation" x="-37" y="-616"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="JzK-bz-sz7">
-            <objects>
-                <viewController id="Lzf-T2-xzz" customClass="DetailViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nYF-0S-rLf"/>
-                        <viewControllerLayoutGuide type="bottom" id="9us-ZN-CxX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Qhn-Vk-713">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hST-Es-lYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-510" y="591"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="cross-hair.png" width="312" height="312"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="aQJ-j9-8Cl"/>
+        <segue reference="77R-dE-kYZ"/>
     </inferredMetricsTieBreakers>
 </document>

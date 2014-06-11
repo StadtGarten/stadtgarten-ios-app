@@ -10,7 +10,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 
-//test comment 
+ 
 
 @implementation SGAppDelegate
 

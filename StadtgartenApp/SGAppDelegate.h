@@ -1,7 +1,7 @@
 //
 //  SGAppDelegate.h
 //  StadtgartenApp
-// bla bla
+// 
 //  Created by Dennis Schaaf and team on 07/05/14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
