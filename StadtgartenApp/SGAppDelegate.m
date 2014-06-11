@@ -8,6 +8,7 @@
 
 #import "SGAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
 
 //test comment 
 
@@ -27,6 +28,11 @@
     
     [FBLoginView class];
     [FBProfilePictureView class];
+    
+    [Parse setApplicationId:@"cUtvqSxl71cbab8bFG4oJarnDG88lht8MrE0bHAy"
+                  clientKey:@"tPfw8txBrzGLC8F8ljIS4ZBpWYLVVPkkQVHtkDN3"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 
