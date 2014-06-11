@@ -100,7 +100,7 @@ bool testSession = NO;
 - (void)setMarker {
     CLLocationCoordinate2D annotationCoord;
  
-    for(int i=0; i<(sizeof markerPosition); i++) {
+    for(int i=0; i<(1); i++) {
      
         annotationCoord.latitude = markerPosition[i][LATITUDE];
         annotationCoord.longitude = markerPosition[i][LONGITUDE];
@@ -111,6 +111,7 @@ bool testSession = NO;
         annotationPoint.subtitle = @"";
 
         [_mapView addAnnotation:annotationPoint];
+    
     }
 
 
