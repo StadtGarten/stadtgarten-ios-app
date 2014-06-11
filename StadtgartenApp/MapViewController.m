@@ -28,8 +28,22 @@ const int LONGITUDE = 1;
 float lat = 48.133;
 float lon = 11.567;
 
+NSArray *myColors;
+
+//myColors = [NSArray arrayWithObjects: @"Red", @"Green", @"Blue", @"Yellow", nil];
+
+//NSDictionary *dict;
+/*
+ *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+        @"/opt/picture.png", @"Luca",
+        @"/home/nico/birthday.png", @"Birthday Photo",
+        @"/home/nico/birthday.png", @"Birthday Image",
+        @"/home/marghe/pic.jpg", @"My Sister", nil];
+*/
+//NSString *value = [myDictionary objectForKey:@"Bob", "ddd", "ddd"];
 
 //lat, lon, title (Apfelbaum), subtitle
+
 double markerPosition[][2] = {47.0, 11.0,
     47.1, 11.1,
     47.15, 11.2,
@@ -43,6 +57,7 @@ double markerPosition[][2] = {47.0, 11.0,
     48.2, 11.15,
     48.0, 11.25,
     47.2, 11.2};
+
 
 bool testSession = NO;
 
@@ -99,7 +114,10 @@ bool testSession = NO;
 - (void)setMarker {
     CLLocationCoordinate2D annotationCoord;
  
-    for(int i=0; i<(1); i++) {
+    int const sizeOfElements = 13;
+    
+    
+    for(int i=0; i<(sizeOfElements-1); i++) {
      
         annotationCoord.latitude = markerPosition[i][LATITUDE];
         annotationCoord.longitude = markerPosition[i][LONGITUDE];
