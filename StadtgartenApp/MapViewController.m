@@ -113,11 +113,11 @@ bool testSession = NO;
 
 - (void)setMarker {
     CLLocationCoordinate2D annotationCoord;
- 
-    int const sizeOfElements = 13;
-    
-    
-    for(int i=0; i<(sizeOfElements-1); i++) {
+
+    //Anzahl der Elemente
+    int const numberOfElements = sizeof(markerPosition)/sizeof(double)/2;
+
+    for(int i=0; i<(numberOfElements-1); i++) {
      
         annotationCoord.latitude = markerPosition[i][LATITUDE];
         annotationCoord.longitude = markerPosition[i][LONGITUDE];
