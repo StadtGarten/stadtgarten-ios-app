@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.loginButton.readPermissions = @[@"public_profile", @"email"];
+    self.loginButton.delegate = self;
     
     
 }
@@ -35,6 +37,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Facebook
+-(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
+}
+
+-(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{
+    NSLog(@"%@", user);
+    self.profilePicture.profileID = user.objectID;
+    self.lblUsername.text = user.name;
+    self.lblEmail.text = [user objectForKey:@"email"];
+}
+
+-(void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView{
+
+}
+
+-(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error{
+    NSLog(@"%@", [error localizedDescription]);
 }
 
 /*

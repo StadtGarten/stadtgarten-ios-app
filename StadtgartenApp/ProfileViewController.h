@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePicture;
 @property (strong, nonatomic) IBOutlet UILabel *lblUsername;
 @property (strong, nonatomic) IBOutlet UILabel *lblEmail;
+@property (strong, nonatomic) IBOutlet FBLoginView *loginButton;
 
 @end
