@@ -29,9 +29,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.loginButton.delegate = self;
-    
-    
-    
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    _isFromProfile=NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,23 +49,33 @@
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
 {
     
+    NSString *skipButtonString = [NSString stringWithFormat:@"%@ %@", @"Fortfahren als",user.name];
+    [self.skipButton setTitle:skipButtonString forState:UIControlStateNormal];
+    
 }
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
- 
-        [self performSegueWithIdentifier:@"showMap" sender:loginView];
+    _isLoggedIn = YES;
     
+    if(!_isFromProfile && _isLoggedIn){
+    [self performSegueWithIdentifier:@"showMap" sender:loginView];
+    }
 }
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
-
+    _isLoggedIn = NO;
+    _isFromProfile=NO;
+    if(_isFromProfile){
+     [self.skipButton setTitle:@"Fortfahren als Gast" forState:UIControlStateNormal];
+    }
 }
 
 -(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error{
     NSLog(@"%@", [error localizedDescription]);
 }
+
 
 /*
 #pragma mark - Navigation
@@ -77,4 +88,8 @@
 }
 */
 
+- (IBAction)tapSkipButton:(id)sender {
+    NSLog(@"single Tap on SkipButton");
+        [self performSegueWithIdentifier:@"showMap" sender:self];
+}
 @end
