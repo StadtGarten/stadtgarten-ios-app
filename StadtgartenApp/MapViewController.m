@@ -17,13 +17,11 @@
 
 @implementation MapViewController
 
-
-
 const int LATITUDE = 0;
 const int LONGITUDE = 1;
 
+bool centerInMunich = YES;
 
-//test
 //Muenchen
 float lat = 48.133;
 float lon = 11.567;
@@ -45,7 +43,7 @@ double markerPosition[][2] = {47.0, 11.0,
     47.2, 11.2};
 
 
-bool testSession = NO;
+
 
 - (void)viewDidLoad
 {
@@ -88,7 +86,7 @@ bool testSession = NO;
 
     _mapView = [[MKMapView alloc]
                 initWithFrame:CGRectMake(0,
-                                         -170,
+                                         -45,
                                          self.view.bounds.size.width,
                                          self.view.bounds.size.height)
                 ];
@@ -121,22 +119,21 @@ bool testSession = NO;
         [_mapView addAnnotation:annotationPoint];
     
     }
-
-
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if(testSession) {
-        MKCoordinateRegion region;
+    MKCoordinateRegion region;
+    if(centerInMunich) {
         region.center.latitude = lat;
         region.center.longitude = lon;
         region.span.latitudeDelta = 0.1;
         region.span.longitudeDelta = 0.1;
         [_mapView setRegion:region animated:YES];
     }
+    
 }
 
 
