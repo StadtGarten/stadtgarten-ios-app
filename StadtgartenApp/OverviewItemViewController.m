@@ -46,4 +46,9 @@
 }
 */
 
+- (IBAction)doneSettingUpNewTree:(id)sender {
+    
+ [self performSegueWithIdentifier:@"showMap" sender:sender];
+    
+}
 @end

@@ -28,10 +28,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self toggleHiddenState:YES];
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
     self.loginButton.delegate = self;
     
-    [self toggleHiddenState:YES];
+    
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
     singleTap.numberOfTapsRequired = 1;

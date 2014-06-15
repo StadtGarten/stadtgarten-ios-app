@@ -95,13 +95,13 @@
 - (void) startTrackingLocation
 {
     [self.locationManager setDelegate:self];
-    self.myLocationButton.hidden = true;
+   // self.myLocationButton.hidden = true;
 }
 
 - (void) stopTrackingLocation
 {
     [self.locationManager setDelegate:nil];
-    self.myLocationButton.hidden = false;
+   // self.myLocationButton.hidden = false;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations

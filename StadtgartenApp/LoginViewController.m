@@ -67,9 +67,9 @@
 {
     _isLoggedIn = NO;
     _isFromProfile=NO;
-    if(_isFromProfile){
+    
      [self.skipButton setTitle:@"Fortfahren als Gast" forState:UIControlStateNormal];
-    }
+    
 }
 
 -(void)loginView:(FBLoginView *)loginView handleError:(NSError *)error{
