@@ -17,6 +17,10 @@
 
 @implementation MapViewController
 
+#define APPLE 0
+#define CHERRIE 1
+#define PEAR 2
+
 const int LATITUDE = 0;
 const int LONGITUDE = 1;
 
@@ -49,6 +53,8 @@ double markerPosition[][2] = {47.0, 11.0,
 {
     
     [super viewDidLoad];
+    
+    _tree = CHERRIE;
 
     baum = [NSDictionary dictionaryWithObjectsAndKeys:
             @"01", @"id",
@@ -119,6 +125,36 @@ double markerPosition[][2] = {47.0, 11.0,
         [_mapView addAnnotation:annotationPoint];
     
     }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
+    NSString *annotationIdentifier = @"CustomViewAnnotation";
+    MKAnnotationView* annotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+    if(!annotationView)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                      reuseIdentifier:annotationIdentifier];
+    }
+    
+    
+    if(_tree == APPLE) {
+        annotationView.image = [UIImage imageNamed:@"apple_pin.png"];
+    }
+    if(_tree == CHERRIE) {
+        annotationView.image = [UIImage imageNamed:@"cherrie_pin.png"];
+    }
+    if(_tree == PEAR) {
+        annotationView.image = [UIImage imageNamed:@"pear_pin.png"];
+    }
+
+    annotationView.canShowCallout= YES;
+    
+    return annotationView;
 }
 
 
