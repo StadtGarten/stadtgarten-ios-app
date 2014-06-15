@@ -89,7 +89,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xht-Zi-PWu"/>
-                                    <barButtonItem image="list-2_44" width="30" id="zbr-dS-9KK"/>
+                                    <barButtonItem image="list-2_44" width="30" id="zbr-dS-9KK">
+                                        <connections>
+                                            <segue destination="z0L-qI-SbW" kind="push" id="DNR-q0-efM"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Kyu-Ep-6Kf"/>
                                     <barButtonItem image="location-1_44" width="30" id="Lsm-Xc-nJ1"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1dC-7P-fJN"/>
@@ -123,6 +127,52 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-609" y="-275"/>
+        </scene>
+        <!--Tree List View Controller-->
+        <scene sceneID="IQH-GK-U6r">
+            <objects>
+                <tableViewController id="z0L-qI-SbW" customClass="TreeListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="E7T-dT-9Zs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="5yz-bI-iPn" detailTextLabel="xuh-AL-3Rl" style="IBUITableViewCellStyleSubtitle" id="btu-n0-Tjs">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="btu-n0-Tjs" id="d9B-dh-VDj">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5yz-bI-iPn">
+                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xuh-AL-3Rl">
+                                            <rect key="frame" x="15" y="25" width="43" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z0L-qI-SbW" id="oxJ-xv-ec3"/>
+                            <outlet property="delegate" destination="z0L-qI-SbW" id="T6s-47-0AD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="fNm-hf-UNX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2j8-B3-gvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-96" y="134"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Wdc-QA-Hdi">
@@ -200,6 +250,7 @@
             </objects>
             <point key="canvasLocation" x="-1201" y="-275"/>
         </scene>
+
         <!--List View Controller-->
         <scene sceneID="QwV-TX-mWS">
             <objects>
@@ -229,6 +280,7 @@
             <point key="canvasLocation" x="-60" y="524"/>
         </scene>
         <!--Set Location View Controller - Wo steht der Baum?-->
+
         <scene sceneID="HTm-go-G8r">
             <objects>
                 <viewController id="HX4-ni-7C2" customClass="SetLocationViewController" sceneMemberID="viewController">

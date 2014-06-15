@@ -17,6 +17,7 @@
 
 NSArray *textData;
 NSArray *imageData;
+NSArray *subTextData;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +40,7 @@ NSArray *imageData;
     
     imageData = [NSArray arrayWithObjects:@"apple_pin.png", @"pear_pin.png", @"cherrie_pin.png", @"apple_pin.png", @"cherrie_pin.png", nil];
  
+    subTextData = [NSArray arrayWithObjects:@"in 400 m", @"in 650 m", @"in 700 m", @"in 1,2 km", @"in 2,3 km",nil];
     
 }
 
@@ -63,9 +65,10 @@ NSArray *imageData;
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
     //fügt kleinen pfeil hinzu
@@ -74,6 +77,11 @@ NSArray *imageData;
     //setzt Text
     cell.textLabel.text = [textData objectAtIndex:indexPath.row];
 
+
+    //subtitel
+    cell.detailTextLabel.text = [subTextData objectAtIndex:indexPath.row];
+    
+    
     //setzt bilder
     cell.imageView.image = [UIImage imageNamed:[imageData objectAtIndex:indexPath.row]];
     
