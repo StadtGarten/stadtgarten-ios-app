@@ -310,7 +310,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Xez-7V-0aF"/>
                                     <barButtonItem style="plain" systemItem="camera" id="CJv-CL-SfT">
                                         <connections>
-                                            <segue destination="0yl-cU-Q04" kind="push" id="01I-dA-sXH"/>
+                                            <segue destination="0yl-cU-Q04" kind="push" identifier="" id="01I-dA-sXH"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
