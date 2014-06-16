@@ -21,28 +21,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-GX-isn">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-GX-isn">
                                 <rect key="frame" x="88" y="84" width="212" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWe-Zu-wzB">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWe-Zu-wzB">
                                 <rect key="frame" x="88" y="105" width="212" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="w6O-y4-ObY">
-                                <rect key="frame" x="62" y="163" width="196" height="29"/>
+                                <rect key="frame" x="62" y="162" width="196" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Meine Bäume"/>
                                     <segment title="Favoriten"/>
                                 </segments>
                             </segmentedControl>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0n-HM-6jz" customClass="FBLoginView">
-                                <rect key="frame" x="100" y="150" width="200" height="50"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0n-HM-6jz" customClass="FBLoginView">
+                                <rect key="frame" x="60" y="87" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -60,11 +60,12 @@
                         <outlet property="lblUsername" destination="Mxx-GX-isn" id="Vx4-B7-Pub"/>
                         <outlet property="loginButton" destination="u0n-HM-6jz" id="Ukw-lL-d0A"/>
                         <outlet property="profilePicture" destination="yU8-by-zbD" id="fb0-js-R4n"/>
+                        <segue destination="i7x-g5-hh1" kind="modal" identifier="showInitial" modalTransitionStyle="flipHorizontal" id="hxH-rc-nBo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDk-GA-RDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-609" y="-1037"/>
+            <point key="canvasLocation" x="-60" y="-1045"/>
         </scene>
         <!--Map View Controller - Stadtgarten-->
         <scene sceneID="cP2-b9-yn6">
@@ -82,9 +83,9 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="profile-1_44" width="30" id="e7v-EH-t93">
+                                    <barButtonItem title="Profil" image="profile-1_44" width="30" id="e7v-EH-t93">
                                         <connections>
-                                            <segue destination="X2M-hI-XjE" kind="push" id="Zpy-OQ-b4S"/>
+                                            <segue destination="X2M-hI-XjE" kind="push" identifier="showProfile" id="Zpy-OQ-b4S"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xht-Zi-PWu"/>
@@ -94,18 +95,15 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Kyu-Ep-6Kf"/>
-                                    <barButtonItem image="location-1_44" width="30" id="Lsm-Xc-nJ1">
-                                        <connections>
-                                            <segue destination="Co4-FB-R3z" kind="modal" id="77R-dE-kYZ"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem image="location-1_44" width="30" id="Lsm-Xc-nJ1"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1dC-7P-fJN"/>
                                     <barButtonItem image="add-2_44" width="30" id="jRS-9j-BjG">
                                         <connections>
-                                            <segue destination="Co4-FB-R3z" kind="modal" id="aQJ-j9-8Cl"/>
+                                            <segue destination="HX4-ni-7C2" kind="push" id="E3h-S6-Tly"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" red="0.015686274509803921" green="0.57647058823529407" blue="0.44705882352941173" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -162,7 +160,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2j8-B3-gvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-96" y="134"/>
+            <point key="canvasLocation" x="-60" y="478"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Wdc-QA-Hdi">
@@ -196,12 +194,12 @@
                                 <rect key="frame" x="60" y="465" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Überspringen">
+                                <state key="normal" title="Fortfahren als Gast">
                                     <color key="titleColor" red="0.85490196080000003" green="0.87450980389999999" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6Mg-Q1-46V" kind="modal" id="dNG-2c-MLc"/>
+                                    <action selector="tapSkipButton:" destination="i7x-g5-hh1" eventType="touchUpInside" id="G24-Ua-lDx"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_font" translatesAutoresizingMaskIntoConstraints="NO" id="07t-gZ-8OG">
@@ -209,16 +207,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.015686274509803921" green="0.57647058823529407" blue="0.44705882352941173" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.015686274509803921" green="0.57647058823529407" blue="0.44705882352941173" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="zvW-r4-RS9" id="tZK-BB-KeU"/>
+                        <outlet property="skipButton" destination="Hit-vn-qL2" id="upm-gN-oRf"/>
                         <segue destination="6Mg-Q1-46V" kind="modal" identifier="showMap" id="7hm-H5-z8T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ra-05-1CZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1709" y="-275"/>
+            <point key="canvasLocation" x="-1721" y="-275"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Znd-Ex-sSK">
@@ -239,7 +238,35 @@
             </objects>
             <point key="canvasLocation" x="-1201" y="-275"/>
         </scene>
-        <!--Set Location View Controller-->
+        <!--List View Controller-->
+        <scene sceneID="QwV-TX-mWS">
+            <objects>
+                <tableViewController id="Lre-5J-itR" customClass="ListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fSO-hO-uHB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="87I-iy-46n">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="87I-iy-46n" id="UG8-zl-jtb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lre-5J-itR" id="hOo-wX-Hqx"/>
+                            <outlet property="delegate" destination="Lre-5J-itR" id="gI3-Va-JuB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ph1-3t-4WM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418" y="484"/>
+        </scene>
+        <!--Set Location View Controller - Wo steht der Baum?-->
         <scene sceneID="HTm-go-G8r">
             <objects>
                 <viewController id="HX4-ni-7C2" customClass="SetLocationViewController" sceneMemberID="viewController">
@@ -252,55 +279,45 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mtH-Qq-qvn">
-                                <rect key="frame" x="0.0" y="77" width="320" height="355"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="458"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWX-Lj-1au">
-                                <rect key="frame" x="123" y="440" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="take photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0yl-cU-Q04" kind="modal" id="XTR-1W-qa9"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-qD-G4V">
-                                <rect key="frame" x="0.0" y="33" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Wo steht der Baum?" id="bFk-Pa-Eqh"/>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOa-hF-SUz">
-                                <rect key="frame" x="8" y="440" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="*my loc">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goToMyLocationClick:" destination="HX4-ni-7C2" eventType="touchUpInside" id="bY2-EI-iKN"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross-hair.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-hi-pb5">
                                 <rect key="frame" x="136" y="231" width="49" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vy5-mb-qd7">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="location-1_44" id="bCp-uQ-q6I">
+                                        <connections>
+                                            <action selector="goToMyLocationClick:" destination="HX4-ni-7C2" id="Sw5-sn-zkD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Xez-7V-0aF"/>
+                                    <barButtonItem style="plain" systemItem="camera" id="CJv-CL-SfT">
+                                        <connections>
+                                            <segue destination="0yl-cU-Q04" kind="push" id="01I-dA-sXH"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4Xf-ho-ESb"/>
+                    <navigationItem key="navigationItem" title="Wo steht der Baum?" id="4Xf-ho-ESb"/>
                     <connections>
                         <outlet property="crossHair" destination="4gb-hi-pb5" id="ZYi-G6-QOZ"/>
                         <outlet property="mapView" destination="mtH-Qq-qvn" id="n3z-bb-SSS"/>
-                        <outlet property="myLocationButton" destination="YOa-hF-SUz" id="4Cj-wt-HUa"/>
+                        <outlet property="myLocationButton" destination="bCp-uQ-q6I" id="IvN-i5-MTz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENN-A3-0SS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="402" y="-527"/>
+            <point key="canvasLocation" x="-60" y="-275"/>
         </scene>
-        <!--Set Picture View Controller-->
+        <!--Set Picture View Controller - Foto aufnhemen-->
         <scene sceneID="9vg-qu-Jiw">
             <objects>
                 <viewController id="0yl-cU-Q04" customClass="SetPictureViewController" sceneMemberID="viewController">
@@ -312,33 +329,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo aufnehmen" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NV8-Rl-nqS">
-                                <rect key="frame" x="40" y="88" width="136" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ick-XI-HeK">
-                                <rect key="frame" x="236" y="448" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="weiter">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Llm-BS-QTt" kind="modal" id="CMh-dv-bmc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDL-vF-Zml">
-                                <rect key="frame" x="40" y="448" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="von Library">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectPhoto:" destination="0yl-cU-Q04" eventType="touchUpInside" id="pqa-c6-Acc"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTC-fq-MmY">
                                 <rect key="frame" x="46" y="468" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -347,38 +337,59 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejb-Uk-Nv3">
-                                <rect key="frame" x="40" y="109" width="238" height="320"/>
+                                <rect key="frame" x="-1" y="68" width="321" height="456"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ev3-pj-VZE">
-                                <rect key="frame" x="133" y="448" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePicture:" destination="0yl-cU-Q04" eventType="touchUpInside" id="p1l-tI-qDD"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="msA-Wb-20v">
-                                <rect key="frame" x="-1" y="36" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgd-iC-iGg">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <navigationItem title="Stadtgarten" id="daf-CB-0O3"/>
+                                    <barButtonItem style="plain" id="uvj-Xy-OaL">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uDL-vF-Zml">
+                                            <rect key="frame" x="16" y="7" width="77" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="von Library">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="selectPhoto:" destination="0yl-cU-Q04" eventType="touchUpInside" id="pqa-c6-Acc"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qWs-Kv-FqC"/>
+                                    <barButtonItem style="plain" id="liT-9C-KMu">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ev3-pj-VZE">
+                                            <rect key="frame" x="122" y="7" width="76" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Take photo">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="takePicture:" destination="0yl-cU-Q04" eventType="touchUpInside" id="p1l-tI-qDD"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PkD-G6-Kse"/>
+                                    <barButtonItem title="weiter" id="0pG-ow-Vip">
+                                        <connections>
+                                            <segue destination="Llm-BS-QTt" kind="push" id="uax-qC-daS"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
-                            </navigationBar>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Foto aufnhemen" id="GU2-cE-wmQ"/>
                     <connections>
                         <outlet property="imageView" destination="ejb-Uk-Nv3" id="vrr-lI-yPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82d-2W-1zy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="-393"/>
+            <point key="canvasLocation" x="418" y="-275"/>
         </scene>
-        <!--Set Item View Controller-->
+        <!--Set Item View Controller - Beschreibung-->
         <scene sceneID="JP4-mn-LIc">
             <objects>
                 <viewController id="Llm-BS-QTt" customClass="SetItemViewController" sceneMemberID="viewController">
@@ -390,32 +401,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rI-z2-6sw">
-                                <rect key="frame" x="198" y="421" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="weiter">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="eAk-O6-G3Z" kind="modal" id="6Jl-hd-cE7"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOE-Wu-VhH">
-                                <rect key="frame" x="0.0" y="35" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IkT-cv-fwd">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <navigationItem title="Stadtgarten" id="K30-zp-TjF"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PYn-me-kWY"/>
+                                    <barButtonItem title="weiter" id="Wam-JV-Bn6">
+                                        <connections>
+                                            <segue destination="eAk-O6-G3Z" kind="push" id="Dkh-TB-bs2"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
-                            </navigationBar>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Beschreibung" id="GaE-pO-Deo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2D-OS-Bt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1166" y="-393"/>
+            <point key="canvasLocation" x="932" y="-275"/>
         </scene>
-        <!--Overview Item View Controller-->
+        <!--Overview Item View Controller - Zusammenfassung-->
         <scene sceneID="gLD-cl-O2Y">
             <objects>
                 <viewController id="eAk-O6-G3Z" customClass="OverviewItemViewController" sceneMemberID="viewController">
@@ -470,20 +477,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ph9-nl-ztz">
-                                <rect key="frame" x="0.0" y="32" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Stadtgarten" id="25h-O7-Awt"/>
-                                </items>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLd-dx-sjN">
+                                <rect key="frame" x="137" y="479" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Fertig">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneSettingUpNewTree:" destination="eAk-O6-G3Z" eventType="touchUpInside" id="d3L-uC-IBS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Zusammenfassung" id="kbj-zi-FNX"/>
+                    <connections>
+                        <outlet property="doneSettingUpNewTree" destination="LLd-dx-sjN" id="jkM-eA-0Eg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlH-0e-HOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1602" y="-393"/>
+            <point key="canvasLocation" x="1416" y="-275"/>
         </scene>
         <!--Authentification View Controller-->
         <scene sceneID="uNn-m8-KmD">
@@ -531,9 +545,6 @@
                                 <state key="normal" title="vorwärt">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="HX4-ni-7C2" kind="modal" id="Ufd-sb-Idf"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -548,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIB-VG-Nn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-37" y="-616"/>
+            <point key="canvasLocation" x="-1573" y="-1224"/>
         </scene>
     </scenes>
     <resources>
@@ -560,6 +571,7 @@
         <image name="profile-1_44" width="22" height="22"/>
         <image name="tree_white" width="513" height="548"/>
     </resources>
+    <color key="tintColor" red="0.015686274510000001" green="0.57647058819999997" blue="0.44705882349999998" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

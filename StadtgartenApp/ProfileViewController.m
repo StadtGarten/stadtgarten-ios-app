@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "LoginViewController.h"
 
 @interface ProfileViewController ()
 
@@ -23,15 +24,34 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self toggleHiddenState:YES];
+   
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
     self.loginButton.delegate = self;
     
     
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapDetected)];
+    singleTap.numberOfTapsRequired = 1;
+    _profilePicture.userInteractionEnabled = YES;
+    [_profilePicture addGestureRecognizer:singleTap];
+    
+    
 }
+
+
+-(void)tapDetected{
+    NSLog(@"single Tap on profilePicture");
+    [self performSegueWithIdentifier:@"showInitial" sender:self];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -39,8 +59,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)toggleHiddenState:(BOOL)shouldHide{
+    self.lblUsername.hidden = shouldHide;
+    self.lblEmail.hidden = shouldHide;
+    self.profilePicture.hidden = shouldHide;
+    self.loginButton.hidden = !shouldHide;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showInitial"]){
+        LoginViewController *controller = (LoginViewController *)segue.destinationViewController;
+        controller.isFromProfile = YES;
+    }
+}
+
 //Facebook
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
+    
+    [self toggleHiddenState:NO];
 }
 
 -(void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user{

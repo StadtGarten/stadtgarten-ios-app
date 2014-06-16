@@ -29,6 +29,11 @@
     [FBLoginView class];
     [FBProfilePictureView class];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:4.0/255.0 green:147.0/255.0 blue:114.0/255.0 alpha:0.7]];
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:236.0/255.0 green:240.0/255.0 blue:241.0/255.0 alpha:1]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
     [Parse setApplicationId:@"cUtvqSxl71cbab8bFG4oJarnDG88lht8MrE0bHAy"
                   clientKey:@"tPfw8txBrzGLC8F8ljIS4ZBpWYLVVPkkQVHtkDN3"];
     

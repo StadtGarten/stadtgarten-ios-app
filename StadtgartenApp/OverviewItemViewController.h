@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OverviewItemViewController : UIViewController
+- (IBAction)doneSettingUpNewTree:(id)sender;
 
 @end
