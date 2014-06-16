@@ -172,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2j8-B3-gvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-96" y="134"/>
+            <point key="canvasLocation" x="-60" y="478"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Wdc-QA-Hdi">
@@ -250,7 +250,6 @@
             </objects>
             <point key="canvasLocation" x="-1201" y="-275"/>
         </scene>
-
         <!--List View Controller-->
         <scene sceneID="QwV-TX-mWS">
             <objects>
@@ -277,10 +276,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ph1-3t-4WM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-60" y="524"/>
+            <point key="canvasLocation" x="418" y="484"/>
         </scene>
         <!--Set Location View Controller - Wo steht der Baum?-->
-
         <scene sceneID="HTm-go-G8r">
             <objects>
                 <viewController id="HX4-ni-7C2" customClass="SetLocationViewController" sceneMemberID="viewController">

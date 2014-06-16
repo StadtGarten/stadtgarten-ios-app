@@ -24,12 +24,15 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [self toggleHiddenState:YES];
+   
     self.loginButton.readPermissions = @[@"public_profile", @"email"];
     self.loginButton.delegate = self;
     
@@ -42,6 +45,7 @@
     
     
 }
+
 
 -(void)tapDetected{
     NSLog(@"single Tap on profilePicture");
