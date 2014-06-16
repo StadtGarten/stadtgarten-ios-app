@@ -24,7 +24,7 @@
 		56780EBC194DD677007218C8 /* apple_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBB194DD677007218C8 /* apple_pin.png */; };
 		56780EBE194DD93A007218C8 /* pear_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBD194DD93A007218C8 /* pear_pin.png */; };
 		56780EC2194DDD56007218C8 /* TreeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780EC1194DDD56007218C8 /* TreeListViewController.m */; };
-		56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
+		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
@@ -421,8 +421,8 @@
 				34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */,
 				700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
-				56B53D2C19238FF200FEDFDA /* MapViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
+				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
 				0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
@@ -560,11 +560,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StadtgartenApp/StadtgartenApp-Prefix.pch";
 				INFOPLIST_FILE = "StadtgartenApp/StadtgartenApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -582,11 +584,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StadtgartenApp/StadtgartenApp-Prefix.pch";
 				INFOPLIST_FILE = "StadtgartenApp/StadtgartenApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

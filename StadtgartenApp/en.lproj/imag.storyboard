@@ -112,21 +112,9 @@
                         <rect key="contentStretch" x="1.3877787807814457e-17" y="0.0" width="1" height="1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stadtgarten" id="J0u-MQ-WGL"/>
-                    <connections>
-                        <outlet property="navigationBar" destination="Vbj-jB-eGW" id="Waj-PY-wge"/>
-                        <outlet property="navigationItem" destination="J0u-MQ-WGL" id="QLz-1C-ewF"/>
-                        <outlet property="searchDisplayController" destination="p3v-bx-rFz" id="Nfj-9F-wn5"/>
-                    </connections>
+                    <size key="freeformSize" width="320" height="568"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqW-Gm-fxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="p3v-bx-rFz">
-                    <connections>
-                        <outlet property="delegate" destination="pgQ-g5-dAC" id="PLf-8s-cQo"/>
-                        <outlet property="searchContentsController" destination="pgQ-g5-dAC" id="Shp-vi-L3u"/>
-                        <outlet property="searchResultsDataSource" destination="pgQ-g5-dAC" id="nUI-vo-UWN"/>
-                        <outlet property="searchResultsDelegate" destination="pgQ-g5-dAC" id="sS6-tJ-sxn"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-609" y="-275"/>
         </scene>
@@ -578,7 +566,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="dNG-2c-MLc"/>
         <segue reference="77R-dE-kYZ"/>
+        <segue reference="dNG-2c-MLc"/>
     </inferredMetricsTieBreakers>
 </document>

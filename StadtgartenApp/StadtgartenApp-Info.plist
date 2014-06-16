@@ -37,6 +37,8 @@
 	<string>StadtgartenApp</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UILaunchImageFile</key>
+	<string>LaunchImg2.png</string>
 	<key>UIMainStoryboardFile</key>
 	<string>imag</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -47,8 +49,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>UILaunchImageFile</key>
-	<string>LaunchImg2.png</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
