@@ -8,6 +8,7 @@
 //
 
 #import "SetPictureViewController.h"
+#import "SetItemViewConntroller.h"
 
 @interface SetPictureViewController ()
 
@@ -15,10 +16,32 @@
 
 @implementation SetPictureViewController
 
+@synthesize picker;
 
-- (IBAction)takePicture:(UIButton *)sender {
+-(void) requireImage:(id)sender{
+    //if([picker == nil]){
+    //  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
+    //                                                message:@"Waehlen Sie ein Bild aus"
+    //                                             delegate:self
+    //                                  cancelButtonTitle:@"OK"
+    //                                otherButtonTitles:nil];
+    //[alert show];
+    //[alert release];
+    //}else{
+    //[self performSegueWithIdentifier:@"showDescription" sender:self];
+    //}
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showDescription"]){
+        SetItemViewConntroller *itemController = (SetItemViewConntroller *)segue.destinationViewController ;
+        //  itemcontroller _image = picker;
+    }
+}
+- (IBAction)takePicture:(id)sender {
     
     // test if camerafunction is available
+    // if not show Error Message
     if (![UIImagePickerController
           isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIAlertView *myAlertView =
@@ -27,9 +50,11 @@
                          otherButtonTitles:nil];
         
         [myAlertView show];
+        
     }else{
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init]; picker.delegate = self; // Delegate ist unsere ViewController Klasse picker.allowsEditing = YES;
-    
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        // choose picture from camera
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         [self presentViewController:picker animated:YES completion:NULL];
     }
@@ -39,6 +64,7 @@
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing =YES;
+    // choose picture from Library
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:picker animated:YES completion:NULL];
 }
@@ -78,14 +104,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
