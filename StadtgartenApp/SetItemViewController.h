@@ -1,19 +1,19 @@
 //
-//  SetItemViewConntroller.h
+//  SetItemViewController.h
 //  StadtgartenApp
 //
-//  Created by Jule Zigeler on 6/3/14.
+//  Created by Jule Zigeler on 6/17/14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
+@interface SetItemViewController : UIViewController{
 
-@interface SetItemViewConntroller : UIViewController{
-    
-    IBOutlet UITextField *nameTextField;
-    IBOutlet UITextView *descriptionTextArea;
-    
+
+IBOutlet UITextField *nameTextField;
+IBOutlet UITextView *descriptionTextArea;
+
 }
 
 @property (nonatomic, strong) IBOutlet UILabel *ddText;
@@ -28,16 +28,10 @@
 - (IBAction)ddMenuShow:(UIButton *)sender;
 - (IBAction)ddMenuSelectionMade:(UIButton *)sender;
 
-- (IBAction)ddTextFieldClicked:(id)sender;
-- (IBAction)ddTextViewClicked:(id)sender;
 
 -(void)dismissKeyboard;
 -(IBAction) requireTextInput:(id)sender;
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
-
-
 
 
 
 @end
-

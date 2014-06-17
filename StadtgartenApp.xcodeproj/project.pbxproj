@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		042EDEC519486C12008E54DC /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042EDEC319486C12008E54DC /* imag.storyboard */; };
 		0461FE79193F15C40005251D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE76193F15C40005251D /* Accounts.framework */; };
 		0461FE7A193F15C40005251D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE77193F15C40005251D /* AdSupport.framework */; };
 		0461FE7B193F15C40005251D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE78193F15C40005251D /* Social.framework */; };
@@ -15,6 +14,8 @@
 		0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
 		0489C26519472DEB009BD670 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C26419472DEB009BD670 /* LoginViewController.m */; };
 		0489C26719473CFD009BD670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489C26619473CFD009BD670 /* Images.xcassets */; };
+		341C15931950345E00690D42 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
+		343FA5A9195028D300D3C4D4 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343FA5A8195028D300D3C4D4 /* imag.storyboard */; };
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */; };
 		34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */; };
@@ -69,7 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042EDEC419486C12008E54DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
 		0461FE76193F15C40005251D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		0461FE77193F15C40005251D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		0461FE78193F15C40005251D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -80,6 +80,9 @@
 		0489C26319472DEB009BD670 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0489C26419472DEB009BD670 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0489C26619473CFD009BD670 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StadtgartenApp/Images.xcassets; sourceTree = "<group>"; };
+		341C15911950345E00690D42 /* SetItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewController.h; sourceTree = "<group>"; };
+		341C15921950345E00690D42 /* SetItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemViewController.m; sourceTree = "<group>"; };
+		343FA5A8195028D300D3C4D4 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
 		34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewConntroller.h; sourceTree = "<group>"; };
@@ -261,7 +264,9 @@
 				842877EA19487E1700533407 /* Database.m */,
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
-				042EDEC319486C12008E54DC /* imag.storyboard */,
+				343FA5A8195028D300D3C4D4 /* imag.storyboard */,
+				341C15911950345E00690D42 /* SetItemViewController.h */,
+				341C15921950345E00690D42 /* SetItemViewController.m */,
 				0488C2FF1947B90700EC00DE /* ProfileViewController.h */,
 				0488C3001947B90700EC00DE /* ProfileViewController.m */,
 				0489C26319472DEB009BD670 /* LoginViewController.h */,
@@ -388,10 +393,10 @@
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
 				842877ED194890EC00533407 /* tree.jpg in Resources */,
 				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
-				042EDEC519486C12008E54DC /* imag.storyboard in Resources */,
 				56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */,
 				56780EBE194DD93A007218C8 /* pear_pin.png in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
+				343FA5A9195028D300D3C4D4 /* imag.storyboard in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +428,7 @@
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
+				341C15931950345E00690D42 /* SetItemViewController.m in Sources */,
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
 				0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
@@ -448,14 +454,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		042EDEC319486C12008E54DC /* imag.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				042EDEC419486C12008E54DC /* en */,
-			);
-			name = imag.storyboard;
-			sourceTree = "<group>";
-		};
 		7092DB9A191A55B500190338 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
 
-#import "SetItemViewConntroller.h"
+#import "SetItemViewController.h"
 #import "OverviewItemViewController.h"
 
-@interface SetItemViewConntroller ()
+@interface SetItemViewController ()
 
 
 @end
 
-@implementation SetItemViewConntroller
+@implementation SetItemViewController
 
 
 @synthesize descriptionTextArea;
@@ -28,18 +28,18 @@
     return NO;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"showOverview"]){
-        OverviewItemViewController *overviewController = (OverviewItemViewController *)segue.destinationViewController ;
-        overviewController.name = nameTextField.text;
-        overviewController.description = descriptionTextArea.text;
-        overviewController.tags = ddText.text;
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//   if([segue.identifier isEqualToString:@"showOverview"]){
+//       OverviewItemViewController *overviewController = (OverviewItemViewController *)segue.destinationViewController ;
+    //overviewController.name = nameTextField.text;
+      //  overviewController.description = descriptionTextArea.text;
+        //overviewController.tags = ddText.text;
         //overviewController.image = ;
         
         
-    }
+    //}
     
-}
+//}
 
 
 // remove keyboard in TextView when done button is pressed
@@ -64,21 +64,9 @@ shouldChangeTextInRange: (NSRange) range
     }
 }
 
-- (IBAction)ddTextFieldClicked:(id)sender{
-   // newTree.name = nameTextField.text;
-    // NSLog(newTree.name);
-    
-}
-
-- (IBAction)ddTextViewClicked:(id)sender{
-    //newTree.description = descriptionTextArea.text;
-    //NSLog(newTree.description);
-    
-    
-}
 
 -(IBAction) requireTextInput:(id)sender{
-    if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddText.text isEqualToString:@"Choose Tree"] ){
+    if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddText.text isEqualToString:@"Baum wählen"] ){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
                                                         message:@"Bitte fuellen Sie das Formular vollstaendig aus"
                                                        delegate:self
