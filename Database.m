@@ -26,7 +26,8 @@
             for (int i = 0; i < results.count; i++) {
                 PFObject *treeObject = results[i];
                 NSDictionary *tree = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     treeObject[@"id"], @"id",
+                                     treeObject[@"objectId"], @"id",
+                                     treeObject[@"userid"], @"userid",
                                      treeObject[@"baumname"], @"baumname",
                                      treeObject[@"beschreibung"], @"beschreibung",
                                      treeObject[@"tag"], @"tag",
@@ -39,9 +40,10 @@
     return (NSArray*)trees;
 };
 
--(void)writeTree:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild{
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild{
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
+    treeObject[@"userid"] = userid;
     treeObject[@"baumname"] = baumname;
     treeObject[@"tag"] = tag;
     //treeObject[@"location"] = @"Ort";
@@ -57,7 +59,7 @@
      
      UIImage *temp = [UIImage imageNamed:@"Assets/tree.jpg"];
      Database * db=[[Database alloc]init];
-     [db writeTree:@"Apfelbaum1" tag:@"Apfel" beschreibung:@"Baum - toll" bild:temp];
+     [db writeTree:@"user" baumname:@"Apfelbaum1" tag:@"Apfel" beschreibung:@"Baum - toll" bild:temp];
      //[self.view addSubview:_navigationBar];
      */
 
