@@ -110,13 +110,6 @@
                         <rect key="contentStretch" x="1.3877787807814457e-17" y="0.0" width="1" height="1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Stadtgarten" id="J0u-MQ-WGL"/>
-                    <!--
-                    <connections>
-                        <outlet property="navigationBar" destination="Vbj-jB-eGW" id="Waj-PY-wge"/>
-                        <outlet property="navigationItem" destination="J0u-MQ-WGL" id="QLz-1C-ewF"/>
-                        <outlet property="searchDisplayController" destination="p3v-bx-rFz" id="Nfj-9F-wn5"/>
-                    </connections>
-                     -->
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqW-Gm-fxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="p3v-bx-rFz">
@@ -297,7 +290,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross-hair.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-hi-pb5">
-                                <rect key="frame" x="136" y="231" width="49" height="47"/>
+                                <rect key="frame" x="136" y="271" width="49" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vy5-mb-qd7">
@@ -578,7 +571,7 @@
     </scenes>
     <resources>
         <image name="add-2_44" width="22" height="22"/>
-        <image name="cross-hair.png" width="312" height="312"/>
+        <image name="cross-hair.png" width="128" height="128"/>
         <image name="list-2_44" width="22" height="22"/>
         <image name="location-1_44" width="22" height="22"/>
         <image name="logo_font" width="423" height="118"/>

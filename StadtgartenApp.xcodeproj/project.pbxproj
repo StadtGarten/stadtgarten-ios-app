@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		042EDEC519486C12008E54DC /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042EDEC319486C12008E54DC /* imag.storyboard */; };
 		0461FE79193F15C40005251D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE76193F15C40005251D /* Accounts.framework */; };
 		0461FE7A193F15C40005251D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE77193F15C40005251D /* AdSupport.framework */; };
 		0461FE7B193F15C40005251D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE78193F15C40005251D /* Social.framework */; };
@@ -42,6 +41,7 @@
 		7092DBB1191A55B500190338 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB95191A55B500190338 /* CoreData.framework */; };
 		7092DBB9191A55B500190338 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7092DBB7191A55B500190338 /* InfoPlist.strings */; };
 		7092DBBB191A55B500190338 /* StadtgartenAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBBA191A55B500190338 /* StadtgartenAppTests.m */; };
+		70A8919719502AD200CD0106 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A8919619502AD200CD0106 /* imag.storyboard */; };
 		842877D2194868D500533407 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D1194868D500533407 /* Parse.framework */; };
 		842877D3194868D500533407 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D1194868D500533407 /* Parse.framework */; };
 		842877D51948691900533407 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D41948691900533407 /* AudioToolbox.framework */; };
@@ -69,7 +69,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042EDEC419486C12008E54DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
 		0461FE76193F15C40005251D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		0461FE77193F15C40005251D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		0461FE78193F15C40005251D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -117,6 +116,7 @@
 		7092DBB6191A55B500190338 /* StadtgartenAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StadtgartenAppTests-Info.plist"; sourceTree = "<group>"; };
 		7092DBB8191A55B500190338 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7092DBBA191A55B500190338 /* StadtgartenAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StadtgartenAppTests.m; sourceTree = "<group>"; };
+		70A8919619502AD200CD0106 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		842877D1194868D500533407 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		842877D41948691900533407 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		842877D61948692400533407 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -261,7 +261,7 @@
 				842877EA19487E1700533407 /* Database.m */,
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
-				042EDEC319486C12008E54DC /* imag.storyboard */,
+				70A8919619502AD200CD0106 /* imag.storyboard */,
 				0488C2FF1947B90700EC00DE /* ProfileViewController.h */,
 				0488C3001947B90700EC00DE /* ProfileViewController.m */,
 				0489C26319472DEB009BD670 /* LoginViewController.h */,
@@ -388,10 +388,10 @@
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
 				842877ED194890EC00533407 /* tree.jpg in Resources */,
 				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
-				042EDEC519486C12008E54DC /* imag.storyboard in Resources */,
 				56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */,
 				56780EBE194DD93A007218C8 /* pear_pin.png in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
+				70A8919719502AD200CD0106 /* imag.storyboard in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,14 +448,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		042EDEC319486C12008E54DC /* imag.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				042EDEC419486C12008E54DC /* en */,
-			);
-			name = imag.storyboard;
-			sourceTree = "<group>";
-		};
 		7092DB9A191A55B500190338 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
