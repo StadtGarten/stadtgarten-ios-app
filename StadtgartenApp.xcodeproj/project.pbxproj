@@ -43,6 +43,7 @@
 		7092DBB1191A55B500190338 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB95191A55B500190338 /* CoreData.framework */; };
 		7092DBB9191A55B500190338 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7092DBB7191A55B500190338 /* InfoPlist.strings */; };
 		7092DBBB191A55B500190338 /* StadtgartenAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBBA191A55B500190338 /* StadtgartenAppTests.m */; };
+		70A8919719502AD200CD0106 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A8919619502AD200CD0106 /* imag.storyboard */; };
 		842877D2194868D500533407 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D1194868D500533407 /* Parse.framework */; };
 		842877D3194868D500533407 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D1194868D500533407 /* Parse.framework */; };
 		842877D51948691900533407 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D41948691900533407 /* AudioToolbox.framework */; };
@@ -120,6 +121,7 @@
 		7092DBB6191A55B500190338 /* StadtgartenAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StadtgartenAppTests-Info.plist"; sourceTree = "<group>"; };
 		7092DBB8191A55B500190338 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7092DBBA191A55B500190338 /* StadtgartenAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StadtgartenAppTests.m; sourceTree = "<group>"; };
+		70A8919619502AD200CD0106 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		842877D1194868D500533407 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		842877D41948691900533407 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		842877D61948692400533407 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
