@@ -14,6 +14,31 @@
 //-(NSArray *)getAllTrees;
 //-(NSArray *)getAllUsers;
 
+-(NSArray *)getTrees{
+    NSMutableArray *trees = [[NSMutableArray alloc] init];
+    PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
+    [query whereKeyExists:@"id"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else {
+            for (int i = 0; i < results.count; i++) {
+                PFObject *treeObject = results[i];
+                NSDictionary *tree = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     treeObject[@"id"], @"id",
+                                     treeObject[@"baumname"], @"baumname",
+                                     treeObject[@"beschreibung"], @"beschreibung",
+                                     treeObject[@"tag"], @"tag",
+                                     treeObject[@"bild"], @"bild",
+                                     nil];
+                [trees addObject:tree];
+            }
+        }
+    }];
+    return (NSArray*)trees;
+};
+
 -(void)writeTree:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild{
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
