@@ -14,9 +14,36 @@
 //-(NSArray *)getAllTrees;
 //-(NSArray *)getAllUsers;
 
--(void)writeTree:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild{
+-(NSArray *)getTrees{
+    NSMutableArray *trees = [[NSMutableArray alloc] init];
+    PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
+    [query whereKeyExists:@"id"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else {
+            for (int i = 0; i < results.count; i++) {
+                PFObject *treeObject = results[i];
+                NSDictionary *tree = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     treeObject[@"objectId"], @"id",
+                                     treeObject[@"userid"], @"userid",
+                                     treeObject[@"baumname"], @"baumname",
+                                     treeObject[@"beschreibung"], @"beschreibung",
+                                     treeObject[@"tag"], @"tag",
+                                     treeObject[@"bild"], @"bild",
+                                     nil];
+                [trees addObject:tree];
+            }
+        }
+    }];
+    return (NSArray*)trees;
+};
+
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild{
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
+    treeObject[@"userid"] = userid;
     treeObject[@"baumname"] = baumname;
     treeObject[@"tag"] = tag;
     //treeObject[@"location"] = @"Ort";
@@ -32,7 +59,7 @@
      
      UIImage *temp = [UIImage imageNamed:@"Assets/tree.jpg"];
      Database * db=[[Database alloc]init];
-     [db writeTree:@"Apfelbaum1" tag:@"Apfel" beschreibung:@"Baum - toll" bild:temp];
+     [db writeTree:@"user" baumname:@"Apfelbaum1" tag:@"Apfel" beschreibung:@"Baum - toll" bild:temp];
      //[self.view addSubview:_navigationBar];
      */
 

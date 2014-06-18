@@ -5,7 +5,7 @@
 //  Created by Katharina Winkler on 14.05.14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
-// Setzen der Map und der Marker
+// Map, Marker/Pins setzen, Fokus setzen
 
 
 
@@ -24,9 +24,10 @@
 const int LATITUDE = 0;
 const int LONGITUDE = 1;
 
-bool centerInMunich = YES;
+const bool CENTER_IN_MUNICH = YES;
+const bool ZOOM = YES;
 
-//Muenchen
+//GPS of Munich
 float lat = 48.133;
 float lon = 11.567;
 
@@ -51,6 +52,8 @@ double markerPosition[][2] = {47.0, 11.0,
 
 - (void)viewDidLoad
 {
+    NSLog(@"start MapViewController");
+
     
     [super viewDidLoad];
     
@@ -162,14 +165,17 @@ double markerPosition[][2] = {47.0, 11.0,
     [super viewWillAppear:animated];
     
     MKCoordinateRegion region;
-    if(centerInMunich) {
-        region.center.latitude = lat;
-        region.center.longitude = lon;
+    
+    if(ZOOM) {
         region.span.latitudeDelta = 0.1;
         region.span.longitudeDelta = 0.1;
-        [_mapView setRegion:region animated:YES];
     }
     
+    if(CENTER_IN_MUNICH) {
+        region.center.latitude = lat;
+        region.center.longitude = lon;
+    }
+    [_mapView setRegion:region animated:YES];
 }
 
 
