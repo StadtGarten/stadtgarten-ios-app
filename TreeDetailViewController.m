@@ -31,7 +31,38 @@
     [self registerForKeyboardNotifications];
     
     _description.clipsToBounds = YES;
-    _description.layer.cornerRadius = 10.0f;
+    _description.layer.cornerRadius = 4.0f;
+    
+    _treeName.clipsToBounds = YES;
+    _treeName.layer.cornerRadius = 4.0f;
+
+    _treeTag.clipsToBounds = YES;
+    _treeTag.layer.cornerRadius = 4.0f;
+    
+    _locationBGView.clipsToBounds = YES;
+    _locationBGView.layer.cornerRadius = 4.0f;
+    
+    
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnTreePicture)];
+    singleTap.numberOfTapsRequired = 1;
+    [_treePicture addGestureRecognizer:singleTap];
+    
+     UITapGestureRecognizer *singleTapLocation = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnLaction)];
+    singleTapLocation.numberOfTapsRequired = 1;
+    [_treeDistance addGestureRecognizer:singleTapLocation];
+    
+    
+}
+
+-(void)tapOnTreePicture{
+    NSLog(@"Tap on TreePicture");
+    [self performSegueWithIdentifier:@"showSetPicture" sender:self];
+}
+
+-(void)tapOnLaction{
+    NSLog(@"Tap on Location");
+    [self performSegueWithIdentifier:@"showSetLocation" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +84,11 @@
 
 - (IBAction)tapEdit:(id)sender {
     self.description.editable = YES;
+    _treePicture.userInteractionEnabled = YES;
+    _treeTag.enabled = YES;
+    _treeName.enabled=YES;
+    _treeDistance.userInteractionEnabled = YES;
+   
     
     [_backgroundView setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1]];
     [_doneButton setHidden:NO];
@@ -102,13 +138,58 @@
 }
 
 - (IBAction)doneEditing:(id)sender {
-     [_description resignFirstResponder];
-   // [_description endEditing:YES];
+    [self.view endEditing:YES];
     self.description.editable = NO;
-    
+    _treePicture.userInteractionEnabled = NO;
+    _treeTag.enabled = YES;
+    _treeName.enabled=YES;
+    _treeDistance.userInteractionEnabled = YES;
     [_backgroundView setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     [_doneButton setHidden:YES];
-   
     
+    //Save Changes in DB
 }
+
+-(void)tapBackground:(id)sender{
+    [self.view endEditing:YES];
+}
+
+- (IBAction)showColorsActionSheet:(id)sender{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Bewerten Sie diesen Baum:"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Abbrechen"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"1 Stern", @"2 Sterne", @"3 Sterne", @"4 Sterne", @"5 Sterne", nil];
+    
+    [actionSheet showInView:self.view];
+    
+    actionSheet.tag = 100;
+}
+
+#pragma mark - UIActionSheet method implementation
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (actionSheet.tag == 100) {
+        NSLog(@"The Rating selection action sheet.");
+    }
+}
+
+
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (actionSheet.tag == 100) {
+        NSLog(@"From didDismissWithButtonIndex - Selected Rating: %@", [actionSheet buttonTitleAtIndex:buttonIndex]);
+        
+        //TODO POST Rating to Parse
+    }
+}
+
+
+-(void)actionSheet:(UIActionSheet *)actionSheet willDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (actionSheet.tag == 100) {
+        NSLog(@"From willDismissWithButtonIndex - Selected Rating: %@", [actionSheet buttonTitleAtIndex:buttonIndex]);
+    }
+}
+
+
+
 @end
