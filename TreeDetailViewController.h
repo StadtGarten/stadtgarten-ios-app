@@ -10,4 +10,14 @@
 
 @interface TreeDetailViewController : UIViewController
 
+- (IBAction)tapEdit:(id)sender;
+- (IBAction)doneEditing:(id)sender;
+
+
+@property (strong, nonatomic) IBOutlet UITextView *description;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIButton *doneButton;
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
+
+
 @end
