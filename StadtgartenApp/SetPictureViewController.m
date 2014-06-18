@@ -17,32 +17,34 @@
 @implementation SetPictureViewController
 
 @synthesize picker;
+@synthesize imageView;
 
 
--(void) requireImage:(id)sender{
-    //if(1 != 0 ){
-     // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
-       //                                             message:@"Waehlen Sie ein Bild aus"
-         //                                        delegate:self
-           //                           cancelButtonTitle:@"OK"
-             //                       otherButtonTitles:nil];
+// an image is necessary before switching to the next view
+-(IBAction) requireImage:(id)sender{
+    //if(imageView.image == nil){
+    // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
+     //                                              message:@"Bitte wählen Sie ein Bild aus"
+     //                                            delegate:self
+     //                              cancelButtonTitle:@"OK"
+     //                              otherButtonTitles:nil];
     //[alert show];
-    //[alert release];
     //}else{
+    // go to next view if segue "showDescription" is chosen
     [self performSegueWithIdentifier:@"showDescription" sender:self];
     //}
 }
 
+// if segue "showDescription" is chosen, instantiate itemController
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"showDescription"]){
         SetItemViewController *itemController = (SetItemViewController *)segue.destinationViewController ;
-        //  itemcontroller _image = picker;
+        itemController.image= imageView.image;
     }
 }
+
+// test if camerafunction is available, if not show Error Message
 - (IBAction)takePicture:(id)sender {
-    
-    // test if camerafunction is available
-    // if not show Error Message
     if (![UIImagePickerController
           isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIAlertView *myAlertView =
@@ -53,7 +55,8 @@
         [myAlertView show];
         
     }else{
-        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        // UIImagePickerController *
+        picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
         // choose picture from camera
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -62,7 +65,7 @@
     
 }
 - (IBAction)selectPhoto:(id)sender {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing =YES;
     // choose picture from Library

@@ -23,15 +23,15 @@ IBOutlet UITextView *descriptionTextArea;
 @property (nonatomic) IBOutlet UITextField *nameTextField;
 @property (nonatomic) IBOutlet UITextView *descriptionTextArea;
 
+@property UIImage *image;
 
 
 - (IBAction)ddMenuShow:(UIButton *)sender;
 - (IBAction)ddMenuSelectionMade:(UIButton *)sender;
-
+- (IBAction)requireTextInput:(id)sender;
 
 -(void)dismissKeyboard;
 
--(IBAction) requireTextInput:(id)sender;
 
 
 

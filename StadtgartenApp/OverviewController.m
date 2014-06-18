@@ -1,21 +1,19 @@
 //
-//  OverviewItemViewController.m
+//  OverviewController.m
 //  StadtgartenApp
 //
-//  Created by Jule Zigeler on 6/3/14.
+//  Created by Jule Zigeler on 6/18/14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
 
-#import "OverviewItemViewController.h"
+#import "OverviewController.h"
 #import "SetItemViewController.h"
 
-@interface OverviewItemViewController ()
+@interface OverviewController ()
 
 @end
 
-
-
-@implementation OverviewItemViewController
+@implementation OverviewController
 
 @synthesize nameLabel;
 @synthesize descriptionLabel;
@@ -37,6 +35,11 @@
     //newDatabase writeTree:([aUser objectForKey])userid baumname:(_name)baumname tag:(_tags)tag beschreibung:(_description)beschreibung bild:(_image)bild;
     
 }
+
+-(IBAction)discardData:(id)sender{
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,9 +78,9 @@
  }
  */
 
-- (IBAction)doneSettingUpNewTree:(id)sender {
+//- (IBAction)doneSettingUpNewTree:(id)sender {
     
-    [self performSegueWithIdentifier:@"showMap" sender:sender];
+//    [self performSegueWithIdentifier:@"showMap" sender:sender];
     
-}
+//}
 @end

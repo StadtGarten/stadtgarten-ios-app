@@ -7,7 +7,7 @@
 //
 
 #import "SetItemViewController.h"
-#import "OverviewItemViewController.h"
+#import "OverviewController.h"
 
 @interface SetItemViewController ()
 
@@ -19,28 +19,45 @@
 
 @synthesize descriptionTextArea;
 @synthesize nameTextField;
+@synthesize image;
+@synthesize ddMenu, ddText;
+@synthesize ddMenuShowButton;
 
 // *newTree = [[StoreTreeData alloc] init];
+
+
+
+-(IBAction)requireTextInput:(id)sender{
+    //if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddText.text isEqualToString:@"Baum wählen"] ){
+   //     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
+     //                                                   message:@"Bitte fuellen Sie das Formular vollständig aus"
+     //                                                  delegate:self
+      //                                        cancelButtonTitle:@"OK"
+      //                                        otherButtonTitles:nil];
+     //   [alert show];
+    //}else{
+        [self performSegueWithIdentifier:@"showOverview" sender:self];
+   // }
+    
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+   if([segue.identifier isEqualToString:@"showOverview"]){
+       OverviewController *overviewController = (OverviewController *)segue.destinationViewController ;
+    overviewController.name = nameTextField.text;
+    overviewController.description = descriptionTextArea.text;
+    overviewController.tags = ddText.text;
+    overviewController.image = image;
+    }
+
+}
 
 // remove keyboard in TextField when done button is pressed
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return NO;
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-   if([segue.identifier isEqualToString:@"showOverview"]){
-       OverviewItemViewController *overviewController = (OverviewItemViewController *)segue.destinationViewController ;
-    overviewController.name = nameTextField.text;
-    overviewController.description = descriptionTextArea.text;
-    overviewController.tags = ddText.text;
-        //overviewController.image = ;
-        
-        
-    }
-    
-}
-
 
 // remove keyboard in TextView when done button is pressed
 - (BOOL) textView: (UITextView*) textView
@@ -54,6 +71,7 @@ shouldChangeTextInRange: (NSRange) range
     return YES;
 }
 
+// remove keyboard if its klicked outside the textfield or textarea
 -(void)dismissKeyboard {
     if(nameTextField){
         [nameTextField resignFirstResponder];
@@ -65,24 +83,8 @@ shouldChangeTextInRange: (NSRange) range
 }
 
 
--(IBAction) requireTextInput:(id)sender{
-    if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddText.text isEqualToString:@"Baum wählen"] ){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
-                                                        message:@"Bitte fuellen Sie das Formular vollstaendig aus"
-                                                       delegate:self
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        //[alert release];
-    }else{
-        [self performSegueWithIdentifier:@"showOverview" sender:self];
-    }
-    
-}
-
 // Drop Down List for selecting Tags
-@synthesize ddMenu, ddText;
-@synthesize ddMenuShowButton;
+
 - (IBAction)ddMenuShow:(UIButton *)sender
 {
     if (sender.tag == 0) {
@@ -101,20 +103,20 @@ shouldChangeTextInRange: (NSRange) range
     [self.ddMenuShowButton setTitle:@"▼" forState:UIControlStateNormal];
     self.ddMenuShowButton.tag = 0;
     self.ddMenu.hidden = YES;
-    switch (sender.tag) {
-        case 1:
+    //switch (sender.tag) {
+    //    case 1:
             //self.view.backgroundColor = [UIColor redColor];
-            break;
-        case 2:
+     //       break;
+     //   case 2:
             //self.view.backgroundColor = [UIColor blueColor];
-            break;
-        case 3:
+     //       break;
+     //   case 3:
             //self.view.backgroundColor = [UIColor greenColor];
-            break;
+      //      break;
             
-        default:
-            break;
-    }
+     //   default:
+     //       break;
+    //}
 }
 
 
