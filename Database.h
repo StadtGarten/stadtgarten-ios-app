@@ -11,5 +11,6 @@
 @interface Database : PFQuery
 
 -(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild;
+-(NSArray *)getTrees;
 
 @end

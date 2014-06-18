@@ -11,9 +11,9 @@
 @implementation Database
 
 //-(NSArray *)getUserFavourites(String*)userId{};
-//-(NSArray *)getAllTrees;
 //-(NSArray *)getAllUsers;
 
+//gibt alle Bäume zurück
 -(NSArray *)getTrees{
     NSMutableArray *trees = [[NSMutableArray alloc] init];
     PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
@@ -40,6 +40,16 @@
     return (NSArray*)trees;
 };
 
+
+-(NSArray *)getUserTrees:(NSString*)userid{
+    //getAlltress filter for userid
+    NSArray *trees = [self getTrees];
+    NSString *userSelector = [@"userid = " stringByAppendingString:userid];
+    NSPredicate *filter = [NSPredicate predicateWithFormat:userSelector];
+    return [trees filteredArrayUsingPredicate:filter];
+};
+
+
 -(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild{
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
@@ -65,6 +75,7 @@
 
     
 };
+
 
 
 
