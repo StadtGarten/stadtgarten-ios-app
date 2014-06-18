@@ -28,18 +28,18 @@
     return NO;
 }
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//   if([segue.identifier isEqualToString:@"showOverview"]){
-//       OverviewItemViewController *overviewController = (OverviewItemViewController *)segue.destinationViewController ;
-    //overviewController.name = nameTextField.text;
-      //  overviewController.description = descriptionTextArea.text;
-        //overviewController.tags = ddText.text;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+   if([segue.identifier isEqualToString:@"showOverview"]){
+       OverviewItemViewController *overviewController = (OverviewItemViewController *)segue.destinationViewController ;
+    overviewController.name = nameTextField.text;
+    overviewController.description = descriptionTextArea.text;
+    overviewController.tags = ddText.text;
         //overviewController.image = ;
         
         
-    //}
+    }
     
-//}
+}
 
 
 // remove keyboard in TextView when done button is pressed

@@ -8,7 +8,7 @@
 //
 
 #import "SetPictureViewController.h"
-#import "SetItemViewConntroller.h"
+#import "SetItemViewController.h"
 
 @interface SetPictureViewController ()
 
@@ -18,23 +18,24 @@
 
 @synthesize picker;
 
+
 -(void) requireImage:(id)sender{
-    //if([picker == nil]){
-    //  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
-    //                                                message:@"Waehlen Sie ein Bild aus"
-    //                                             delegate:self
-    //                                  cancelButtonTitle:@"OK"
-    //                                otherButtonTitles:nil];
+    //if(1 != 0 ){
+     // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
+       //                                             message:@"Waehlen Sie ein Bild aus"
+         //                                        delegate:self
+           //                           cancelButtonTitle:@"OK"
+             //                       otherButtonTitles:nil];
     //[alert show];
     //[alert release];
     //}else{
-    //[self performSegueWithIdentifier:@"showDescription" sender:self];
+    [self performSegueWithIdentifier:@"showDescription" sender:self];
     //}
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"showDescription"]){
-        SetItemViewConntroller *itemController = (SetItemViewConntroller *)segue.destinationViewController ;
+        SetItemViewController *itemController = (SetItemViewController *)segue.destinationViewController ;
         //  itemcontroller _image = picker;
     }
 }

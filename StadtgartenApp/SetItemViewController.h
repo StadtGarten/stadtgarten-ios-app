@@ -30,6 +30,7 @@ IBOutlet UITextView *descriptionTextArea;
 
 
 -(void)dismissKeyboard;
+
 -(IBAction) requireTextInput:(id)sender;
 
 

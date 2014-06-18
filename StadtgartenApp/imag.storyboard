@@ -372,7 +372,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PkD-G6-Kse"/>
                                     <barButtonItem title="weiter" id="0pG-ow-Vip">
                                         <connections>
-                                            <segue destination="Llm-BS-QTt" kind="push" identifier="showDescription" id="xbM-C9-wRb"/>
+                                            <action selector="requireImage:" destination="0yl-cU-Q04" id="uZQ-ur-0Yg"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -383,6 +383,7 @@
                     <navigationItem key="navigationItem" title="Foto aufnehmen" id="GU2-cE-wmQ"/>
                     <connections>
                         <outlet property="imageView" destination="ejb-Uk-Nv3" id="vrr-lI-yPQ"/>
+                        <segue destination="Llm-BS-QTt" kind="push" identifier="showDescription" id="zTA-QR-ARG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="82d-2W-1zy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -408,7 +409,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PYn-me-kWY"/>
                                     <barButtonItem title="weiter" id="Wam-JV-Bn6">
                                         <connections>
-                                            <segue destination="eAk-O6-G3Z" kind="push" identifier="showOverview" id="DpC-Ls-fxQ"/>
+                                            <action selector="requireTextInput:" destination="Llm-BS-QTt" id="Bz8-1D-jpZ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -510,6 +511,7 @@
                         <outlet property="ddText" destination="QLg-Sj-aDA" id="Shf-bY-nvW"/>
                         <outlet property="descriptionTextArea" destination="9ms-12-c82" id="Xe5-mi-9YE"/>
                         <outlet property="nameTextField" destination="bzp-2u-0Is" id="Ffp-cm-CIA"/>
+                        <segue destination="eAk-O6-G3Z" kind="push" identifier="showOverview" id="hrZ-B8-5Jm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2D-OS-Bt7" userLabel="First Responder" sceneMemberID="firstResponder"/>

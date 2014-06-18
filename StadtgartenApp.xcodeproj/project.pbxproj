@@ -17,7 +17,6 @@
 		341C15931950345E00690D42 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
 		343FA5A9195028D300D3C4D4 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343FA5A8195028D300D3C4D4 /* imag.storyboard */; };
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
-		34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */; };
 		34D32646193DF5CE008B1D2F /* OverviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */; };
 		5676F2E0193F4CDD003846F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */; };
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
@@ -43,7 +42,6 @@
 		7092DBB1191A55B500190338 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB95191A55B500190338 /* CoreData.framework */; };
 		7092DBB9191A55B500190338 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7092DBB7191A55B500190338 /* InfoPlist.strings */; };
 		7092DBBB191A55B500190338 /* StadtgartenAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7092DBBA191A55B500190338 /* StadtgartenAppTests.m */; };
-		70A8919719502AD200CD0106 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70A8919619502AD200CD0106 /* imag.storyboard */; };
 		842877D2194868D500533407 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D1194868D500533407 /* Parse.framework */; };
 		842877D3194868D500533407 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D1194868D500533407 /* Parse.framework */; };
 		842877D51948691900533407 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877D41948691900533407 /* AudioToolbox.framework */; };
@@ -86,8 +84,6 @@
 		343FA5A8195028D300D3C4D4 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
-		34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewConntroller.h; sourceTree = "<group>"; };
-		34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemViewConntroller.m; sourceTree = "<group>"; };
 		34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewItemViewController.h; sourceTree = "<group>"; };
 		34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewItemViewController.m; sourceTree = "<group>"; };
 		5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -121,7 +117,6 @@
 		7092DBB6191A55B500190338 /* StadtgartenAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StadtgartenAppTests-Info.plist"; sourceTree = "<group>"; };
 		7092DBB8191A55B500190338 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7092DBBA191A55B500190338 /* StadtgartenAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StadtgartenAppTests.m; sourceTree = "<group>"; };
-		70A8919619502AD200CD0106 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		842877D1194868D500533407 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		842877D41948691900533407 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		842877D61948692400533407 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -281,8 +276,6 @@
 				7092DB9F191A55B500190338 /* StadtgartenApp-Prefix.pch */,
 				34D3263B193DF219008B1D2F /* SetPictureViewController.h */,
 				34D3263C193DF219008B1D2F /* SetPictureViewController.m */,
-				34D3263E193DF387008B1D2F /* SetItemViewConntroller.h */,
-				34D3263F193DF387008B1D2F /* SetItemViewConntroller.m */,
 				34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */,
 				34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */,
 				842877E619486F9C00533407 /* ListViewController.h */,
@@ -418,7 +411,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				842877EB19487E1700533407 /* Database.m in Sources */,
 				56780EC2194DDD56007218C8 /* TreeListViewController.m in Sources */,
