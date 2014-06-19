@@ -19,9 +19,6 @@
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		5676F2E0193F4CDD003846F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */; };
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
-		56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EB7194DD50F007218C8 /* cherrie_pin.png */; };
-		56780EBC194DD677007218C8 /* apple_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBB194DD677007218C8 /* apple_pin.png */; };
-		56780EBE194DD93A007218C8 /* pear_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBD194DD93A007218C8 /* pear_pin.png */; };
 		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56780F161952CD9C007218C8 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F151952CD9C007218C8 /* Tree.m */; };
 		56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F181952CDC0007218C8 /* TreeTableCell.m */; };
@@ -29,6 +26,9 @@
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		56E7C52B1952E8DA008293D9 /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7C52A1952E8DA008293D9 /* TreeDetailViewController.m */; };
 		56E7C52E1952E911008293D9 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C52C1952E911008293D9 /* imag.storyboard */; };
+		56E7C5341952F23D008293D9 /* apple_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5331952F23D008293D9 /* apple_pin@2x.png */; };
+		56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */; };
+		56E7C5381952F32F008293D9 /* pear_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5371952F32F008293D9 /* pear_pin@2x.png */; };
 		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
 		708B2FE6195032DA0075F53B /* SGTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 708B2FE5195032DA0075F53B /* SGTree.m */; };
@@ -94,9 +94,6 @@
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
 		5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
-		56780EB7194DD50F007218C8 /* cherrie_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cherrie_pin.png; sourceTree = "<group>"; };
-		56780EBB194DD677007218C8 /* apple_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_pin.png; sourceTree = "<group>"; };
-		56780EBD194DD93A007218C8 /* pear_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pear_pin.png; sourceTree = "<group>"; };
 		56780F041952C5C2007218C8 /* TreeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableViewController.h; sourceTree = "<group>"; };
 		56780F051952C5C2007218C8 /* TreeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTableViewController.m; sourceTree = "<group>"; };
 		56780F141952CD9C007218C8 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
@@ -110,6 +107,9 @@
 		56E7C5291952E8DA008293D9 /* TreeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeDetailViewController.h; sourceTree = "<group>"; };
 		56E7C52A1952E8DA008293D9 /* TreeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeDetailViewController.m; sourceTree = "<group>"; };
 		56E7C52D1952E911008293D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
+		56E7C5331952F23D008293D9 /* apple_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple_pin@2x.png"; sourceTree = "<group>"; };
+		56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cherrie_pin@2x.png"; sourceTree = "<group>"; };
+		56E7C5371952F32F008293D9 /* pear_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pear_pin@2x.png"; sourceTree = "<group>"; };
 		700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		70329A6D1941AE74002F7742 /* cross-hair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross-hair.png"; sourceTree = "<group>"; };
@@ -206,9 +206,9 @@
 		56780EBF194DDACB007218C8 /* Pins */ = {
 			isa = PBXGroup;
 			children = (
-				56780EB7194DD50F007218C8 /* cherrie_pin.png */,
-				56780EBD194DD93A007218C8 /* pear_pin.png */,
-				56780EBB194DD677007218C8 /* apple_pin.png */,
+				56E7C5371952F32F008293D9 /* pear_pin@2x.png */,
+				56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */,
+				56E7C5331952F23D008293D9 /* apple_pin@2x.png */,
 			);
 			name = Pins;
 			sourceTree = "<group>";
@@ -431,16 +431,16 @@
 			files = (
 				848875BD19524F3E00DFBEAD /* star_empty.png in Resources */,
 				848875BE19524F3E00DFBEAD /* star_half.png in Resources */,
-				56780EBC194DD677007218C8 /* apple_pin.png in Resources */,
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
 				842877ED194890EC00533407 /* tree.jpg in Resources */,
 				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
-				56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */,
+				56E7C5341952F23D008293D9 /* apple_pin@2x.png in Resources */,
 				56E7C52E1952E911008293D9 /* imag.storyboard in Resources */,
-				56780EBE194DD93A007218C8 /* pear_pin.png in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
 				848875BF19524F3E00DFBEAD /* star-full.png in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
+				56E7C5381952F32F008293D9 /* pear_pin@2x.png in Resources */,
+				56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
