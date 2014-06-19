@@ -8,6 +8,7 @@
 #import "TreeTableViewController.h"
 #import "TreeTableCell.h"
 #import "Tree.h"
+#import "TreeDetailViewController.h"
 
 @interface TreeTableViewController ()
 
@@ -107,24 +108,24 @@
     return cell;
 }
 
-/*
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = nil;
-        Tree *tree = nil;
+        Tree *selectedTree = nil;
         
         if (self.searchDisplayController.active) {
             indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            tree = [searchResults objectAtIndex:indexPath.row];
+            selectedTree = [searchResults objectAtIndex:indexPath.row];
         } else {
             indexPath = [self.tableView indexPathForSelectedRow];
-            tree = [trees objectAtIndex:indexPath.row];
+            selectedTree = [trees objectAtIndex:indexPath.row];
         }
         
         TreeDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.tree = tree;
+        
     }
-}*/
+}
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
