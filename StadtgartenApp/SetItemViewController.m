@@ -138,15 +138,18 @@ shouldChangeTextInRange: (NSRange) range
     
     self.ddMenuShowButton.clipsToBounds = YES;
     self.ddMenuShowButton.layer.cornerRadius = 4.0f;
-    
     self.ddMenuShowButton.layer.borderWidth = 1.0f;
     self.ddMenuShowButton.layer.borderColor = borderColor.CGColor;
     
     self.descriptionTextArea.clipsToBounds = YES;
     self.descriptionTextArea.layer.cornerRadius = 4.0f;
-    
     self.descriptionTextArea.layer.borderWidth = 1.0f;
     self.descriptionTextArea.layer.borderColor = borderColor.CGColor;
+    
+    self.ddMenu.clipsToBounds = YES;
+    self.ddMenu.layer.cornerRadius = 4.0f;
+    self.ddMenu.layer.borderWidth = 1.0f;
+    self.ddMenu.layer.borderColor = borderColor.CGColor;
     
     self.nameTextField.delegate = self;
     
