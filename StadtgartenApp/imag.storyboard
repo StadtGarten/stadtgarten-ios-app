@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="i7x-g5-hh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="i7x-g5-hh1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -134,7 +134,7 @@
                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="5yz-bI-iPn" detailTextLabel="xuh-AL-3Rl" style="IBUITableViewCellStyleSubtitle" id="btu-n0-Tjs">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="btu-n0-Tjs" id="d9B-dh-VDj">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -811,6 +811,7 @@
                         <outlet property="imageView" destination="qRe-oM-X1Y" id="agr-SP-08C"/>
                         <outlet property="nameLabel" destination="bw3-do-ZoT" id="D44-Rv-vPY"/>
                         <outlet property="tagsLabel" destination="Bdr-Gj-QrL" id="4NI-Ga-wcr"/>
+                        <segue destination="pgQ-g5-dAC" kind="push" identifier="showMapView" id="nZh-97-HVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NlH-0e-HOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -839,7 +840,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fz1-5Y-KY7"/>
+        <segue reference="nZh-97-HVN"/>
         <segue reference="LmC-9d-aua"/>
+        <segue reference="fz1-5Y-KY7"/>
     </inferredMetricsTieBreakers>
 </document>
