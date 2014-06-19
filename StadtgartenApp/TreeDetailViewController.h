@@ -14,7 +14,6 @@
 
 - (IBAction)tapEdit:(id)sender;
 - (IBAction)doneEditing:(id)sender;
-- (IBAction)tapBackground:(id)sender;
 
 - (IBAction)bookmarkTree:(id)sender;
 

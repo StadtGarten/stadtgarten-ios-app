@@ -14,6 +14,7 @@
 		0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
 		0489C26519472DEB009BD670 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C26419472DEB009BD670 /* LoginViewController.m */; };
 		0489C26719473CFD009BD670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489C26619473CFD009BD670 /* Images.xcassets */; };
+		04A14A9C1952C8F50007C22C /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A14A9B1952C8F50007C22C /* TreeDetailViewController.m */; };
 		3405602B19519A430057E46F /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3405602A19519A430057E46F /* OverviewController.m */; };
 		341C15931950345E00690D42 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
 		34C3D09B19518CFE00496F08 /* OverviewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */; };
@@ -23,7 +24,6 @@
 		56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EB7194DD50F007218C8 /* cherrie_pin.png */; };
 		56780EBC194DD677007218C8 /* apple_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBB194DD677007218C8 /* apple_pin.png */; };
 		56780EBE194DD93A007218C8 /* pear_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBD194DD93A007218C8 /* pear_pin.png */; };
-		56780EC2194DDD56007218C8 /* TreeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780EC1194DDD56007218C8 /* TreeListViewController.m */; };
 		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
@@ -85,6 +85,8 @@
 		0489C26319472DEB009BD670 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0489C26419472DEB009BD670 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0489C26619473CFD009BD670 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StadtgartenApp/Images.xcassets; sourceTree = "<group>"; };
+		04A14A9A1952C8F50007C22C /* TreeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeDetailViewController.h; sourceTree = "<group>"; };
+		04A14A9B1952C8F50007C22C /* TreeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeDetailViewController.m; sourceTree = "<group>"; };
 		3405602919519A430057E46F /* OverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewController.h; sourceTree = "<group>"; };
 		3405602A19519A430057E46F /* OverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewController.m; sourceTree = "<group>"; };
 		341C15911950345E00690D42 /* SetItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewController.h; sourceTree = "<group>"; };
@@ -308,6 +310,8 @@
 				34D3263C193DF219008B1D2F /* SetPictureViewController.m */,
 				34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */,
 				34D32645193DF5CE008B1D2F /* OverviewItemViewController.m */,
+				04A14A9A1952C8F50007C22C /* TreeDetailViewController.h */,
+				04A14A9B1952C8F50007C22C /* TreeDetailViewController.m */,
 				842877E619486F9C00533407 /* ListViewController.h */,
 				842877E719486F9C00533407 /* ListViewController.m */,
 				0461FE80193F19250005251D /* AuthentificationViewController.h */,
@@ -450,7 +454,6 @@
 				848875B919524A0200DFBEAD /* RateView.m in Sources */,
 				708B2FE6195032DA0075F53B /* SGTree.m in Sources */,
 				842877EB19487E1700533407 /* Database.m in Sources */,
-				56780EC2194DDD56007218C8 /* TreeListViewController.m in Sources */,
 				842877E819486F9C00533407 /* ListViewController.m in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
@@ -458,6 +461,7 @@
 				34C3D09B19518CFE00496F08 /* OverviewItemViewController.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
+				04A14A9C1952C8F50007C22C /* TreeDetailViewController.m in Sources */,
 				3405602B19519A430057E46F /* OverviewController.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
 				341C15931950345E00690D42 /* SetItemViewController.m in Sources */,

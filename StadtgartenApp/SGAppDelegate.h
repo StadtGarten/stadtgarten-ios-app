@@ -17,7 +17,7 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-
+q
 
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
 - (void) checkSessionState:(FBSessionState)state;
