@@ -9,6 +9,7 @@
 #import "TreeDetailViewController.h"
 #import "SGAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Database.h"
 
 @interface TreeDetailViewController ()
 
@@ -278,7 +279,11 @@ shouldChangeTextInRange: (NSRange) range
 }
 
 - (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
-    self.statusLabel.text = [NSString stringWithFormat:@"Rating: %f", rating];
+    Database *db = [[Database alloc] init];
+    NSString* treeid = @"tq0M0q5fC4";
+    float treeRating = [[db getTreeRating:treeid] floatValue];
+    self.statusLabel.text = [NSString stringWithFormat:@"%f", treeRating];
+    self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", [db getRaterCount:treeid]];
 }
 
 

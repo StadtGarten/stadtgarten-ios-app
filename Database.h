@@ -16,6 +16,7 @@
 -(void)getUserTrees:(NSString*)userid with:(PFArrayResultBlock)callback;
 
 -(NSNumber*)getTreeRating:(NSString*)treeid;
+-(int)getRaterCount:(NSString*)treeid;
 -(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)rating;
 
 @end

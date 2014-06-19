@@ -135,6 +135,20 @@
     }];
 };
 
+-(int)getRaterCount:(NSString*)treeid{
+    __block int raterCount;
+    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
+    [query whereKey:@"treeId" equalTo:treeid];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else {
+            raterCount = [[NSNumber numberWithFloat:[results count]] intValue];
+        }
+    }];
+    return raterCount;
+};
 
 
 
