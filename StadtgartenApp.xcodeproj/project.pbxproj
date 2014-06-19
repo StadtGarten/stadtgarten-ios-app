@@ -57,7 +57,6 @@
 		842877E11948696600533407 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E01948696600533407 /* Security.framework */; };
 		842877E31948697000533407 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E21948697000533407 /* StoreKit.framework */; };
 		842877E51948697A00533407 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842877E41948697A00533407 /* SystemConfiguration.framework */; };
-		842877E819486F9C00533407 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842877E719486F9C00533407 /* ListViewController.m */; };
 		842877EB19487E1700533407 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 842877EA19487E1700533407 /* Database.m */; };
 		842877ED194890EC00533407 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842877EC194890EC00533407 /* tree.jpg */; };
 		848875B919524A0200DFBEAD /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848875B819524A0200DFBEAD /* RateView.m */; };
@@ -143,8 +142,6 @@
 		842877E01948696600533407 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		842877E21948697000533407 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		842877E41948697A00533407 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		842877E619486F9C00533407 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
-		842877E719486F9C00533407 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		842877E919487E1700533407 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = ../Database.h; sourceTree = "<group>"; };
 		842877EA19487E1700533407 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Database.m; path = ../Database.m; sourceTree = "<group>"; };
 		842877EC194890EC00533407 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
@@ -328,8 +325,6 @@
 				7092DB9F191A55B500190338 /* StadtgartenApp-Prefix.pch */,
 				34D3263B193DF219008B1D2F /* SetPictureViewController.h */,
 				34D3263C193DF219008B1D2F /* SetPictureViewController.m */,
-				842877E619486F9C00533407 /* ListViewController.h */,
-				842877E719486F9C00533407 /* ListViewController.m */,
 				0461FE80193F19250005251D /* AuthentificationViewController.h */,
 				0461FE81193F19250005251D /* AuthentificationViewController.m */,
 				700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */,
@@ -469,7 +464,6 @@
 				848875B919524A0200DFBEAD /* RateView.m in Sources */,
 				708B2FE6195032DA0075F53B /* SGTree.m in Sources */,
 				842877EB19487E1700533407 /* Database.m in Sources */,
-				842877E819486F9C00533407 /* ListViewController.m in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
 				700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */,
