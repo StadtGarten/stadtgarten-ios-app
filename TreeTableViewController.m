@@ -7,7 +7,6 @@
 
 #import "TreeTableViewController.h"
 #import "TreeTableCell.h"
-#import "TreeDetailViewController.h"
 #import "Tree.h"
 
 @interface TreeTableViewController ()
@@ -108,6 +107,7 @@
     return cell;
 }
 
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = nil;
@@ -124,7 +124,7 @@
         TreeDetailViewController *destViewController = segue.destinationViewController;
         destViewController.tree = tree;
     }
-}
+}*/
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
