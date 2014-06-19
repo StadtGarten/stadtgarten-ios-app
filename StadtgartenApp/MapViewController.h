@@ -11,13 +11,8 @@
 
 @interface MapViewController : UIViewController< MKMapViewDelegate>
 
-//< MKMapViewDelegate>
-
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-//@property (weak, nonatomic) IBOutlet UIToolbar *navigationBar;
-//@property (nonatomic) IBOutlet UISearchBar *searchBar;
-
 @property NSInteger tree;
 
 

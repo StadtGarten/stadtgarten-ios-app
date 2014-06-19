@@ -109,25 +109,6 @@
 }
 
 
-/*
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
- NSIndexPath *indexPath = nil;
- Recipe *recipe = nil;
- 
- if (self.searchDisplayController.active) {
- indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
- recipe = [searchResults objectAtIndex:indexPath.row];
- } else {
- indexPath = [self.tableView indexPathForSelectedRow];
- recipe = [recipes objectAtIndex:indexPath.row];
- }
- 
- RecipeDetailViewController *destViewController = segue.destinationViewController;
- destViewController.recipe = recipe;
- }
- }
- */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showTreeDetail"]) {
