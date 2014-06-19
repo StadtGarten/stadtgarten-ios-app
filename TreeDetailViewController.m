@@ -7,6 +7,7 @@
 //
 
 #import "TreeDetailViewController.h"
+#import "SGAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface TreeDetailViewController ()
@@ -28,8 +29,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     [self registerForKeyboardNotifications];
     
+    self.treeName.delegate = self;
+    self.treeTag.delegate = self;
+    // graphical tweaks
     _description.clipsToBounds = YES;
     _description.layer.cornerRadius = 4.0f;
     
@@ -43,7 +48,7 @@
     _locationBGView.layer.cornerRadius = 4.0f;
     
     
-    
+    // Register taps on tree pricture and location
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnTreePicture)];
     singleTap.numberOfTapsRequired = 1;
     [_treePicture addGestureRecognizer:singleTap];
@@ -53,22 +58,6 @@
     [_treeDistance addGestureRecognizer:singleTapLocation];
     
     
-}
-
--(void)tapOnTreePicture{
-    NSLog(@"Tap on TreePicture");
-    [self performSegueWithIdentifier:@"showSetPicture" sender:self];
-}
-
--(void)tapOnLaction{
-    NSLog(@"Tap on Location");
-    [self performSegueWithIdentifier:@"showSetLocation" sender:self];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
@@ -82,7 +71,36 @@
 }
 */
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)tapOnTreePicture{
+    NSLog(@"Tap on TreePicture");
+    [self performSegueWithIdentifier:@"showSetPicture" sender:self];
+}
+
+-(void)tapOnLaction{
+    NSLog(@"Tap on Location");
+    [self performSegueWithIdentifier:@"showSetLocation" sender:self];
+}
+
+//Change background when editing and make the elements editable
 - (IBAction)tapEdit:(id)sender {
+    
+    if (![FBSession activeSession].isOpen) {
+        
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
+                                                           message:@"Sie müssen eingeloggt sein um den Baum zu bearbeiten."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Abbrechen"
+                                                 otherButtonTitles:@"zum Login", nil];
+        [theAlert show];
+        
+    }else{
+    
     self.description.editable = YES;
     _treePicture.userInteractionEnabled = YES;
     _treeTag.enabled = YES;
@@ -92,8 +110,56 @@
     
     [_backgroundView setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1]];
     [_doneButton setHidden:NO];
+        
+    }
     
 }
+
+- (IBAction)doneEditing:(id)sender {
+    [self.view endEditing:YES];
+    self.description.editable = NO;
+    _treePicture.userInteractionEnabled = NO;
+    _treeTag.enabled = YES;
+    _treeName.enabled=YES;
+    _treeDistance.userInteractionEnabled = YES;
+    [_backgroundView setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
+    [_doneButton setHidden:YES];
+    
+    //Save Changes in DB
+}
+
+-(void)bookmarkTree:(id)sender{
+    
+    if (![FBSession activeSession].isOpen) {
+        
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
+                                                           message:@"Sie müssen eingeloggt sein um den Baum zu bookmarken."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Abbrechen"
+                                                 otherButtonTitles:@"zum Login", nil];
+        [theAlert show];
+        
+    }else{
+        
+    }
+}
+
+/*
+-(void)tapBackground:(id)sender{
+    [self.view endEditing:YES];
+}
+*/
+
+- (void) connectWithFacebook {
+    // The user has initiated a login, so call the openSession method
+    // and show the login UI if necessary << Only if user has never
+    // logged in or ir requesting new permissions.
+    SGAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate openSessionWithAllowLoginUI:YES];
+}
+
+
+#pragma Mark - Keyboard behavior setup
 
 // Call this method somewhere in your view controller setup code.
 - (void)registerForKeyboardNotifications
@@ -133,28 +199,30 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(70, 0.0, 0.0, 0.0);
     _scrollView.contentInset = contentInsets;
     _scrollView.scrollIndicatorInsets = contentInsets;
-     _scrollView.scrollsToTop = YES;
-  
-}
-
-- (IBAction)doneEditing:(id)sender {
-    [self.view endEditing:YES];
-    self.description.editable = NO;
-    _treePicture.userInteractionEnabled = NO;
-    _treeTag.enabled = YES;
-    _treeName.enabled=YES;
-    _treeDistance.userInteractionEnabled = YES;
-    [_backgroundView setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
-    [_doneButton setHidden:YES];
+    _scrollView.scrollsToTop = YES;
     
-    //Save Changes in DB
 }
 
--(void)tapBackground:(id)sender{
-    [self.view endEditing:YES];
+// remove keyboard in TextField when done button is pressed
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return NO;
 }
 
-- (IBAction)showColorsActionSheet:(id)sender{
+// remove keyboard in TextView when done button is pressed
+- (BOOL) textView: (UITextView*) textView
+shouldChangeTextInRange: (NSRange) range
+  replacementText: (NSString*) text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
+- (IBAction)showRatingActionSheet:(id)sender{
+    
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Bewerten Sie diesen Baum:"
                                                              delegate:self
                                                     cancelButtonTitle:@"Abbrechen"
@@ -162,15 +230,27 @@
                                                     otherButtonTitles:@"1 Stern", @"2 Sterne", @"3 Sterne", @"4 Sterne", @"5 Sterne", nil];
     
     [actionSheet showInView:self.view];
-    
     actionSheet.tag = 100;
 }
 
 #pragma mark - UIActionSheet method implementation
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+   
+    
+    if (![FBSession activeSession].isOpen) {
+        
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
+                                                           message:@"Sie müssen eingeloggt sein um den Baum zu bewerten."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Abbrechen"
+                                                 otherButtonTitles:@"zum Login", nil];
+        [theAlert show];
+    }else{
+    
     if (actionSheet.tag == 100) {
         NSLog(@"The Rating selection action sheet.");
+    }
     }
 }
 
@@ -188,6 +268,18 @@
     if (actionSheet.tag == 100) {
         NSLog(@"From willDismissWithButtonIndex - Selected Rating: %@", [actionSheet buttonTitleAtIndex:buttonIndex]);
     }
+}
+
+
+#pragma mark - UIAlert method implementation
+
+- (void)alertView:(UIAlertView *)theAlert clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"The %@ button was tapped.", [theAlert buttonTitleAtIndex:buttonIndex]);
+    if(buttonIndex == 1){
+        [self connectWithFacebook];
+    }
+    
 }
 
 

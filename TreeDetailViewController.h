@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate>
+@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
 
 - (IBAction)tapEdit:(id)sender;
 - (IBAction)doneEditing:(id)sender;
 - (IBAction)tapBackground:(id)sender;
+- (IBAction)bookmarkTree:(id)sender;
 
-- (IBAction)showColorsActionSheet:(id)sender;
+- (IBAction)showRatingActionSheet:(id)sender;
+- (void) connectWithFacebook;
 
 @property (strong, nonatomic) IBOutlet UITextField *treeName;
 @property (strong, nonatomic) IBOutlet UITextField *treeTag;
