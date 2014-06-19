@@ -28,19 +28,23 @@
      ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError *error) {
          if (!error) {
              NSLog(@"User id %@",[aUser objectForKey:@"id"]);
+
+         
+         // TODO bild: _image
+         Database *db = [[Database alloc] init];
+         [db writeTree: [aUser objectForKey:@"id"] baumname:_name tag:_tags beschreibung:_description bild:nil];
+         
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                         message:@"Der Baum wurde gespeichert"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+         [alert show];
+         [self performSegueWithIdentifier:@"showMapView" sender:self];
          }
      }];
     
-    Database *newDatabase = [[Database alloc] init];
-    //newDatabase writeTree:([aUser objectForKey])userid baumname:(_name)baumname tag:(_tags)tag beschreibung:(_description)beschreibung bild:(_image)bild;
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                    message:@"Der Baum wurde gespeichert"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    [self performSegueWithIdentifier:@"showMapView" sender:self];
+   
     
 }
 

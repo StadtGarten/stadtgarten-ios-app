@@ -15,6 +15,8 @@ IBOutlet UITextField *nameTextField;
 IBOutlet UITextView *descriptionTextArea;
 
 }
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, strong) IBOutlet UILabel *ddText;
 @property (nonatomic, strong) IBOutlet UIView *ddMenu;
@@ -22,6 +24,7 @@ IBOutlet UITextView *descriptionTextArea;
 
 @property (nonatomic) IBOutlet UITextField *nameTextField;
 @property (nonatomic) IBOutlet UITextView *descriptionTextArea;
+
 
 @property UIImage *image;
 
