@@ -16,6 +16,7 @@
 		0489C26719473CFD009BD670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489C26619473CFD009BD670 /* Images.xcassets */; };
 		04F7BD6B19530178007B5E94 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
 		3405602B19519A430057E46F /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3405602A19519A430057E46F /* OverviewController.m */; };
+		3408430E1952F7B60035C007 /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B6DD41952D82D009FC517 /* TreeDetailViewController.m */; };
 		341C15931950345E00690D42 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		5676F2E0193F4CDD003846F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */; };
@@ -462,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3408430E1952F7B60035C007 /* TreeDetailViewController.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				848875B919524A0200DFBEAD /* RateView.m in Sources */,
 				708B2FE6195032DA0075F53B /* SGTree.m in Sources */,
