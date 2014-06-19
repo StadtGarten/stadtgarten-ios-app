@@ -1,8 +1,8 @@
 //
-//  OverviewItemViewController.h
+//  OverviewController.h
 //  StadtgartenApp
 //
-//  Created by Jule Zigeler on 6/3/14.
+//  Created by Jule Zigeler on 6/18/14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
 
@@ -10,9 +10,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Database.h"
 
+@interface OverviewController : UIViewController
 
-
-@interface OverviewItemViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 -(IBAction)storeData:(id)sender;
@@ -28,8 +27,5 @@
 @property NSString *description;
 @property NSString *tags;
 @property UIImage *image;
-
-
-
 
 @end
