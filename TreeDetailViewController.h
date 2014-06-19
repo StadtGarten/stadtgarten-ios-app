@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RateView.h"
 
-@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate>
+@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, RateViewDelegate>
 
 - (IBAction)tapEdit:(id)sender;
 - (IBAction)doneEditing:(id)sender;
 - (IBAction)tapBackground:(id)sender;
-
 - (IBAction)showColorsActionSheet:(id)sender;
+
+@property (weak, nonatomic) IBOutlet RateView *rateView;
+
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *treeName;
 @property (strong, nonatomic) IBOutlet UITextField *treeTag;
