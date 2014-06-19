@@ -14,40 +14,43 @@
 //-(NSArray *)getAllUsers;
 
 //gibt alle Bäume zurück
--(NSArray *)getTrees{
-    NSMutableArray *trees = [[NSMutableArray alloc] init];
+-(void)getTrees:(PFArrayResultBlock)callback {
     PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
-    [query whereKeyExists:@"id"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        NSMutableArray *trees = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < results.count; i++) {
+            PFObject *treeObject = results[i];
+            
+            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:0 longitude:0];
+            
+            [trees addObject:tree];
         }
-        else {
-            for (int i = 0; i < results.count; i++) {
-                PFObject *treeObject = results[i];
-                NSDictionary *tree = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     treeObject[@"objectId"], @"id",
-                                     treeObject[@"userid"], @"userid",
-                                     treeObject[@"baumname"], @"baumname",
-                                     treeObject[@"beschreibung"], @"beschreibung",
-                                     treeObject[@"tag"], @"tag",
-                                     treeObject[@"bild"], @"bild",
-                                     treeObject[@"rating"], @"rating",
-                                     nil];
-                [trees addObject:tree];
-            }
-        }
+        
+        NSArray *result = (NSArray *)trees;
+        
+        callback(result, NULL);
+
     }];
-    return (NSArray*)trees;
 };
 
 
--(NSArray *)getUserTrees:(NSString*)userid{
+-(void)getUserTrees:(NSString*)userid with:(PFArrayResultBlock)callback {
     //getAlltress filter for userid
-    NSArray *trees = [self getTrees];
-    NSString *userSelector = [@"userid = " stringByAppendingString:userid];
-    NSPredicate *filter = [NSPredicate predicateWithFormat:userSelector];
-    return [trees filteredArrayUsingPredicate:filter];
+    
+    
+    [self getTrees:^(NSArray *trees, NSError *error) {
+        NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+            SGTree *tree = evaluatedObject;
+            BOOL equal = [tree.userId isEqualToString:userid];
+            NSLog(@"Tree %@ %@ %@", userid, tree.userId, equal? @"YES" : @"NO");
+            return equal;
+        }];
+        NSArray *filteredTrees = [trees filteredArrayUsingPredicate:filter];
+        callback(filteredTrees, error);
+    }];
+    
 };
 
 

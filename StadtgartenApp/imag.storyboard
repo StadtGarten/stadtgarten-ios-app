@@ -50,6 +50,16 @@
                                 <rect key="frame" x="0.0" y="204" width="320" height="364"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SimpleTableItem" id="dWR-PN-s3O">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWR-PN-s3O" id="SFb-WE-EE1">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -60,7 +70,9 @@
                         <outlet property="lblUsername" destination="Mxx-GX-isn" id="Vx4-B7-Pub"/>
                         <outlet property="loginButton" destination="u0n-HM-6jz" id="Ukw-lL-d0A"/>
                         <outlet property="profilePicture" destination="yU8-by-zbD" id="fb0-js-R4n"/>
+                        <outlet property="tableView" destination="yZl-o8-pko" id="XQ4-hf-AZk"/>
                         <segue destination="i7x-g5-hh1" kind="modal" identifier="showInitial" modalTransitionStyle="flipHorizontal" id="hxH-rc-nBo"/>
+                        <segue destination="tm3-ej-o9v" kind="push" identifier="showTree" id="GLN-Zh-qre"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDk-GA-RDs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -839,7 +851,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LmC-9d-aua"/>
+        <segue reference="EMj-wi-qCB"/>
         <segue reference="E3h-S6-Tly"/>
+        <segue reference="GLN-Zh-qre"/>
     </inferredMetricsTieBreakers>
 </document>
