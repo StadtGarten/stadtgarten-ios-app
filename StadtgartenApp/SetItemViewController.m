@@ -99,8 +99,8 @@ shouldChangeTextInRange: (NSRange) range
 }
 - (IBAction)ddMenuSelectionMade:(UIButton *)sender
 {
-   // self.ddText.text = sender.titleLabel.text;
     [self.ddMenuShowButton setTitle:sender.titleLabel.text forState:UIControlStateNormal];
+    //[self.ddMenuShowButton setTitle:@"▼" forState:UIControlStateNormal];
     self.ddMenuShowButton.tag = 0;
     self.ddMenu.hidden = YES;
     //switch (sender.tag) {

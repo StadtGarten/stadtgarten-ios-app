@@ -488,9 +488,9 @@
                                 <items>
                                     <barButtonItem style="plain" id="uvj-Xy-OaL">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uDL-vF-Zml">
-                                            <rect key="frame" x="16" y="7" width="77" height="30"/>
+                                            <rect key="frame" x="16" y="7" width="82" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="von Library">
+                                            <state key="normal" title=" von Galerie">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -499,17 +499,10 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="qWs-Kv-FqC"/>
-                                    <barButtonItem style="plain" id="liT-9C-KMu">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ev3-pj-VZE">
-                                            <rect key="frame" x="122" y="7" width="76" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Take photo">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="takePicture:" destination="0yl-cU-Q04" eventType="touchUpInside" id="p1l-tI-qDD"/>
-                                            </connections>
-                                        </button>
+                                    <barButtonItem title="Foto aufnehmen" style="plain" id="liT-9C-KMu">
+                                        <connections>
+                                            <action selector="takePicture:" destination="0yl-cU-Q04" id="a7G-qm-Aga"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PkD-G6-Kse"/>
                                     <barButtonItem title="weiter" id="0pG-ow-Vip">
@@ -587,7 +580,7 @@
                                 <rect key="frame" x="73" y="187" width="174" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Baumart wählen  ▼">
+                                <state key="normal" title="Baumart wählen">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -602,7 +595,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="174" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Apfel">
+                                        <state key="normal" title="Apfelbaum">
                                             <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -614,7 +607,7 @@
                                         <rect key="frame" x="0.0" y="29" width="174" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Birne">
+                                        <state key="normal" title="Birnenbaum">
                                             <color key="titleColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -626,7 +619,7 @@
                                         <rect key="frame" x="0.0" y="56" width="174" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Kirsch">
+                                        <state key="normal" title="Kirschbaum">
                                             <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -637,8 +630,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aiA-H6-ecz">
-                                <rect key="frame" x="202" y="74" width="89" height="84"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo-frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="fhd-0l-irm">
+                                <rect key="frame" x="192" y="66" width="108" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5a-KD-OyI">
+                                <rect key="frame" x="202" y="72" width="89" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -649,7 +646,8 @@
                         <outlet property="ddMenu" destination="xDL-TG-RhY" id="jB1-hi-6w5"/>
                         <outlet property="ddMenuShowButton" destination="yZ9-qS-697" id="WZj-Ww-4Z5"/>
                         <outlet property="descriptionTextArea" destination="9ms-12-c82" id="Xe5-mi-9YE"/>
-                        <outlet property="imageView" destination="aiA-H6-ecz" id="mWW-Ge-YMh"/>
+
+                        <outlet property="imageView" destination="Q5a-KD-OyI" id="mxn-Xs-vPz"/>
                         <outlet property="nameTextField" destination="bzp-2u-0Is" id="Ffp-cm-CIA"/>
                         <segue destination="eAk-O6-G3Z" kind="push" identifier="showOverview" id="wED-mI-Qul"/>
                     </connections>
@@ -676,7 +674,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pink Lady" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdr-Gj-QrL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdr-Gj-QrL">
                                 <rect key="frame" x="20" y="316" width="121" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
@@ -714,7 +712,6 @@
                                 <rect key="frame" x="20" y="387" width="280" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -723,6 +720,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Zusammenfassung" id="kbj-zi-FNX"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="7T6-eP-4Fx" id="ciK-6c-254"/>
                         <outlet property="imageView" destination="qRe-oM-X1Y" id="agr-SP-08C"/>
                         <outlet property="nameLabel" destination="bw3-do-ZoT" id="D44-Rv-vPY"/>
                         <outlet property="tagsLabel" destination="Bdr-Gj-QrL" id="4NI-Ga-wcr"/>

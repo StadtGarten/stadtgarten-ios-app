@@ -19,7 +19,7 @@
 -(IBAction)discardData:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
 
