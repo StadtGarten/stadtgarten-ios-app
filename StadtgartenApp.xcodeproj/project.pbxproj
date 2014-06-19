@@ -57,6 +57,10 @@
 		842877E819486F9C00533407 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842877E719486F9C00533407 /* ListViewController.m */; };
 		842877EB19487E1700533407 /* Database.m in Sources */ = {isa = PBXBuildFile; fileRef = 842877EA19487E1700533407 /* Database.m */; };
 		842877ED194890EC00533407 /* tree.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842877EC194890EC00533407 /* tree.jpg */; };
+		848875B919524A0200DFBEAD /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 848875B819524A0200DFBEAD /* RateView.m */; };
+		848875BD19524F3E00DFBEAD /* star_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 848875BA19524F3E00DFBEAD /* star_empty.png */; };
+		848875BE19524F3E00DFBEAD /* star_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 848875BB19524F3E00DFBEAD /* star_half.png */; };
+		848875BF19524F3E00DFBEAD /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 848875BC19524F3E00DFBEAD /* star-full.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +88,6 @@
 		3405602A19519A430057E46F /* OverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewController.m; sourceTree = "<group>"; };
 		341C15911950345E00690D42 /* SetItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewController.h; sourceTree = "<group>"; };
 		341C15921950345E00690D42 /* SetItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemViewController.m; sourceTree = "<group>"; };
-		343FA5A8195028D300D3C4D4 /* imag.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = imag.storyboard; sourceTree = "<group>"; };
 		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
 		34D32644193DF5CE008B1D2F /* OverviewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewItemViewController.h; sourceTree = "<group>"; };
@@ -135,6 +138,11 @@
 		842877E919487E1700533407 /* Database.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Database.h; path = ../Database.h; sourceTree = "<group>"; };
 		842877EA19487E1700533407 /* Database.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Database.m; path = ../Database.m; sourceTree = "<group>"; };
 		842877EC194890EC00533407 /* tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree.jpg; sourceTree = "<group>"; };
+		848875B719524A0200DFBEAD /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		848875B819524A0200DFBEAD /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
+		848875BA19524F3E00DFBEAD /* star_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_empty.png; sourceTree = "<group>"; };
+		848875BB19524F3E00DFBEAD /* star_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_half.png; sourceTree = "<group>"; };
+		848875BC19524F3E00DFBEAD /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-full.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +186,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049990F1194F1B0100F79D0B /* img */ = {
+			isa = PBXGroup;
+			children = (
+				049991051950387800F79D0B /* bookmark@2x Kopie.png */,
+				049991061950387800F79D0B /* bookmark@2x.png */,
+				049991011950377600F79D0B /* rate.png */,
+				049991021950377600F79D0B /* rate@2x.png */,
+				049990FB194F2FBA00F79D0B /* star.png */,
+				848875BA19524F3E00DFBEAD /* star_empty.png */,
+				848875BB19524F3E00DFBEAD /* star_half.png */,
+				848875BC19524F3E00DFBEAD /* star-full.png */,
+				049990FD1950366400F79D0B /* edit.png */,
+				049990FE1950366400F79D0B /* edit@2x.png */,
+				049990F9194F28CF00F79D0B /* appl_tree_sample.png */,
+				049990F2194F1B3300F79D0B /* photo-frame.png */,
+				049990F3194F1B3300F79D0B /* photo-frame@2x.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		56780EBF194DDACB007218C8 /* Pins */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +275,7 @@
 		7092DB97191A55B500190338 /* StadtgartenApp */ = {
 			isa = PBXGroup;
 			children = (
+				049990F1194F1B0100F79D0B /* img */,
 				56780EBF194DDACB007218C8 /* Pins */,
 				70329A6F1941AE7D002F7742 /* Assets */,
 				7092DBA0191A55B500190338 /* SGAppDelegate.h */,
@@ -260,11 +289,15 @@
 		7092DB98191A55B500190338 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0499910919504D3900F79D0B /* TreeDetailViewController.h */,
+				0499910A19504D3900F79D0B /* TreeDetailViewController.m */,
+				848875B719524A0200DFBEAD /* RateView.h */,
+				848875B819524A0200DFBEAD /* RateView.m */,
 				842877E919487E1700533407 /* Database.h */,
 				842877EA19487E1700533407 /* Database.m */,
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
+				04A14A9519519F7E0007C22C /* imag.storyboard */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
-				343FA5A8195028D300D3C4D4 /* imag.storyboard */,
 				341C15911950345E00690D42 /* SetItemViewController.h */,
 				341C15921950345E00690D42 /* SetItemViewController.m */,
 				0488C2FF1947B90700EC00DE /* ProfileViewController.h */,
@@ -389,14 +422,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049991041950377600F79D0B /* rate@2x.png in Resources */,
+				848875BD19524F3E00DFBEAD /* star_empty.png in Resources */,
+				848875BE19524F3E00DFBEAD /* star_half.png in Resources */,
+				049991081950387800F79D0B /* bookmark@2x.png in Resources */,
+				049990FA194F28CF00F79D0B /* appl_tree_sample.png in Resources */,
 				56780EBC194DD677007218C8 /* apple_pin.png in Resources */,
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
+				049991071950387800F79D0B /* bookmark@2x Kopie.png in Resources */,
+				049991001950366400F79D0B /* edit@2x.png in Resources */,
 				842877ED194890EC00533407 /* tree.jpg in Resources */,
+				049991031950377600F79D0B /* rate.png in Resources */,
 				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
+				049990F4194F1B3300F79D0B /* photo-frame.png in Resources */,
+				049990FF1950366400F79D0B /* edit.png in Resources */,
 				56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */,
 				56780EBE194DD93A007218C8 /* pear_pin.png in Resources */,
+				049990FC194F2FBA00F79D0B /* star.png in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
-				343FA5A9195028D300D3C4D4 /* imag.storyboard in Resources */,
+				848875BF19524F3E00DFBEAD /* star-full.png in Resources */,
+				04A14A9619519F7E0007C22C /* imag.storyboard in Resources */,
+				049990F5194F1B3300F79D0B /* photo-frame@2x.png in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
+				848875B919524A0200DFBEAD /* RateView.m in Sources */,
 				842877EB19487E1700533407 /* Database.m in Sources */,
 				56780EC2194DDD56007218C8 /* TreeListViewController.m in Sources */,
 				842877E819486F9C00533407 /* ListViewController.m in Sources */,
