@@ -23,7 +23,10 @@
         for (int i = 0; i < results.count; i++) {
             PFObject *treeObject = results[i];
             
-            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:0 longitude:0];
+            PFGeoPoint *gp = treeObject[@"location"];
+            double longitude = [gp longitude];
+            double latitude = [gp latitude];
+            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
             
             [trees addObject:tree];
         }
@@ -36,7 +39,7 @@
 };
 
 
--(void)getUserTrees:(NSString*)userid with:(PFArrayResultBlock)callback {
+-(void)getUserTrees:(NSString*)userid callback:(PFArrayResultBlock)callback {
     //getAlltress filter for userid
     
     
@@ -54,7 +57,7 @@
 };
 
 
--(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild{
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild latitude:(double)latitude longitude:(double)longitude{
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
     treeObject[@"userid"] = userid;
@@ -65,8 +68,7 @@
     NSData *imageData = UIImagePNGRepresentation(bild.image);
     treeObject[@"bild"] = [PFFile fileWithData:imageData];
     treeObject[@"rating"] = @0.0;
-    //TODO location
-    //treeObject[@"location"] = longLat;
+    treeObject[@"location"] = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
 
     [treeObject saveInBackground];
 
@@ -80,7 +82,7 @@
 
     
 };
--(NSNumber*)getTreeRating:(NSString*)treeid{
+-(void)getTreeRating:(NSString*)treeid callback:(PFNumberResultBlock)callback{
     __block NSNumber* rating;
     PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
     [query whereKey:@"objectId" equalTo:treeid];
@@ -93,12 +95,15 @@
             rating = tree[@"rating"];
         }
     }];
-    return rating;
+    callback(rating, NULL);
 };
 
 
 -(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)rating{
-    __block NSNumber* currentRating = [self getTreeRating:treeid];
+    __block NSNumber* currentRating;
+    [self getTreeRating:treeid callback:^(NSNumber *number, NSError *error){
+        currentRating = number;
+    }];
     __block NSNumber* raterCount;
     PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
     [query whereKey:@"treeid" equalTo:treeid];
@@ -135,8 +140,8 @@
     }];
 };
 
--(int)getRaterCount:(NSString*)treeid{
-    __block int raterCount;
+-(void)getRaterCount:(NSString*)treeid callback:(PFNumberResultBlock)callback{
+    __block NSNumber* raterCount;
     PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
     [query whereKey:@"treeId" equalTo:treeid];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
@@ -144,10 +149,10 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            raterCount = [[NSNumber numberWithFloat:[results count]] intValue];
+            raterCount = [NSNumber numberWithFloat:[results count]];
         }
     }];
-    return raterCount;
+    callback(raterCount, NULL);
 };
 
 

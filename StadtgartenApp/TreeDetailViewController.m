@@ -281,9 +281,19 @@ shouldChangeTextInRange: (NSRange) range
 - (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
     Database *db = [[Database alloc] init];
     NSString* treeid = @"tq0M0q5fC4";
-    float treeRating = [[db getTreeRating:treeid] floatValue];
-    self.statusLabel.text = [NSString stringWithFormat:@"%f", treeRating];
-    self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", [db getRaterCount:treeid]];
+    //[db getTreeRating:^(NSArray *trees, NSError *error);
+    __block NSNumber* treeRating;
+    __block NSNumber* rC;
+    [db getTreeRating:treeid callback:^(NSNumber *number, NSError *error){
+        treeRating = number;
+    }];
+    [db getRaterCount:treeid callback:^(NSNumber *number, NSError *error){
+        rC = number;
+    }];
+
+    //float treeRating = [[db getTreeRating:treeid] floatValue];
+    self.statusLabel.text = [NSString stringWithFormat:@"%f", [treeRating floatValue]];
+    self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", (int)rC];
 }
 
 
