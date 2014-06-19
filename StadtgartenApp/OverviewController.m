@@ -34,10 +34,36 @@
     Database *newDatabase = [[Database alloc] init];
     //newDatabase writeTree:([aUser objectForKey])userid baumname:(_name)baumname tag:(_tags)tag beschreibung:(_description)beschreibung bild:(_image)bild;
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message:@"Der Baum wurde gespeichert"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    [self performSegueWithIdentifier:@"showMapView" sender:self];
+    
 }
 
+// delete Tree
 -(IBAction)discardData:(id)sender{
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verwerfen bestätigen"
+                                                    message:@"Soll der Baum wirklich verworfen werden?"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"Ja"
+                                          otherButtonTitles:@"Nein",nil];
+    alert.delegate = self;
+    [alert show];
+    
+    
+}
+
+// go to MapView if Tree delete is confirmed with "yes"
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if(buttonIndex == 0){
+        [self performSegueWithIdentifier:@"showMapView" sender:self];
+    }
 }
 
 
