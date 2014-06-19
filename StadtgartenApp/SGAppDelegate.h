@@ -17,6 +17,11 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (strong, nonatomic) FBSession *session;
+
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
+- (void) checkSessionState:(FBSessionState)state;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

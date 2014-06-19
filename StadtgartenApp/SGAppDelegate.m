@@ -61,12 +61,16 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [FBAppEvents activateApp];
+    [FBAppCall handleDidBecomeActiveWithSession:self.session];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+    [self.session close];
 }
 
 - (void)saveContext
@@ -168,7 +172,44 @@
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     
     return [FBAppCall handleOpenURL:url
-                  sourceApplication:sourceApplication];
+                  sourceApplication:sourceApplication withSession:self.session];
+}
+
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI
+{
+    NSArray *permissions = @[@"public_profile", @"email"];
+    
+    return [FBSession openActiveSessionWithReadPermissions:permissions
+                                              allowLoginUI:allowLoginUI
+                                         completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+                                             if (error) {
+                                                 NSLog (@"Handle error %@", error.localizedDescription);
+                                             } else {
+                                                 [self checkSessionState:state];
+                                             }
+                                         }];
+}
+
+- (void) checkSessionState:(FBSessionState)state {
+    switch (state) {
+        case FBSessionStateOpen:
+            break;
+        case FBSessionStateCreated:
+            break;
+        case FBSessionStateCreatedOpening:
+            break;
+        case FBSessionStateCreatedTokenLoaded:
+            break;
+        case FBSessionStateOpenTokenExtended:
+            // I think this is the state that is calling
+            break;
+        case FBSessionStateClosed:
+            break;
+        case FBSessionStateClosedLoginFailed:
+            break;
+        default:
+            break;
+    }
 }
 
 @end
