@@ -7,16 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RateView.h"
 
-@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
+
+@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, RateViewDelegate,UIAlertViewDelegate>
 
 - (IBAction)tapEdit:(id)sender;
 - (IBAction)doneEditing:(id)sender;
 - (IBAction)tapBackground:(id)sender;
+
 - (IBAction)bookmarkTree:(id)sender;
 
 - (IBAction)showRatingActionSheet:(id)sender;
 - (void) connectWithFacebook;
+
+
+@property (weak, nonatomic) IBOutlet RateView *rateView;
+
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @property (strong, nonatomic) IBOutlet UITextField *treeName;
 @property (strong, nonatomic) IBOutlet UITextField *treeTag;

@@ -28,6 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.rateView.notSelectedImage = [UIImage imageNamed:@"star_empty.png"];
+    self.rateView.halfSelectedImage = [UIImage imageNamed:@"star_half.png"];
+    self.rateView.fullSelectedImage = [UIImage imageNamed:@"star.png"];
+    self.rateView.rating = 0;
+    self.rateView.editable = YES;
+    self.rateView.maxRating = 5;
+    self.rateView.delegate = self;
     // Do any additional setup after loading the view.
 
     [self registerForKeyboardNotifications];
@@ -268,6 +275,10 @@ shouldChangeTextInRange: (NSRange) range
     if (actionSheet.tag == 100) {
         NSLog(@"From willDismissWithButtonIndex - Selected Rating: %@", [actionSheet buttonTitleAtIndex:buttonIndex]);
     }
+}
+
+- (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
+    self.statusLabel.text = [NSString stringWithFormat:@"Rating: %f", rating];
 }
 
 
