@@ -494,7 +494,7 @@
             </objects>
             <point key="canvasLocation" x="-1573" y="-1224"/>
         </scene>
-        <!--Tree Table View Controller - Recipes-->
+        <!--Tree Table View Controller - Bäume-->
         <scene sceneID="nGt-P0-Yvu">
             <objects>
                 <tableViewController id="O9O-jP-BE7" customClass="TreeTableViewController" sceneMemberID="viewController">
@@ -522,14 +522,14 @@
                                             <rect key="frame" x="20" y="7" width="58" height="58"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RecipeName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-81-DoQ">
-                                            <rect key="frame" x="92" y="7" width="215" height="23"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Titel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-81-DoQ">
+                                            <rect key="frame" x="92" y="7" width="215" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="21"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PrepTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GV-z9-IP7">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Beschreibung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GV-z9-IP7">
                                             <rect key="frame" x="92" y="32" width="186" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -549,7 +549,7 @@
                             <outlet property="delegate" destination="O9O-jP-BE7" id="cs7-iC-Y70"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipes" id="HSF-KX-5Eh"/>
+                    <navigationItem key="navigationItem" title="Bäume" id="HSF-KX-5Eh"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Mcd-ME-CBN" id="R5D-up-PY8"/>
                     </connections>
