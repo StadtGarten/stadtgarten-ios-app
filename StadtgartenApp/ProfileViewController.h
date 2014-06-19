@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "Database.h"
 
-@interface ProfileViewController : UIViewController <FBLoginViewDelegate>
+@interface ProfileViewController : UIViewController <FBLoginViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePicture;
 @property (strong, nonatomic) IBOutlet UILabel *lblUsername;
 @property (strong, nonatomic) IBOutlet UILabel *lblEmail;
 @property (strong, nonatomic) IBOutlet FBLoginView *loginButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
