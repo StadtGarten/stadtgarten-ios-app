@@ -25,22 +25,19 @@
 
 // *newTree = [[StoreTreeData alloc] init];
 
-
-
--(IBAction)requireTextInput:(id)sender{
-    //if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddText.text isEqualToString:@"Baum wählen"] ){
-   //     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
-     //                                                   message:@"Bitte fuellen Sie das Formular vollständig aus"
-     //                                                  delegate:self
-      //                                        cancelButtonTitle:@"OK"
-      //                                        otherButtonTitles:nil];
-     //   [alert show];
-    //}else{
-        [self performSegueWithIdentifier:@"showOverview" sender:self];
-   // }
+-(IBAction)shouldContinue:(id)sender{
+    if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddText.text isEqualToString:@" Baum wählen"] ){
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
+                                                       message:@"Bitte fuellen Sie das Formular vollständig aus"
+                                                      delegate:self
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+       [alert show];
+    }else{
+            [self performSegueWithIdentifier:@"showOverview" sender:self];
+        }
     
 }
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
    if([segue.identifier isEqualToString:@"showOverview"]){
@@ -84,6 +81,7 @@ shouldChangeTextInRange: (NSRange) range
 
 
 // Drop Down List for selecting Tags
+
 
 - (IBAction)ddMenuShow:(UIButton *)sender
 {

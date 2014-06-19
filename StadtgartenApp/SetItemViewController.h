@@ -25,10 +25,10 @@ IBOutlet UITextView *descriptionTextArea;
 
 @property UIImage *image;
 
+- (IBAction)shouldContinue:(id)sender;
 
 - (IBAction)ddMenuShow:(UIButton *)sender;
 - (IBAction)ddMenuSelectionMade:(UIButton *)sender;
-- (IBAction)requireTextInput:(id)sender;
 
 -(void)dismissKeyboard;
 
