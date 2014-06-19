@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		042EDEC519486C12008E54DC /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042EDEC319486C12008E54DC /* imag.storyboard */; };
 		0461FE79193F15C40005251D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE76193F15C40005251D /* Accounts.framework */; };
 		0461FE7A193F15C40005251D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE77193F15C40005251D /* AdSupport.framework */; };
 		0461FE7B193F15C40005251D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0461FE78193F15C40005251D /* Social.framework */; };
@@ -23,8 +22,12 @@
 		56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EB7194DD50F007218C8 /* cherrie_pin.png */; };
 		56780EBC194DD677007218C8 /* apple_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBB194DD677007218C8 /* apple_pin.png */; };
 		56780EBE194DD93A007218C8 /* pear_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBD194DD93A007218C8 /* pear_pin.png */; };
-		56780EC2194DDD56007218C8 /* TreeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780EC1194DDD56007218C8 /* TreeListViewController.m */; };
 		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
+		56780EF819502B27007218C8 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56780EFA19502B27007218C8 /* imag.storyboard */; };
+		56780F101952C673007218C8 /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F0A1952C673007218C8 /* TreeDetailViewController.m */; };
+		56780F161952CD9C007218C8 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F151952CD9C007218C8 /* Tree.m */; };
+		56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F181952CDC0007218C8 /* TreeTableCell.m */; };
+		56780F1B1952CF4F007218C8 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
@@ -69,7 +72,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042EDEC419486C12008E54DC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
 		0461FE76193F15C40005251D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		0461FE77193F15C40005251D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		0461FE78193F15C40005251D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -91,8 +93,15 @@
 		56780EB7194DD50F007218C8 /* cherrie_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cherrie_pin.png; sourceTree = "<group>"; };
 		56780EBB194DD677007218C8 /* apple_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_pin.png; sourceTree = "<group>"; };
 		56780EBD194DD93A007218C8 /* pear_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pear_pin.png; sourceTree = "<group>"; };
-		56780EC0194DDD56007218C8 /* TreeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeListViewController.h; sourceTree = "<group>"; };
-		56780EC1194DDD56007218C8 /* TreeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeListViewController.m; sourceTree = "<group>"; };
+		56780EF919502B27007218C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
+		56780F041952C5C2007218C8 /* TreeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableViewController.h; sourceTree = "<group>"; };
+		56780F051952C5C2007218C8 /* TreeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTableViewController.m; sourceTree = "<group>"; };
+		56780F091952C673007218C8 /* TreeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeDetailViewController.h; sourceTree = "<group>"; };
+		56780F0A1952C673007218C8 /* TreeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeDetailViewController.m; sourceTree = "<group>"; };
+		56780F141952CD9C007218C8 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
+		56780F151952CD9C007218C8 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
+		56780F171952CDC0007218C8 /* TreeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableCell.h; sourceTree = "<group>"; };
+		56780F181952CDC0007218C8 /* TreeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTableCell.m; sourceTree = "<group>"; };
 		56B53D2A19238FF200FEDFDA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		56B53D2B19238FF200FEDFDA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		56B53D2D1923904900FEDFDA /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
@@ -185,6 +194,21 @@
 			name = Pins;
 			sourceTree = "<group>";
 		};
+		56780EEB194F0226007218C8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				56780F091952C673007218C8 /* TreeDetailViewController.h */,
+				56780F0A1952C673007218C8 /* TreeDetailViewController.m */,
+				56780F141952CD9C007218C8 /* Tree.h */,
+				56780F151952CD9C007218C8 /* Tree.m */,
+				56780F041952C5C2007218C8 /* TreeTableViewController.h */,
+				56780F051952C5C2007218C8 /* TreeTableViewController.m */,
+				56780F171952CDC0007218C8 /* TreeTableCell.h */,
+				56780F181952CDC0007218C8 /* TreeTableCell.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		70329A6F1941AE7D002F7742 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +221,7 @@
 		7092DB83191A55B500190338 = {
 			isa = PBXGroup;
 			children = (
+				56780EEB194F0226007218C8 /* Search */,
 				0489C26619473CFD009BD670 /* Images.xcassets */,
 				7092DB97191A55B500190338 /* StadtgartenApp */,
 				7092DBB4191A55B500190338 /* StadtgartenAppTests */,
@@ -257,11 +282,11 @@
 		7092DB98191A55B500190338 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56780EFA19502B27007218C8 /* imag.storyboard */,
 				842877E919487E1700533407 /* Database.h */,
 				842877EA19487E1700533407 /* Database.m */,
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
-				042EDEC319486C12008E54DC /* imag.storyboard */,
 				0488C2FF1947B90700EC00DE /* ProfileViewController.h */,
 				0488C3001947B90700EC00DE /* ProfileViewController.m */,
 				0489C26319472DEB009BD670 /* LoginViewController.h */,
@@ -284,8 +309,6 @@
 				0461FE81193F19250005251D /* AuthentificationViewController.m */,
 				700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */,
 				700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */,
-				56780EC0194DDD56007218C8 /* TreeListViewController.h */,
-				56780EC1194DDD56007218C8 /* TreeListViewController.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -388,8 +411,8 @@
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
 				842877ED194890EC00533407 /* tree.jpg in Resources */,
 				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
-				042EDEC519486C12008E54DC /* imag.storyboard in Resources */,
 				56780EB8194DD50F007218C8 /* cherrie_pin.png in Resources */,
+				56780EF819502B27007218C8 /* imag.storyboard in Resources */,
 				56780EBE194DD93A007218C8 /* pear_pin.png in Resources */,
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
@@ -411,10 +434,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56780F1B1952CF4F007218C8 /* TreeTableViewController.m in Sources */,
 				34D32640193DF387008B1D2F /* SetItemViewConntroller.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				842877EB19487E1700533407 /* Database.m in Sources */,
-				56780EC2194DDD56007218C8 /* TreeListViewController.m in Sources */,
 				842877E819486F9C00533407 /* ListViewController.m in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
@@ -422,6 +445,9 @@
 				700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
+				56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */,
+				56780F101952C673007218C8 /* TreeDetailViewController.m in Sources */,
+				56780F161952CD9C007218C8 /* Tree.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
 				0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */,
@@ -448,10 +474,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		042EDEC319486C12008E54DC /* imag.storyboard */ = {
+		56780EFA19502B27007218C8 /* imag.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				042EDEC419486C12008E54DC /* en */,
+				56780EF919502B27007218C8 /* en */,
 			);
 			name = imag.storyboard;
 			sourceTree = "<group>";
