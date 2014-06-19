@@ -570,7 +570,7 @@
     </scenes>
     <resources>
         <image name="add-2_44" width="22" height="22"/>
-        <image name="cross-hair.png" width="312" height="312"/>
+        <image name="cross-hair.png" width="128" height="128"/>
         <image name="list-2_44" width="22" height="22"/>
         <image name="location-1_44" width="22" height="22"/>
         <image name="logo_font" width="423" height="118"/>

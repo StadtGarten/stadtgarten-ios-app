@@ -10,9 +10,14 @@
 
 @interface SetPictureViewController : UIViewController
 <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-// Methoden der Delegates benutzen
+
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImagePickerController *picker;
 
 -  (IBAction) takePicture:(id) sender;
 -  (IBAction) selectPhoto:(id)sender;
+
+- (IBAction) requireImage:(id)sender;
+
 @end
