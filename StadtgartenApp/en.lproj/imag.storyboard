@@ -761,6 +761,7 @@
                     <navigationItem key="navigationItem" title="Bäume" id="HSF-KX-5Eh"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Mcd-ME-CBN" id="R5D-up-PY8"/>
+                        <segue destination="tm3-ej-o9v" kind="push" identifier="showTreeDetails" id="YwO-Te-XtT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QKh-zm-hWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -799,6 +800,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="LmC-9d-aua"/>
+        <segue reference="YwO-Te-XtT"/>
         <segue reference="fz1-5Y-KY7"/>
     </inferredMetricsTieBreakers>
 </document>
