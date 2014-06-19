@@ -24,7 +24,6 @@
 		56780F161952CD9C007218C8 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F151952CD9C007218C8 /* Tree.m */; };
 		56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F181952CDC0007218C8 /* TreeTableCell.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
-		56E7C52B1952E8DA008293D9 /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7C52A1952E8DA008293D9 /* TreeDetailViewController.m */; };
 		56E7C52E1952E911008293D9 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C52C1952E911008293D9 /* imag.storyboard */; };
 		56E7C5341952F23D008293D9 /* apple_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5331952F23D008293D9 /* apple_pin@2x.png */; };
 		56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */; };
@@ -90,6 +89,8 @@
 		3405602A19519A430057E46F /* OverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewController.m; sourceTree = "<group>"; };
 		341C15911950345E00690D42 /* SetItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetItemViewController.h; sourceTree = "<group>"; };
 		341C15921950345E00690D42 /* SetItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetItemViewController.m; sourceTree = "<group>"; };
+		344B6DD31952D82D009FC517 /* TreeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeDetailViewController.h; sourceTree = "<group>"; };
+		344B6DD41952D82D009FC517 /* TreeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeDetailViewController.m; sourceTree = "<group>"; };
 		34D3263B193DF219008B1D2F /* SetPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPictureViewController.h; sourceTree = "<group>"; };
 		34D3263C193DF219008B1D2F /* SetPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPictureViewController.m; sourceTree = "<group>"; };
 		5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -301,6 +302,8 @@
 		7092DB98191A55B500190338 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				344B6DD31952D82D009FC517 /* TreeDetailViewController.h */,
+				344B6DD41952D82D009FC517 /* TreeDetailViewController.m */,
 				848875B719524A0200DFBEAD /* RateView.h */,
 				848875B819524A0200DFBEAD /* RateView.m */,
 				842877E919487E1700533407 /* Database.h */,
@@ -477,7 +480,6 @@
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
 				0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
-				56E7C52B1952E8DA008293D9 /* TreeDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

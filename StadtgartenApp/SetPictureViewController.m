@@ -22,17 +22,17 @@
 
 // an image is necessary before switching to the next view
 -(IBAction) requireImage:(id)sender{
-    //if(imageView.image == nil){
-    // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
-     //                                              message:@"Bitte wählen Sie ein Bild aus"
-     //                                            delegate:self
-     //                              cancelButtonTitle:@"OK"
-     //                              otherButtonTitles:nil];
-    //[alert show];
-    //}else{
+    if(imageView.image == nil){
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
+                                                   message:@"Bitte wählen Sie ein Bild aus"
+                                                 delegate:self
+                                   cancelButtonTitle:@"OK"
+                                   otherButtonTitles:nil];
+    [alert show];
+    }else{
     // go to next view if segue "showDescription" is chosen
     [self performSegueWithIdentifier:@"showDescription" sender:self];
-    //}
+    }
 }
 
 // if segue "showDescription" is chosen, instantiate itemController
