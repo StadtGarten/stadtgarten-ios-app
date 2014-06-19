@@ -24,7 +24,6 @@
 		56780EBE194DD93A007218C8 /* pear_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 56780EBD194DD93A007218C8 /* pear_pin.png */; };
 		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
 		56780EF819502B27007218C8 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56780EFA19502B27007218C8 /* imag.storyboard */; };
-		56780F101952C673007218C8 /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F0A1952C673007218C8 /* TreeDetailViewController.m */; };
 		56780F161952CD9C007218C8 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F151952CD9C007218C8 /* Tree.m */; };
 		56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F181952CDC0007218C8 /* TreeTableCell.m */; };
 		56780F1B1952CF4F007218C8 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
@@ -96,8 +95,6 @@
 		56780EF919502B27007218C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
 		56780F041952C5C2007218C8 /* TreeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableViewController.h; sourceTree = "<group>"; };
 		56780F051952C5C2007218C8 /* TreeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTableViewController.m; sourceTree = "<group>"; };
-		56780F091952C673007218C8 /* TreeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeDetailViewController.h; sourceTree = "<group>"; };
-		56780F0A1952C673007218C8 /* TreeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeDetailViewController.m; sourceTree = "<group>"; };
 		56780F141952CD9C007218C8 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
 		56780F151952CD9C007218C8 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 		56780F171952CDC0007218C8 /* TreeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableCell.h; sourceTree = "<group>"; };
@@ -197,8 +194,6 @@
 		56780EEB194F0226007218C8 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				56780F091952C673007218C8 /* TreeDetailViewController.h */,
-				56780F0A1952C673007218C8 /* TreeDetailViewController.m */,
 				56780F141952CD9C007218C8 /* Tree.h */,
 				56780F151952CD9C007218C8 /* Tree.m */,
 				56780F041952C5C2007218C8 /* TreeTableViewController.h */,
@@ -446,7 +441,6 @@
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
 				56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */,
-				56780F101952C673007218C8 /* TreeDetailViewController.m in Sources */,
 				56780F161952CD9C007218C8 /* Tree.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
