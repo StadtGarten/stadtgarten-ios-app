@@ -130,7 +130,7 @@
  */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
+    if ([segue.identifier isEqualToString:@"showTreeDetail"]) {
         NSIndexPath *indexPath = nil;
         Tree *selectedTree = nil;
         
