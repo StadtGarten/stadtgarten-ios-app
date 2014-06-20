@@ -105,9 +105,13 @@
             PFGeoPoint *gp = treeObject[@"location"];
             double longitude = [gp longitude];
             double latitude = [gp latitude];
-            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
+            PFFile *imageFile = [treeObject objectForKey:@"bild"];
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    UIImage *bild = [UIImage imageWithData:data];
+                    SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:bild rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
             //name = tree[@"baumname"];
-            callback(tree, NULL);
+                    callback(tree, NULL);
+            }];
         }
     }];
 };

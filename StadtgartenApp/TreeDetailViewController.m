@@ -41,8 +41,8 @@
     
     Database *db = [[Database alloc] init];
     ////////////////FIXME treeid +userid übergeben!!
-    NSString* userid = @"user2";
-    NSString* treeid = @"DA5KEPsY6b";
+    NSString* userid = @"user1";
+    NSString* treeid = @"zDtjT5lRWH";
     CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:47.1 longitude:11.0];;
     //[db getTreeRating:^(NSArray *trees, NSError *error);
     __block NSNumber* treeRating;
@@ -52,7 +52,8 @@
         self.treeName.text = tree.name;
         self.treeTag.text = tree.tag;
         self.description.text = tree.description;
-        //self.treePicture.image = tree.picture;
+        UIImage *img = tree.picture;
+        self.treePicture.image = img;
     }];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
         self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
@@ -307,7 +308,7 @@ shouldChangeTextInRange: (NSRange) range
     Database* db = [[Database alloc ]  init ];
     //
     NSString* userid = @"user1";
-    NSString* treeid = @"DA5KEPsY6b";
+    NSString* treeid = @"zDtjT5lRWH";
     NSNumber* newRating = [NSNumber numberWithFloat:rating];
     [db rateTree:userid treeid:treeid rating:newRating];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
