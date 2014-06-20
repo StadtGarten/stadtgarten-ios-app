@@ -43,6 +43,7 @@
     ////////////////FIXME treeid +userid übergeben!!
     NSString* userid = @"user2";
     NSString* treeid = @"DA5KEPsY6b";
+    CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:47.1 longitude:11.0];;
     //[db getTreeRating:^(NSArray *trees, NSError *error);
     __block NSNumber* treeRating;
     [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
@@ -52,13 +53,15 @@
         self.treeTag.text = tree.tag;
         self.description.text = tree.description;
         //self.treePicture.image = tree.picture;
-        
     }];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
         self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
     }];
     [db getUserRating:userid treeid:treeid callback:^(int rating, NSError *error){
         self.rateView.rating = rating;
+    }];
+    [db getDistance:treeid location:myLocation callback:^(NSNumber *distance, NSError *error){
+        self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
     }];
     
     
@@ -303,16 +306,17 @@ shouldChangeTextInRange: (NSRange) range
 -(void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
     Database* db = [[Database alloc ]  init ];
     //
-    NSString* userid = @"user2";
+    NSString* userid = @"user1";
     NSString* treeid = @"DA5KEPsY6b";
     NSNumber* newRating = [NSNumber numberWithFloat:rating];
     [db rateTree:userid treeid:treeid rating:newRating];
-    [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
-        self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
-    }];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
         self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
     }];
+    [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
+        self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
+    }];
+    //[rateView setNeedsLayout];
 
 }
 
