@@ -84,6 +84,7 @@
 };
 -(void)getTreeRating:(NSString*)treeid callback:(PFNumberResultBlock)callback{
     __block NSNumber* rating;
+    //__block NSString* name;
     PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
     [query whereKey:@"objectId" equalTo:treeid];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
@@ -93,9 +94,10 @@
         else {
             PFObject* tree = [results firstObject];
             rating = tree[@"rating"];
+            //name = tree[@"baumname"];
+            callback(rating, NULL);
         }
     }];
-    callback(rating, NULL);
 };
 
 
@@ -140,19 +142,21 @@
     }];
 };
 
--(void)getRaterCount:(NSString*)treeid callback:(PFNumberResultBlock)callback{
+-(void)getRaterCount:(NSString*)treeid callback:(PFIntegerResultBlock)callback{
     __block NSNumber* raterCount;
-    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
-    [query whereKey:@"treeId" equalTo:treeid];
+    PFQuery *query = [PFQuery queryWithClassName:@"Ratings"];
+    [query whereKey:@"treeId" equalTo:[PFObject objectWithoutDataWithClassName:@"TreeObject" objectId:treeid]];
+    //[query whereKey:@"treeId" equalTo:treeid];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            raterCount = [NSNumber numberWithFloat:[results count]];
+            int count = (int)[results count];
+            //raterCount = [[NSNumber alloc] initWithFloat:count];
+            callback(count, NULL);
         }
     }];
-    callback(raterCount, NULL);
 };
 
 

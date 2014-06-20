@@ -31,7 +31,7 @@
     [super viewDidLoad];
     self.rateView.notSelectedImage = [UIImage imageNamed:@"star_empty.png"];
     self.rateView.halfSelectedImage = [UIImage imageNamed:@"star_half.png"];
-    self.rateView.fullSelectedImage = [UIImage imageNamed:@"star.png"];
+    self.rateView.fullSelectedImage = [UIImage imageNamed:@"star-full.png"];
     self.rateView.rating = 0;
     self.rateView.editable = YES;
     self.rateView.maxRating = 5;
@@ -283,17 +283,13 @@ shouldChangeTextInRange: (NSRange) range
     NSString* treeid = @"tq0M0q5fC4";
     //[db getTreeRating:^(NSArray *trees, NSError *error);
     __block NSNumber* treeRating;
-    __block NSNumber* rC;
     [db getTreeRating:treeid callback:^(NSNumber *number, NSError *error){
         treeRating = number;
+        self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [treeRating floatValue]];
     }];
-    [db getRaterCount:treeid callback:^(NSNumber *number, NSError *error){
-        rC = number;
+    [db getRaterCount:treeid callback:^(int number, NSError *error){
+        self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
     }];
-
-    //float treeRating = [[db getTreeRating:treeid] floatValue];
-    self.statusLabel.text = [NSString stringWithFormat:@"%f", [treeRating floatValue]];
-    self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", (int)rC];
 }
 
 
