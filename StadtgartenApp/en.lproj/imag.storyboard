@@ -646,7 +646,6 @@
                         <outlet property="ddMenu" destination="xDL-TG-RhY" id="jB1-hi-6w5"/>
                         <outlet property="ddMenuShowButton" destination="yZ9-qS-697" id="WZj-Ww-4Z5"/>
                         <outlet property="descriptionTextArea" destination="9ms-12-c82" id="Xe5-mi-9YE"/>
-
                         <outlet property="imageView" destination="Q5a-KD-OyI" id="mxn-Xs-vPz"/>
                         <outlet property="nameTextField" destination="bzp-2u-0Is" id="Ffp-cm-CIA"/>
                         <segue destination="eAk-O6-G3Z" kind="push" identifier="showOverview" id="wED-mI-Qul"/>
@@ -877,6 +876,7 @@
         <image name="list-2_44" width="22" height="22"/>
         <image name="location-1_44" width="22" height="22"/>
         <image name="logo_font" width="423" height="118"/>
+        <image name="photo-frame.png" width="22" height="22"/>
         <image name="profile-1_44" width="22" height="22"/>
         <image name="rate.png" width="22" height="22"/>
         <image name="tree_white" width="513" height="548"/>
@@ -888,8 +888,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="E3h-S6-Tly"/>
-        <segue reference="28v-VV-2QA"/>
+        <segue reference="nZh-97-HVN"/>
+        <segue reference="wED-mI-Qul"/>
         <segue reference="LmC-9d-aua"/>
+        <segue reference="28v-VV-2QA"/>
+        <segue reference="E3h-S6-Tly"/>
     </inferredMetricsTieBreakers>
 </document>
