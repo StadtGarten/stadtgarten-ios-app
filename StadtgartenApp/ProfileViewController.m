@@ -77,7 +77,7 @@ NSMutableArray* trees;
 }
 
 - (void) fetchTableData {
-    [db getUserTrees:userId with:^(NSArray *objects, NSError *error) {
+    [db getUserTrees:userId callback:^(NSArray *objects, NSError *error) {
         tableData = objects;
         [self.tableView reloadData];
     }];

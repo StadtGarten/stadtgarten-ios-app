@@ -9,13 +9,20 @@
 #import <Parse/Parse.h>
 #import "SGTree.h"
 
+typedef void (^PFNumberResultBlock)(NSNumber* number, NSError *error);
+typedef void (^PFTreeResultBlock)(SGTree* tree, NSError *error);
+
 @interface Database : PFQuery
 
--(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild;
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild latitude:(double)latitude longitude:(double)longitude;
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild;
 -(void)getTrees:(PFArrayResultBlock)callback;
--(void)getUserTrees:(NSString*)userid with:(PFArrayResultBlock)callback;
+-(void)getUserTrees:(NSString*)userid callback:(PFArrayResultBlock)callback;
 
--(NSNumber*)getTreeRating:(NSString*)treeid;
+-(void)getTreeInfo:(NSString*)treeid callback:(PFTreeResultBlock)callback;
+-(void)getRaterCount:(NSString*)treeid callback:(PFIntegerResultBlock)callback;
 -(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)rating;
+-(void)getUserRating:(NSString*)userid treeid:(NSString*)treeid callback:(PFIntegerResultBlock)callback;
+
 
 @end

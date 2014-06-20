@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet RateView *rateView;
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *raterCount;
 
 @property (strong, nonatomic) IBOutlet UITextField *treeName;
 @property (strong, nonatomic) IBOutlet UITextField *treeTag;
