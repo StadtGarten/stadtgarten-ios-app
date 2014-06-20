@@ -61,7 +61,7 @@
 };
 
 
--(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild latitude:(double)latitude longitude:(double)longitude{
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude{
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
     treeObject[@"userid"] = userid;
@@ -69,8 +69,13 @@
     treeObject[@"tag"] = tag;
     //treeObject[@"location"] = @"Ort";
     treeObject[@"beschreibung"] = beschreibung;
-    NSData *imageData = UIImagePNGRepresentation(bild.image);
-    treeObject[@"bild"] = [PFFile fileWithData:imageData];
+    
+    NSData *imageData = UIImagePNGRepresentation(bild);
+    PFFile *imageFile = [PFFile fileWithName:@"tree.png" data:imageData];
+    [imageFile saveInBackground];
+    [treeObject setObject:imageFile forKey:@"bild"];
+    
+    //treeObject[@"bild"] = [PFFile fileWithData:imageData];
     treeObject[@"rating"] = @0.0;
     treeObject[@"location"] = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
 
