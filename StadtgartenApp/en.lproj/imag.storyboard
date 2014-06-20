@@ -550,6 +550,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Beschreibung" id="GaE-pO-Deo"/>
+                    <connections>
+                        <outlet property="ddMenu" destination="xDL-TG-RhY" id="jB1-hi-6w5"/>
+                        <outlet property="ddMenuShowButton" destination="yZ9-qS-697" id="WZj-Ww-4Z5"/>
+                        <outlet property="descriptionTextArea" destination="9ms-12-c82" id="Xe5-mi-9YE"/>
+                        <outlet property="imageView" destination="Q5a-KD-OyI" id="mxn-Xs-vPz"/>
+                        <outlet property="nameTextField" destination="bzp-2u-0Is" id="Ffp-cm-CIA"/>
+                        <segue destination="eAk-O6-G3Z" kind="push" identifier="showOverview" id="wED-mI-Qul"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2D-OS-Bt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
