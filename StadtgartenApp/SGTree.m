@@ -12,7 +12,7 @@
 
 -(id)init {
     if ( self = [super init] ) {
-        self.userId = @"";
+        self.userid = @"";
         self.name = @"";
         self.description = @"";
         self.tag = @"";
@@ -23,10 +23,10 @@
     return self;
 };
 
--(id)initWithUser:(NSString *)userId name:(NSString*)name description:(NSString*)description tag:(NSString*)tag picture:(NSString*)picture rating:(NSNumber *)rating latitude:(float)latitude longitude:(float)longitude {
+-(id)initWithUser:(NSString *)userid name:(NSString*)name description:(NSString*)description tag:(NSString*)tag picture:(NSString*)picture rating:(NSNumber *)rating latitude:(float)latitude longitude:(float)longitude {
     
     if ( self = [super init] ) {
-        self.userId = userId;
+        self.userid = userid;
         self.name = name;
         self.description = description;
         self.tag = tag;

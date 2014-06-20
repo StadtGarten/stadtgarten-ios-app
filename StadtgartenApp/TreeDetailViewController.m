@@ -32,13 +32,35 @@
     self.rateView.notSelectedImage = [UIImage imageNamed:@"star_empty.png"];
     self.rateView.halfSelectedImage = [UIImage imageNamed:@"star_half.png"];
     self.rateView.fullSelectedImage = [UIImage imageNamed:@"star-full.png"];
-    self.rateView.rating = 0;
     self.rateView.editable = YES;
     self.rateView.maxRating = 5;
     self.rateView.delegate = self;
     // Do any additional setup after loading the view.
 
     [self registerForKeyboardNotifications];
+    
+    Database *db = [[Database alloc] init];
+    ////////////////FIXME treeid +userid übergeben!!
+    NSString* userid = @"user2";
+    NSString* treeid = @"DA5KEPsY6b";
+    //[db getTreeRating:^(NSArray *trees, NSError *error);
+    __block NSNumber* treeRating;
+    [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
+        treeRating = tree.rating;
+        self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [treeRating floatValue]];
+        self.treeName.text = tree.name;
+        self.treeTag.text = tree.tag;
+        self.description.text = tree.description;
+        //self.treePicture.image = tree.picture;
+        
+    }];
+    [db getRaterCount:treeid callback:^(int number, NSError *error){
+        self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
+    }];
+    [db getUserRating:userid treeid:treeid callback:^(int rating, NSError *error){
+        self.rateView.rating = rating;
+    }];
+    
     
     self.treeName.delegate = self;
     self.treeTag.delegate = self;
@@ -278,20 +300,21 @@ shouldChangeTextInRange: (NSRange) range
     }
 }
 
-- (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
-    Database *db = [[Database alloc] init];
-    NSString* treeid = @"tq0M0q5fC4";
-    //[db getTreeRating:^(NSArray *trees, NSError *error);
-    __block NSNumber* treeRating;
-    [db getTreeRating:treeid callback:^(NSNumber *number, NSError *error){
-        treeRating = number;
-        self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [treeRating floatValue]];
+-(void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
+    Database* db = [[Database alloc ]  init ];
+    //
+    NSString* userid = @"user2";
+    NSString* treeid = @"DA5KEPsY6b";
+    NSNumber* newRating = [NSNumber numberWithFloat:rating];
+    [db rateTree:userid treeid:treeid rating:newRating];
+    [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
+        self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
     }];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
         self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
     }];
-}
 
+}
 
 #pragma mark - UIAlert method implementation
 

@@ -10,7 +10,7 @@
 
 @implementation Database
 
-//-(NSArray *)getUserFavourites(String*)userId{};
+//-(NSArray *)getUserFavourites(String*)userid{};
 //-(NSArray *)getAllUsers;
 
 //gibt alle Bäume zurück
@@ -37,7 +37,11 @@
 
     }];
 };
-
+/*  Database * db=[[Database alloc]init];
+    [db getTrees:(NSArray* results, NSError* error){
+        //results enhält alle SGTrees aus der Datenbank
+ }];
+ */
 
 -(void)getUserTrees:(NSString*)userid callback:(PFArrayResultBlock)callback {
     //getAlltress filter for userid
@@ -46,8 +50,8 @@
     [self getTrees:^(NSArray *trees, NSError *error) {
         NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
             SGTree *tree = evaluatedObject;
-            BOOL equal = [tree.userId isEqualToString:userid];
-            NSLog(@"Tree %@ %@ %@", userid, tree.userId, equal? @"YES" : @"NO");
+            BOOL equal = [tree.userid isEqualToString:userid];
+            NSLog(@"Tree %@ %@ %@", userid, tree.userid, equal? @"YES" : @"NO");
             return equal;
         }];
         NSArray *filteredTrees = [trees filteredArrayUsingPredicate:filter];
@@ -82,8 +86,8 @@
 
     
 };
--(void)getTreeRating:(NSString*)treeid callback:(PFNumberResultBlock)callback{
-    __block NSNumber* rating;
+
+-(void)getTreeInfo:(NSString*)treeid callback:(PFTreeResultBlock)callback{
     //__block NSString* name;
     PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
     [query whereKey:@"objectId" equalTo:treeid];
@@ -92,10 +96,13 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            PFObject* tree = [results firstObject];
-            rating = tree[@"rating"];
+            PFObject* treeObject = [results firstObject];
+            PFGeoPoint *gp = treeObject[@"location"];
+            double longitude = [gp longitude];
+            double latitude = [gp latitude];
+            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
             //name = tree[@"baumname"];
-            callback(rating, NULL);
+            callback(tree, NULL);
         }
     }];
 };
@@ -103,27 +110,51 @@
 
 -(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)rating{
     __block NSNumber* currentRating;
-    [self getTreeRating:treeid callback:^(NSNumber *number, NSError *error){
-        currentRating = number;
-    }];
     __block NSNumber* raterCount;
-    PFQuery *query = [PFQuery queryWithClassName:@"Rating"];
-    [query whereKey:@"treeid" equalTo:treeid];
+    __block Boolean alreadyRated = false;
+    __block PFObject *object;
+    [self getTreeInfo:treeid callback:^(SGTree *tree, NSError *error){
+        currentRating = tree.rating;
+    }];
+    PFQuery *query = [PFQuery queryWithClassName:@"Ratings"];
+
+    [query whereKey:@"treeid"
+            equalTo:[PFObject objectWithoutDataWithClassName:@"TreeObject" objectId:treeid]];
+    //[query whereKey:@"treeid" equalTo:treeid];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            raterCount = [NSNumber numberWithFloat:[results count]];
+            int count = [results count];
+            for (int i = 0; i < count; i++){
+                PFObject* treeobject = results[i];
+                //falls der user bereits abgestimmt hat, count reduzieren, damit nicht immer höhere anzahl
+                if ([treeobject[@"userid"] isEqualToString: userid])
+                    {
+                        object = treeobject;
+                        alreadyRated = true;
+                        count = count - 1;
+                        //save userrating
+                        object[@"rating"] = rating;
+                        [object saveInBackground];
+                    }
+            }
+            raterCount = [NSNumber numberWithInt:count];
             float temp = ([raterCount floatValue] * [currentRating floatValue])+[rating floatValue];
             currentRating = @(temp/([raterCount floatValue]+1.0));
             
-            //save userrating
-            PFObject *newUserRating = [PFObject objectWithClassName:@"Rating"];
-            newUserRating[@"userid"] = userid;
-            newUserRating[@"treeid"] = treeid;
-            newUserRating[@"rating"] = rating;
-            [newUserRating saveInBackground];
+            
+            //save userrating, if new rating
+            
+            if (!alreadyRated){
+                PFObject *newUserRating = [PFObject objectWithClassName:@"Ratings"];
+                PFRelation *relation = [newUserRating relationforKey:@"treeid"];
+                [relation addObject:[PFObject objectWithoutDataWithClassName:@"TreeObject" objectId:treeid]];
+                newUserRating[@"userid"] = userid;
+                newUserRating[@"rating"] = rating;
+                [newUserRating saveInBackground];
+            }
         }
     }];
     
@@ -143,10 +174,9 @@
 };
 
 -(void)getRaterCount:(NSString*)treeid callback:(PFIntegerResultBlock)callback{
-    __block NSNumber* raterCount;
     PFQuery *query = [PFQuery queryWithClassName:@"Ratings"];
-    [query whereKey:@"treeId" equalTo:[PFObject objectWithoutDataWithClassName:@"TreeObject" objectId:treeid]];
-    //[query whereKey:@"treeId" equalTo:treeid];
+    [query whereKey:@"treeid" equalTo:[PFObject objectWithoutDataWithClassName:@"TreeObject" objectId:treeid]];
+    //[query whereKey:@"treeid" equalTo:treeid];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -159,7 +189,22 @@
     }];
 };
 
+-(void)getUserRating:(NSString*)userid treeid:(NSString*)treeid callback:(PFIntegerResultBlock)callback{
+    PFQuery *query = [PFQuery queryWithClassName:@"Ratings"];
+    [query whereKey:@"treeid" equalTo:[PFObject objectWithoutDataWithClassName:@"TreeObject" objectId:treeid]];
+    [query whereKey:@"userid" equalTo:userid];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else {
+            PFObject *rating = [results firstObject];
+            int i = [rating[@"rating"] intValue];
+            callback(i, NULL);
+        }
+    }];
 
+};
 
 
 

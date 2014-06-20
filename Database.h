@@ -10,6 +10,7 @@
 #import "SGTree.h"
 
 typedef void (^PFNumberResultBlock)(NSNumber* number, NSError *error);
+typedef void (^PFTreeResultBlock)(SGTree* tree, NSError *error);
 
 @interface Database : PFQuery
 
@@ -18,8 +19,10 @@ typedef void (^PFNumberResultBlock)(NSNumber* number, NSError *error);
 -(void)getTrees:(PFArrayResultBlock)callback;
 -(void)getUserTrees:(NSString*)userid callback:(PFArrayResultBlock)callback;
 
--(void)getTreeRating:(NSString*)treeid callback:(PFNumberResultBlock)callback;
+-(void)getTreeInfo:(NSString*)treeid callback:(PFTreeResultBlock)callback;
 -(void)getRaterCount:(NSString*)treeid callback:(PFIntegerResultBlock)callback;
 -(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)rating;
+-(void)getUserRating:(NSString*)userid treeid:(NSString*)treeid callback:(PFIntegerResultBlock)callback;
+
 
 @end
