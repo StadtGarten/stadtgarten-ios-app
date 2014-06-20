@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "Database.h"
+#import "SGTree.h"
 
 @interface MapViewController : UIViewController< MKMapViewDelegate>
 

@@ -47,18 +47,20 @@ double markerPosition[][2] = {47.0, 11.0,
     48.0, 11.25,
     47.2, 11.2};
 
-
+NSArray *trees;
 
 
 - (void)viewDidLoad
 {
     NSLog(@"start MapViewController");
 
+
     
     [super viewDidLoad];
     
     _tree = CHERRIE;
 
+    /*
     baum = [NSDictionary dictionaryWithObjectsAndKeys:
             @"01", @"id",
             @"Apfelbaum", @"baumname",
@@ -66,29 +68,36 @@ double markerPosition[][2] = {47.0, 11.0,
             @"Apfel", @"tag",
             @"Das ist ein Bild", @"bild",
             nil];
-    
+    */
     NSLog(@"%@", [baum objectForKey: @"tag"]);
+    
+
+
+    
+    [self getTreeFromDatabase];
     
     [self setMap];
 
     [self setMarker];
 
-    
-    //Button ohne Storyboard
-    /*
-     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-     [button addTarget:self
-     action:@selector(aMethod:)
-     forControlEvents:UIControlEventTouchUpInside];
-     [button setTitle:@"add" forState:UIControlStateNormal];
-     button.frame = CGRectMake(180.0, 430.0, 160.0, 40.0);
-     [self.view addSubview:button];
-     */
-    
-    //[_mapView release];
-    
-    
     }
+
+
+- (void)getTreeFromDatabase {
+
+    double longitude;
+
+    Database *database = [[Database alloc] init];
+    SGTree *sgTree = [[SGTree alloc] init];
+    
+    [database getTrees:^(NSArray *results, NSError *error) {
+        trees = results;
+        NSLog(@"result Trees: %@ %@", [trees objectAtIndex:0], [results objectAtIndex:0]);
+    }];
+    
+    NSLog(@"Trees: %@", [trees objectAtIndex:@"tag"]);
+    NSLog(@"Trees: %@", [trees objectAtIndex:0]);
+}
 
 
 - (void)setMap {
