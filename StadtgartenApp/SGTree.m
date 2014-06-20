@@ -23,7 +23,7 @@
     return self;
 };
 
--(id)initWithUser:(NSString *)userid name:(NSString*)name description:(NSString*)description tag:(NSString*)tag picture:(NSString*)picture rating:(NSNumber *)rating latitude:(float)latitude longitude:(float)longitude {
+-(id)initWithUser:(NSString *)userid name:(NSString*)name description:(NSString*)description tag:(NSString*)tag picture:(UIImage*)picture rating:(NSNumber *)rating latitude:(float)latitude longitude:(float)longitude {
     
     if ( self = [super init] ) {
         self.userid = userid;

@@ -61,7 +61,7 @@
 };
 
 
--(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImageView*)bild latitude:(double)latitude longitude:(double)longitude{
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude{
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
     treeObject[@"userid"] = userid;
@@ -69,8 +69,13 @@
     treeObject[@"tag"] = tag;
     //treeObject[@"location"] = @"Ort";
     treeObject[@"beschreibung"] = beschreibung;
-    NSData *imageData = UIImagePNGRepresentation(bild.image);
-    treeObject[@"bild"] = [PFFile fileWithData:imageData];
+    
+    NSData *imageData = UIImagePNGRepresentation(bild);
+    PFFile *imageFile = [PFFile fileWithName:@"tree.png" data:imageData];
+    [imageFile saveInBackground];
+    [treeObject setObject:imageFile forKey:@"bild"];
+    
+    //treeObject[@"bild"] = [PFFile fileWithData:imageData];
     treeObject[@"rating"] = @0.0;
     treeObject[@"location"] = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
 
@@ -100,9 +105,13 @@
             PFGeoPoint *gp = treeObject[@"location"];
             double longitude = [gp longitude];
             double latitude = [gp latitude];
-            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
+            PFFile *imageFile = [treeObject objectForKey:@"bild"];
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    UIImage *bild = [UIImage imageWithData:data];
+                    SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:bild rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
             //name = tree[@"baumname"];
-            callback(tree, NULL);
+                    callback(tree, NULL);
+            }];
         }
     }];
 };
@@ -206,6 +215,14 @@
 
 };
 
+-(void)getDistance:(NSString*)treeid location:(CLLocation*)location callback:(PFNumberResultBlock)callback{
+    [self getTreeInfo:treeid callback:^(SGTree *tree, NSError *error){
+        CLLocation *myLocation = location;
+        CLLocation *treeLocation = [[CLLocation alloc] initWithLatitude:tree.latitude longitude:tree.longitude];
+        CLLocationDistance distance = [myLocation distanceFromLocation: treeLocation];
+        callback([NSNumber numberWithDouble:distance], NULL);
+    }];
+};
 
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "Database.h"
 
 @interface LoginViewController ()
 
@@ -29,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.loginButton.delegate = self;
+
 }
 
 -(void)viewDidDisappear:(BOOL)animated{

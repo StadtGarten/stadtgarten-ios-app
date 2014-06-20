@@ -15,12 +15,12 @@
 @property(readwrite) NSString* userid;
 @property(readwrite) NSString* description;
 @property(readwrite) NSString* tag;
-@property(readwrite) NSString* picture;
+@property(readwrite) UIImage* picture;
 
 @property(readwrite) float latitude;
 @property(readwrite) float longitude;
 @property(readwrite) NSNumber *rating;
 
--(id)initWithUser:(NSString *)userid name:(NSString*)name description:(NSString*)description tag:(NSString*)tag picture:(NSString*)picture rating:(NSNumber *)rating latitude:(float)latitude longitude:(float)longitude ;
+-(id)initWithUser:(NSString *)userid name:(NSString*)name description:(NSString*)description tag:(NSString*)tag picture:(UIImage*)picture rating:(NSNumber *)rating latitude:(float)latitude longitude:(float)longitude ;
 
 @end

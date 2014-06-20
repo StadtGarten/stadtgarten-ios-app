@@ -32,7 +32,11 @@
          
          // TODO bild: _image
          Database *db = [[Database alloc] init];
-         [db writeTree: [aUser objectForKey:@"id"] baumname:_name tag:_tags beschreibung:_description bild:nil];
+         UIImage *bild = [UIImage imageNamed:@"beispiel.png"];
+         double latitude = 47.1;
+         double longitude = 11.1;
+         [db writeTree:[aUser objectForKey:@"id"] baumname:_name tag:_tags beschreibung:_description bild:bild latitude:latitude longitude:longitude];
+
          
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                          message:@"Der Baum wurde gespeichert"
