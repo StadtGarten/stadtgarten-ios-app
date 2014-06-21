@@ -31,8 +31,8 @@ const bool ZOOM = YES;
 float lat = 48.133;
 float lon = 11.567;
 
+/*
 NSDictionary *baum;
-
 double markerPosition[][2] = {47.0, 11.0,
     47.1, 11.1,
     47.15, 11.2,
@@ -46,20 +46,20 @@ double markerPosition[][2] = {47.0, 11.0,
     48.2, 11.15,
     48.0, 11.25,
     47.2, 11.2};
-
-//NSArray *trees;
+*/
+ 
+NSArray *trees;
 
 
 - (void)viewDidLoad
 {
     NSLog(@"start MapViewController");
 
+    _tree = APPLE;
 
     
     [super viewDidLoad];
     
-    _tree = CHERRIE;
-
     /*
     baum = [NSDictionary dictionaryWithObjectsAndKeys:
             @"01", @"id",
@@ -68,58 +68,50 @@ double markerPosition[][2] = {47.0, 11.0,
             @"Apfel", @"tag",
             @"Das ist ein Bild", @"bild",
             nil];
-    */
-    NSLog(@"%@", [baum objectForKey: @"tag"]);
     
-
+    NSLog(@"%@", [baum objectForKey: @"tag"]);
+    */
 
     
     [self getTreeFromDatabase];
     
-    [self setMap];
-
-    [self setMarker];
-
     }
 
 
 - (void)getTreeFromDatabase {
 
-    double longitude;
-
     Database *database = [[Database alloc] init];
-    SGTree *sgTree = [[SGTree alloc] init];
+    __block SGTree *sgTree;
     
     [database getTrees:^(NSArray *results, NSError *error) {
-        //trees = results;
-        //sgTree = trees[0];
+        trees = results;
+        //sgTree = [trees firstObject];
 
-        /*
-        NSMutableArray *trees = [[NSMutableArray alloc] init];
-        
+
         for (int i = 0; i < results.count; i++) {
   
-            *sgTree = [results objectAtIndex:i];
+            sgTree = [results objectAtIndex:i];
+            if ([sgTree.tag  isEqual: @"Apfel"]){
+                _tree = APPLE;
+            } else if ([sgTree.tag  isEqual: @"Birne"]){
+                _tree = PEAR;
+            } else {
+                _tree = CHERRIE;
+            }
             
-            PFGeoPoint *gp = sgTree[@"location"];
-            double longitude = [gp longitude];
-            double latitude = [gp latitude];
-            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
-            
-            [trees addObject:tree];
-            
-            NSLog(@"Trees: %@", sgTree);
+            NSLog(@"Tree: %@", sgTree);
+
+            [self setMap];
+
         }
-        */
         
-        
+        [self setMarker];
         
         //NSLog(@"result Trees: %@ %@", [trees objectAtIndex:0], [results objectAtIndex:0]);
     }];
     
     //NSLog(@"Trees: %@", [trees objectAtIndex:@"tag"]);
     //NSLog(@"Trees: %@", [trees objectAtIndex:0]);
-    
     //NSLog(@"Trees: %@", sgTree.tag);
 }
 
@@ -146,17 +138,18 @@ double markerPosition[][2] = {47.0, 11.0,
     CLLocationCoordinate2D annotationCoord;
 
     //Anzahl der Elemente
-    int const numberOfElements = sizeof(markerPosition)/sizeof(double)/2;
+    int const numberOfElements = (int)[trees count];
 
     for(int i=0; i<(numberOfElements-1); i++) {
      
-        annotationCoord.latitude = markerPosition[i][LATITUDE];
-        annotationCoord.longitude = markerPosition[i][LONGITUDE];
+        SGTree* tree = [trees objectAtIndex:i];
+        annotationCoord.latitude = tree.latitude;
+        annotationCoord.longitude = tree.longitude;
         
         MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
         annotationPoint.coordinate = annotationCoord;
-        annotationPoint.title = @"Apfelbaum";
-        annotationPoint.subtitle = @"";
+        annotationPoint.title = tree.name;
+        annotationPoint.subtitle = tree.tag;
 
         [_mapView addAnnotation:annotationPoint];
     
