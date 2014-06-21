@@ -47,7 +47,7 @@ double markerPosition[][2] = {47.0, 11.0,
     48.0, 11.25,
     47.2, 11.2};
 
-NSArray *trees;
+//NSArray *trees;
 
 
 - (void)viewDidLoad
@@ -91,12 +91,36 @@ NSArray *trees;
     SGTree *sgTree = [[SGTree alloc] init];
     
     [database getTrees:^(NSArray *results, NSError *error) {
-        trees = results;
-        NSLog(@"result Trees: %@ %@", [trees objectAtIndex:0], [results objectAtIndex:0]);
+        //trees = results;
+        //sgTree = trees[0];
+
+        /*
+        NSMutableArray *trees = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < results.count; i++) {
+  
+            *sgTree = [results objectAtIndex:i];
+            
+            PFGeoPoint *gp = sgTree[@"location"];
+            double longitude = [gp longitude];
+            double latitude = [gp latitude];
+            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
+            
+            [trees addObject:tree];
+            
+            NSLog(@"Trees: %@", sgTree);
+        }
+        */
+        
+        
+        
+        //NSLog(@"result Trees: %@ %@", [trees objectAtIndex:0], [results objectAtIndex:0]);
     }];
     
-    NSLog(@"Trees: %@", [trees objectAtIndex:@"tag"]);
-    NSLog(@"Trees: %@", [trees objectAtIndex:0]);
+    //NSLog(@"Trees: %@", [trees objectAtIndex:@"tag"]);
+    //NSLog(@"Trees: %@", [trees objectAtIndex:0]);
+    
+    //NSLog(@"Trees: %@", sgTree.tag);
 }
 
 
