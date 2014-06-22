@@ -119,9 +119,11 @@
     
     SetPictureViewController *controller = (SetPictureViewController *) segue.destinationViewController;
     
+    SGTree *tree = [[SGTree alloc] init];
+    tree.latitude = self.mapView.centerCoordinate.latitude;
+    tree.longitude = self.mapView.centerCoordinate.longitude;
     
-    controller.lattitude = [NSNumber numberWithFloat:self.mapView.centerCoordinate.latitude];
-    controller.longitude = [NSNumber numberWithFloat:self.mapView.centerCoordinate.longitude];
+    controller.tree = tree;
 }
 
 /*
