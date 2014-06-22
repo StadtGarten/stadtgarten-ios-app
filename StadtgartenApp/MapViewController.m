@@ -177,16 +177,14 @@ int j = 0;
     {
         return nil;
     }
-
-    NSString *annotationIdentifier = @"CustomViewAnnotation";
     
+    NSString *annotationIdentifier = @"CustomViewAnnotation";
     for (; j < treeTags.count;) {
         NSString* tag = [treeTags objectAtIndex:j];
         SGTree* tr = [trees objectAtIndex:j];
 
         j = j + 1;
-        
-        
+    
     if([tr.tag isEqual: @"Apfel"]) {
         
         //NSLog(@"APPLE");
