@@ -251,7 +251,7 @@
                                         <rect key="frame" x="10" y="10" width="157" height="160"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appl_tree_sample.png" translatesAutoresizingMaskIntoConstraints="NO" id="okD-og-Jeu">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okD-og-Jeu">
                                         <rect key="frame" x="18" y="17" width="140" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -779,16 +779,15 @@
     </scenes>
     <resources>
         <image name="add-2_44" width="22" height="22"/>
-        <image name="appl_tree_sample.png" width="22" height="22"/>
         <image name="bookmark.png" width="23" height="23"/>
         <image name="cross-hair.png" width="128" height="128"/>
-        <image name="edit.png" width="22" height="22"/>
+        <image name="edit.png" width="44" height="44"/>
         <image name="list-2_44" width="22" height="22"/>
         <image name="location-1_44" width="22" height="22"/>
         <image name="logo_font" width="423" height="118"/>
-        <image name="photo-frame.png" width="22" height="22"/>
+        <image name="photo-frame.png" width="297" height="199"/>
         <image name="profile-1_44" width="22" height="22"/>
-        <image name="rate.png" width="27" height="27"/>
+        <image name="rate.png" width="55" height="55"/>
         <image name="tree_white" width="513" height="548"/>
     </resources>
     <color key="tintColor" red="0.015686274510000001" green="0.57647058819999997" blue="0.44705882349999998" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
