@@ -9,10 +9,12 @@
 #import "TreeDetailViewController.h"
 #import "SGAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "Database.h"
 
 
 @interface TreeDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarkButton;
 
 @end
 
@@ -97,6 +99,7 @@ Database *db;
     [_treeDistance addGestureRecognizer:singleTapLocation];
     
     
+    [self updateBookmarkStatus];
 }
 
 /*
@@ -183,8 +186,12 @@ Database *db;
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError *error) {
              if (!error) {
-                 NSLog(@"User id %@",[aUser objectForKey:@"id"]);
+                 NSLog(@"Bookmark tree %@ for %@",self.treeObject.id, [aUser objectForKey:@"id"]);
                  
+                 [db bookmarkTree:self.treeObject.id user:[aUser objectForKey:@"id"] callback:^(BOOL succeeded, NSError *error) {
+                     
+                     [self updateBookmarkStatus];
+                 }];
                  
              }
          }];
@@ -355,6 +362,32 @@ shouldChangeTextInRange: (NSRange) range
     
 }
 
+
+- (void)updateBookmarkStatus {
+    
+    if ([FBSession activeSession].isOpen) {
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError * error) {
+             
+             [db getUserFavourites:[aUser objectForKey:@"id"] with:^(NSArray *objects, NSError *error) {
+                 self.bookmarkButton.tintColor = [UIColor darkGrayColor];
+                 for (int x = 0; x < objects.count; x++) {
+                     SGTree *tree = objects[x];
+                     
+                     if ([tree.id isEqualToString:self.treeObject.id]) {
+                         self.bookmarkButton.tintColor = [UIColor colorWithRed:4.0/255.0 green:147.0/255.0 blue:114.0/255.0 alpha:0.7];
+                         return;
+                     }
+                 }
+                 
+             }];
+             
+         }];
+    }
+    
+    self.bookmarkButton.tintColor = [UIColor darkGrayColor];
+   
+}
 
 
 @end

@@ -61,6 +61,11 @@ int selectedList = 1; // own trees or favorites
                forControlEvents:UIControlEventValueChanged];
     
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self fetchTableData];
+}
+
 - (IBAction)segmentedControlChanged:(UISegmentedControl *)sender {
     
     NSInteger clickedSegment = [sender selectedSegmentIndex];

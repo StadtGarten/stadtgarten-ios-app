@@ -164,7 +164,7 @@
     }];
 };
 
--(void)bookmarkTree:(NSString *)treeid user:(NSString *)userid {
+-(void)bookmarkTree:(NSString *)treeid user:(NSString *)userid callback:(void(^)(BOOL succeeded, NSError *error))callback {
     PFQuery *query = [PFQuery queryWithClassName:@"UserClass"];
     [query whereKey:@"fbId" equalTo:userid];
     
@@ -176,15 +176,27 @@
         PFObject *userObject;
         if (results.count > 0) {
             userObject = results[0];
+            
             NSMutableArray *favouriteTrees = userObject[@"favouriteTrees"];
-            [favouriteTrees addObject:treeid];
+            int index = -1;
+            
+            for (int x = 0; x < favouriteTrees.count; x++) {
+                if ([favouriteTrees[x] isEqualToString:treeid]) {
+                    index = x;
+                }
+            }
+            if (index > -1) {
+                [favouriteTrees removeObjectAtIndex:index];
+            } else {
+                [favouriteTrees addObject:treeid];
+            }
         } else {
             userObject = [PFObject objectWithClassName:@"UserClass"];
             userObject[@"fbId"] = userid;
             userObject[@"favouriteTrees"] = [[NSMutableArray alloc] initWithObjects:treeid, nil];
         }
 
-        [userObject saveInBackground];
+        [userObject saveInBackgroundWithBlock:callback];
         
     }];
 }
