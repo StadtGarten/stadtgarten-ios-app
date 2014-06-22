@@ -15,6 +15,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) UIImagePickerController *picker;
 
+@property (strong, readwrite) NSNumber *lattitude;
+@property (strong, readwrite) NSNumber *longitude;
+
 -  (IBAction) takePicture:(id) sender;
 -  (IBAction) selectPhoto:(id)sender;
 

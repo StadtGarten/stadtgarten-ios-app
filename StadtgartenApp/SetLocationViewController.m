@@ -115,6 +115,15 @@
     NSLog(@"some error occurred ... %@", error);
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    SetPictureViewController *controller = (SetPictureViewController *) segue.destinationViewController;
+    
+    
+    controller.lattitude = [NSNumber numberWithFloat:self.mapView.centerCoordinate.latitude];
+    controller.longitude = [NSNumber numberWithFloat:self.mapView.centerCoordinate.longitude];
+}
+
 /*
 #pragma mark - Navigation
 

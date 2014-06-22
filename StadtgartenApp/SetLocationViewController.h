@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import	<CoreLocation/CoreLocation.h>
+#import "SetPictureViewController.h"
 #import "MKMapView+ZoomLevel.h"
 
 @interface SetLocationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate>
