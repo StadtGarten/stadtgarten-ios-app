@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SGTree.h"
 
 @interface SetItemViewController : UIViewController{
 
@@ -17,6 +18,7 @@ IBOutlet UITextView *descriptionTextArea;
 }
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, readwrite) SGTree *tree;
 
 @property (nonatomic, strong) IBOutlet UIView *ddMenu;
 @property (nonatomic, strong) IBOutlet UIButton *ddMenuShowButton;
