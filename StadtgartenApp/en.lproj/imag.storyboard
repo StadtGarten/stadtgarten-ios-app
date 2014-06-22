@@ -272,15 +272,10 @@
                                 <items>
                                     <barButtonItem image="bookmark.png" id="bLH-rg-390">
                                         <connections>
-                                            <action selector="bookmarkTree:" destination="tm3-ej-o9v" id="op7-3O-bgD"/>
+                                            <action selector="bookmarkTree:" destination="tm3-ej-o9v" id="wTs-Cb-SAB"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MZL-Ja-lWa"/>
-                                    <barButtonItem image="rate.png" id="cG7-sL-f4F">
-                                        <connections>
-                                            <action selector="showColorsActionSheet:" destination="tm3-ej-o9v" id="AFf-qt-YPk"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8tQ-IF-Bte"/>
                                     <barButtonItem image="edit.png" id="HbB-DT-u3y">
                                         <connections>
@@ -316,6 +311,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundView" destination="CWn-mS-fw7" id="i9b-nK-GGR"/>
+                        <outlet property="bookmarkButton" destination="bLH-rg-390" id="PZ4-lU-PY3"/>
                         <outlet property="description" destination="tZ1-To-mLE" id="oYL-Du-obz"/>
                         <outlet property="doneButton" destination="aSH-Ek-fcA" id="9IM-cB-6KQ"/>
                         <outlet property="locationBGView" destination="sRy-Vd-ekE" id="nsp-A6-hnS"/>
@@ -881,7 +877,6 @@
         <image name="logo.png" width="475" height="132"/>
         <image name="photo-frame.png" width="297" height="199"/>
         <image name="profile-1_44" width="22" height="22"/>
-        <image name="rate.png" width="55" height="55"/>
         <image name="tree_white" width="513" height="548"/>
     </resources>
     <color key="tintColor" red="0.015686274510000001" green="0.57647058819999997" blue="0.44705882349999998" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
