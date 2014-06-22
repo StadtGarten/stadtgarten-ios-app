@@ -29,13 +29,12 @@
          if (!error) {
              NSLog(@"User id %@",[aUser objectForKey:@"id"]);
 
-         
-         // TODO bild: _image
+        
          Database *db = [[Database alloc] init];
-         UIImage *bild = [UIImage imageNamed:@"beispiel.png"];
          double latitude = 47.1;
          double longitude = 11.1;
-         [db writeTree:[aUser objectForKey:@"id"] baumname:_name tag:_tags beschreibung:_description bild:bild latitude:latitude longitude:longitude];
+             UIImage *test = _image;
+         [db writeTree:[aUser objectForKey:@"id"] baumname:_name tag:_tags beschreibung:_description bild:_image latitude: latitude longitude:longitude];
 
          
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
@@ -88,7 +87,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@", _name);
+    //NSLog(@"%@", _name);
     nameLabel.text = _name;
     descriptionLabel.text = _description;
     tagsLabel.text = _tags;
