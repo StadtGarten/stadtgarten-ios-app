@@ -123,7 +123,7 @@
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSLog(@"filterContentForSearchText");
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"description contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"tag contains[c] %@", searchText];
     searchResults = [trees filteredArrayUsingPredicate:resultPredicate];
 }
 
