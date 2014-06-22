@@ -306,7 +306,6 @@ shouldChangeTextInRange: (NSRange) range
 
 -(void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
     if (![FBSession activeSession].isOpen) {
-        
         UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Rating"
                                                            message:@"Sie müssen eingeloggt sein um den Baum zu bewerten."
                                                           delegate:self
@@ -316,16 +315,21 @@ shouldChangeTextInRange: (NSRange) range
     }
     else{
         Database* db = [[Database alloc ]  init ];
-        //
-        NSString* userid = self.treeObject.userid;
-        NSString* treeid = self.treeObject.id;
-        NSNumber* newRating = [NSNumber numberWithFloat:rating];
-        [db rateTree:userid treeid:treeid rating:newRating];
-        [db getRaterCount:treeid callback:^(int number, NSError *error){
-            self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
-        }];
-        [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
-            self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
+        __block NSString* userid;
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *fbUser, NSError *error) {
+             userid = [fbUser objectForKey:@"id"];
+             //userid = @"testuser1";
+             NSString* treeid = self.treeObject.id;
+             NSNumber* newRating = [NSNumber numberWithFloat:rating];
+             [db rateTree:userid treeid:treeid rating:newRating];
+             [db getRaterCount:treeid callback:^(int number, NSError *error){
+                 self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
+             
+                 [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
+                     self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
+                 }];
+             }];
         }];
     //[rateView setNeedsLayout];
     }
