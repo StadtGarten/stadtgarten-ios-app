@@ -31,23 +31,6 @@ const bool ZOOM = YES;
 float lat = 48.133;
 float lon = 11.567;
 
-/*
-NSDictionary *baum;
-double markerPosition[][2] = {47.0, 11.0,
-    47.1, 11.1,
-    47.15, 11.2,
-    48.15, 11.6,
-    48.2, 11.62,
-    48.15, 11.5,
-    48.13, 11.6,
-    48.14, 11.58,
-    48.22, 11.61,
-    48.1, 11.4,
-    48.2, 11.15,
-    48.0, 11.25,
-    47.2, 11.2};
-*/
- 
 NSArray *trees;
 
 
@@ -94,27 +77,36 @@ NSMutableArray *treeTags;
         [self setMap];
         
         
-        for (int i = 0; i < trees.count; i++) {
+        for (int i = 0; i < results.count; i++) {
             
-            NSLog(@"Pin: %@, %i", sgTree.tag, i);
+            //NSLog(@"Pin: %@, %i", sgTree.tag, i);
   
+            
             sgTree = [results objectAtIndex:i];
             if ([sgTree.tag isEqual: @"Apfel"]){
                 [treeTags insertObject:@"Apfel" atIndex:i];
+                NSLog(@"aAbspeichern: %@, %i", sgTree.tag, i);
+
 
             } else if ([sgTree.tag isEqual: @"Birne"]){
                 [treeTags insertObject:@"Birne" atIndex:i];
+                NSLog(@"bAbspeichern: %@, %i", sgTree.tag, i);
+
 
             } else if ([sgTree.tag isEqual: @"Kirsche"]){
                 [treeTags insertObject:@"Kirsche" atIndex:i];
+                NSLog(@"kAbspeichern: %@, %i", sgTree.tag, i);
 
             }
             
             //NSLog(@"Tree: %@", sgTree);
    
         }
-        [self setMarker];
+        
         [self setMapConfig];
+        [self setMarker];
+        
+        [_mapView reloadInputViews];
         
     }];
 }
@@ -131,6 +123,7 @@ NSMutableArray *treeTags;
         annotationCoord.latitude = tree.latitude;
         annotationCoord.longitude = tree.longitude;
         
+        
         MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
         annotationPoint.coordinate = annotationCoord;
         annotationPoint.title = tree.name;
@@ -138,6 +131,7 @@ NSMutableArray *treeTags;
         
         [_mapView addAnnotation:annotationPoint];
         
+        //[_mapView reloadInputViews];
     }
 }
 
@@ -172,10 +166,7 @@ NSMutableArray *treeTags;
         region.span.latitudeDelta = 0.2;
         region.span.longitudeDelta = 0.2;
     }
-    
-    
     [_mapView setRegion:region animated:YES];
-    
 }
 
 int j = 0;
@@ -186,54 +177,49 @@ int j = 0;
     {
         return nil;
     }
-    
 
-    
     NSString *annotationIdentifier = @"CustomViewAnnotation";
-
-    /*
-    if(!annotationView)
-    {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                      reuseIdentifier:annotationIdentifier];
-    }
-    */
-    
-    NSLog(@"count: %i", treeTags.count);
     
     for (; j < treeTags.count;) {
         NSString* tag = [treeTags objectAtIndex:j];
-        j = j +1;
+        SGTree* tr = [trees objectAtIndex:j];
+
+        j = j + 1;
         
-    if([tag isEqual: @"Apfel"]) {
         
-        NSLog(@"APPLE");
+    if([tr.tag isEqual: @"Apfel"]) {
+        
+        //NSLog(@"APPLE");
         MKAnnotationView* annotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:annotationIdentifier];
         annotationView.image = [UIImage imageNamed:@"apple_pin.png"];
+        NSLog(@"aAuslesen: %@ %@", tr.tag, tr.id);
         return annotationView;
     }
-    else if([tag isEqual: @"Kirsche"]) {
-        NSLog(@"CHERRIE");
+    else if([tr.tag isEqual: @"Kirsche"]) {
+        //NSLog(@"CHERRIE");
         MKAnnotationView* annotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:annotationIdentifier];
         annotationView.image = [UIImage imageNamed:@"cherrie_pin.png"];
+        NSLog(@"kAuslesen: %@ %@", tr.tag, tr.id);
         return annotationView;
     }
-    else if([tag isEqual: @"Birne"]) {
+    else if([tr.tag isEqual: @"Birne"]) {
         
-        NSLog(@"PEAR");
+        //NSLog(@"PEAR");
         MKAnnotationView* annotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:annotationIdentifier];
         annotationView.image = [UIImage imageNamed:@"pear_pin.png"];
+        NSLog(@"bAuslesen: %@ %@", tr.tag, tr.id);
         return annotationView;
     }
     else {
         NSLog(@"wrong");
     }
+        [_mapView reloadInputViews];
     }
     
     return nil;
