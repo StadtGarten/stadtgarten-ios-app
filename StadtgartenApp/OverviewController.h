@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "Database.h"
+#import "SGTree.h"
 
 @interface OverviewController : UIViewController
 
@@ -20,12 +21,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionLabel;
+@property (strong, readwrite) SGTree *tree;
 
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
 
-@property NSString *name;
-@property NSString *description;
-@property NSString *tags;
 @property UIImage *image;
 
 @end

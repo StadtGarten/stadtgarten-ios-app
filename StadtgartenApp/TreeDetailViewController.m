@@ -9,13 +9,18 @@
 #import "TreeDetailViewController.h"
 #import "SGAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import <FacebookSDK/FacebookSDK.h>
 #import "Database.h"
 
+
 @interface TreeDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarkButton;
 
 @end
 
 @implementation TreeDetailViewController
+
+Database *db;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +44,7 @@
 
     [self registerForKeyboardNotifications];
     
-    Database *db = [[Database alloc] init];
+    db = [[Database alloc] init];
     ////////////////FIXME treeid +userid übergeben!!
     NSString* userid = self.treeObject.userid;
     NSString* treeid = self.treeObject.id;
@@ -64,6 +69,8 @@
     [db getDistance:treeid location:myLocation callback:^(NSNumber *distance, NSError *error){
         self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
     }];
+    
+    
     
     
     self.treeName.delegate = self;
@@ -92,6 +99,7 @@
     [_treeDistance addGestureRecognizer:singleTapLocation];
     
     
+    [self updateBookmarkStatus];
 }
 
 /*
@@ -162,7 +170,7 @@
     //Save Changes in DB
 }
 
--(void)bookmarkTree:(id)sender{
+-(IBAction)bookmarkTree:(id)sender{
     
     if (![FBSession activeSession].isOpen) {
         
@@ -174,7 +182,19 @@
         [theAlert show];
         
     }else{
-        
+        // get FacebookUserID
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError *error) {
+             if (!error) {
+                 NSLog(@"Bookmark tree %@ for %@",self.treeObject.id, [aUser objectForKey:@"id"]);
+                 
+                 [db bookmarkTree:self.treeObject.id user:[aUser objectForKey:@"id"] callback:^(BOOL succeeded, NSError *error) {
+                     
+                     [self updateBookmarkStatus];
+                 }];
+                 
+             }
+         }];
     }
 }
 
@@ -346,6 +366,32 @@ shouldChangeTextInRange: (NSRange) range
     
 }
 
+
+- (void)updateBookmarkStatus {
+    
+    if ([FBSession activeSession].isOpen) {
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError * error) {
+             
+             [db getUserFavourites:[aUser objectForKey:@"id"] with:^(NSArray *objects, NSError *error) {
+                 self.bookmarkButton.tintColor = [UIColor darkGrayColor];
+                 for (int x = 0; x < objects.count; x++) {
+                     SGTree *tree = objects[x];
+                     
+                     if ([tree.id isEqualToString:self.treeObject.id]) {
+                         self.bookmarkButton.tintColor = [UIColor colorWithRed:4.0/255.0 green:147.0/255.0 blue:114.0/255.0 alpha:0.7];
+                         return;
+                     }
+                 }
+                 
+             }];
+             
+         }];
+    }
+    
+    self.bookmarkButton.tintColor = [UIColor darkGrayColor];
+   
+}
 
 
 @end

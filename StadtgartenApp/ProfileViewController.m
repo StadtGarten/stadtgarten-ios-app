@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "LoginViewController.h"
+#import "TreeDetailViewController.h"
 #import "SGTree.h"
 
 @interface ProfileViewController ()
@@ -60,6 +61,11 @@ int selectedList = 1; // own trees or favorites
                forControlEvents:UIControlEventValueChanged];
     
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self fetchTableData];
+}
+
 - (IBAction)segmentedControlChanged:(UISegmentedControl *)sender {
     
     NSInteger clickedSegment = [sender selectedSegmentIndex];
@@ -132,8 +138,22 @@ int selectedList = 1; // own trees or favorites
     if([segue.identifier isEqualToString:@"showInitial"]){
         LoginViewController *controller = (LoginViewController *)segue.destinationViewController;
         controller.isFromProfile = YES;
+    } else if ([segue.identifier isEqualToString:@"showTreeDetail"]) {
+        NSIndexPath *indexPath = nil;
+        SGTree *selectedTree = nil;
+        
+        
+        indexPath = [self.tableView indexPathForSelectedRow];
+        selectedTree = [tableData objectAtIndex:indexPath.row];
+        
+        
+        TreeDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.treeObject = selectedTree;
+        
     }
 }
+
+
 
 //Facebook
 -(void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
@@ -170,5 +190,7 @@ int selectedList = 1; // own trees or favorites
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 @end
