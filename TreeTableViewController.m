@@ -35,7 +35,7 @@
             sgTree = [results objectAtIndex:i];
             Tree *tree = [Tree new];
             tree.name = sgTree.name;
-            tree.description = sgTree.description;
+            tree.description = sgTree.tag;
             UIImage *img = sgTree.picture;
             tree.image = img;
             tree.info = [NSArray arrayWithObjects:@"1 unsliced loaf (1 pound) French bread", @"4 tablespoons butter", @"2 tablespoons mayonnaise", @"8 thin slices deli ham", @"1 large tomato, sliced", @"1 small onion", @"8 eggs", @"8 slices cheddar cheese", nil];
@@ -123,7 +123,7 @@
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSLog(@"filterContentForSearchText");
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"description contains[c] %@", searchText];
     searchResults = [trees filteredArrayUsingPredicate:resultPredicate];
 }
 
