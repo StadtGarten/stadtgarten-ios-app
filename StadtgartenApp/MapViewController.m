@@ -177,28 +177,7 @@ NSMutableArray *treeTags;
     [_mapView setRegion:region animated:YES];
     
 }
-/*
-- (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>) annotation
-{   static NSString *identifier = @"myPin";
-    MKPinAnnotationView *pinView = nil;
-    pinView = (MKPinAnnotationView *)[_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-    if (pinView == nil)
-    {
-        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-        pinView.canShowCallout = YES;
-        pinView.animatesDrop = YES;
-    }
-    if(_tree == APPLE) {
-        [pinView setPinColor:MKPinAnnotationColorRed];
-    }
-    else if(_tree == CHERRIE){
-        [pinView setPinColor:MKPinAnnotationColorGreen];
-    }
-    //else if([m_pinColor isEqualToString:@"Purple"]){
-     //   [pinView setPinColor:MKPinAnnotationColorPurple];
-    //}
-    return pinView;
-}*/
+
 int j = 0;
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
