@@ -20,6 +20,7 @@
 		04869DCC19572835005F9A43 /* rate.png in Resources */ = {isa = PBXBuildFile; fileRef = 04869DCB19572835005F9A43 /* rate.png */; };
 		04869DCE1957284E005F9A43 /* rate.png in Resources */ = {isa = PBXBuildFile; fileRef = 04869DCD1957284E005F9A43 /* rate.png */; };
 		04869DD019572862005F9A43 /* appl_tree_sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 04869DCF19572862005F9A43 /* appl_tree_sample.png */; };
+		04869DD219573768005F9A43 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04869DD119573768005F9A43 /* logo.png */; };
 		0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
 		0489C26519472DEB009BD670 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C26419472DEB009BD670 /* LoginViewController.m */; };
 		0489C26719473CFD009BD670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489C26619473CFD009BD670 /* Images.xcassets */; };
@@ -100,6 +101,7 @@
 		04869DCB19572835005F9A43 /* rate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rate.png; sourceTree = "<group>"; };
 		04869DCD1957284E005F9A43 /* rate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rate.png; sourceTree = "<group>"; };
 		04869DCF19572862005F9A43 /* appl_tree_sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appl_tree_sample.png; sourceTree = "<group>"; };
+		04869DD119573768005F9A43 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		0488C2FF1947B90700EC00DE /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		0488C3001947B90700EC00DE /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		0489C26319472DEB009BD670 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				04869DC11957268A005F9A43 /* bookmark@2x.png */,
 				04869DC719572817005F9A43 /* photo-frame.png */,
+				04869DD119573768005F9A43 /* logo.png */,
 				04869DC919572826005F9A43 /* photo-frame@2x.png */,
 				04869DCF19572862005F9A43 /* appl_tree_sample.png */,
 				04869DCB19572835005F9A43 /* rate.png */,
@@ -467,6 +470,7 @@
 			files = (
 				04869DC21957268A005F9A43 /* bookmark@2x.png in Resources */,
 				04869DC61957280E005F9A43 /* edit.png in Resources */,
+				04869DD219573768005F9A43 /* logo.png in Resources */,
 				848875BD19524F3E00DFBEAD /* star_empty.png in Resources */,
 				848875BE19524F3E00DFBEAD /* star_half.png in Resources */,
 				04869DC4195726A3005F9A43 /* edit@2x.png in Resources */,

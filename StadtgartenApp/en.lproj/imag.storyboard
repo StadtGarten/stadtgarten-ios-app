@@ -267,7 +267,11 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="bookmark.png" id="bLH-rg-390"/>
+                                    <barButtonItem image="bookmark.png" id="bLH-rg-390">
+                                        <connections>
+                                            <action selector="bookmarkTree:" destination="tm3-ej-o9v" id="op7-3O-bgD"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MZL-Ja-lWa"/>
                                     <barButtonItem image="rate.png" id="cG7-sL-f4F">
                                         <connections>
@@ -368,7 +372,7 @@
                                     <action selector="tapSkipButton:" destination="i7x-g5-hh1" eventType="touchUpInside" id="G24-Ua-lDx"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_font" translatesAutoresizingMaskIntoConstraints="NO" id="07t-gZ-8OG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="07t-gZ-8OG">
                                 <rect key="frame" x="61" y="288" width="199" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -784,7 +788,7 @@
         <image name="edit.png" width="44" height="44"/>
         <image name="list-2_44" width="22" height="22"/>
         <image name="location-1_44" width="22" height="22"/>
-        <image name="logo_font" width="423" height="118"/>
+        <image name="logo.png" width="475" height="132"/>
         <image name="photo-frame.png" width="297" height="199"/>
         <image name="profile-1_44" width="22" height="22"/>
         <image name="rate.png" width="55" height="55"/>
