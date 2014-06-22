@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Database.h"
 
+
 @interface TreeDetailViewController ()
 
 @end
@@ -66,6 +67,8 @@ Database *db;
     [db getDistance:treeid location:myLocation callback:^(NSNumber *distance, NSError *error){
         self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
     }];
+    
+    
     
     
     self.treeName.delegate = self;
