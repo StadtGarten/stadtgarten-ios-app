@@ -21,7 +21,7 @@
 @synthesize imageView;
 
 
-// an image is necessary before switching to the next view
+// an image is necessary before switching to the next view, show alertView
 -(IBAction) requireImage:(id)sender{
     if(imageView.image == nil){
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
@@ -36,7 +36,7 @@
     }
 }
 
-// if segue "showDescription" is chosen, instantiate itemController
+// if segue "showDescription" is chosen, instantiate itemController and set attributes to treeObject
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"showDescription"]){
         SetItemViewController *itemController = (SetItemViewController *)segue.destinationViewController ;
@@ -60,7 +60,7 @@
         [myAlertView show];
         
     }else{
-        // UIImagePickerController *
+       
         picker = [[UIImagePickerController alloc] init];
         picker.delegate = self;
         // choose picture from camera
@@ -69,6 +69,8 @@
     }
     
 }
+
+// select photo from library
 - (IBAction)selectPhoto:(id)sender {
     picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
@@ -78,14 +80,16 @@
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
+// show chosenImage in imageView
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *chosenImage = info[UIImagePickerControllerOriginalImage];
     self.imageView.image = chosenImage;
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
+
+// show Cancel Button
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    //Cancle Button Methode
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
