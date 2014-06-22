@@ -26,15 +26,19 @@
             PFGeoPoint *gp = treeObject[@"location"];
             double longitude = [gp longitude];
             double latitude = [gp latitude];
-            SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:treeObject[@"bild"] rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
-            
-            [trees addObject:tree];
+            PFFile *imageFile = [treeObject objectForKey:@"bild"];
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                UIImage *bild = [UIImage imageWithData:data];
+                SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:bild rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
+                [trees addObject:tree];
+                
+                if (i==(results.count-1)){
+                NSArray *result = (NSArray *)trees;
+                
+                callback(result, NULL);
+                }
+            }];
         }
-        
-        NSArray *result = (NSArray *)trees;
-        
-        callback(result, NULL);
-
     }];
 };
 /*  Database * db=[[Database alloc]init];

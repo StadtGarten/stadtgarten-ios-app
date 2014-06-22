@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *description;
-@property (nonatomic, strong) NSString *image;
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSArray *info;
 
 @end

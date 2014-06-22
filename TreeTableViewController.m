@@ -9,6 +9,7 @@
 #import "TreeTableCell.h"
 #import "Tree.h"
 #import "TreeDetailViewController.h"
+#import "Database.h"
 
 @interface TreeTableViewController ()
 
@@ -24,43 +25,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    // Initialize the recipes array
-    Tree *recipe1 = [Tree new];
-    recipe1.name = @"Egg Benedict";
-    recipe1.description = @"30 min";
-    recipe1.image = @"apple_pin.png";
-    recipe1.info = [NSArray arrayWithObjects:@"2 fresh English muffins", @"4 eggs", @"4 rashers of back bacon", @"2 egg yolks", @"1 tbsp of lemon juice", @"125 g of butter", @"salt and pepper", nil];
+    Database *database = [[Database alloc] init];
+    __block SGTree *sgTree;
+    __block NSMutableArray *treeArray = [[NSMutableArray alloc] init];
     
-    
-    Tree *recipe2 = [Tree new];
-    recipe2.name = @"Mushroom Risotto";
-    recipe2.description = @"30 min";
-    recipe2.image = @"apple_pin.png";
-    recipe2.info = [NSArray arrayWithObjects:@"1 tbsp dried porcini mushrooms", @"2 tbsp olive oil", @"1 onion, chopped", @"2 garlic cloves", @"350g/12oz arborio rice", @"1.2 litres/2 pints hot vegetable stock", @"salt and pepper", @"25g/1oz butter", nil];
-    
-    Tree *recipe3 = [Tree new];
-    recipe3.name = @"Full Breakfast";
-    recipe3.description = @"20 min";
-    recipe3.image = @"apple_pin.png";
-    recipe3.info = [NSArray arrayWithObjects:@"2 sausages", @"100 grams of mushrooms", @"2 rashers of bacon", @"2 eggs", @"150 grams of baked beans", @"Vegetable oil", nil];
-    
-    Tree *recipe4 = [Tree new];
-    recipe4.name = @"Hamburger";
-    recipe4.description = @"30 min";
-    recipe4.image = @"apple_pin.png";
-    recipe4.info = [NSArray arrayWithObjects:@"400g of ground beef", @"1/4 onion (minced)", @"1 tbsp butter", @"hamburger bun", @"1 teaspoon dry mustard", @"Salt and pepper", nil];
-    
-    Tree *recipe5 = [Tree new];
-    recipe5.name = @"Ham and Egg Sandwich";
-    recipe5.description = @"10 min";
-    recipe5.image = @"apple_pin.png";
-    recipe5.info = [NSArray arrayWithObjects:@"1 unsliced loaf (1 pound) French bread", @"4 tablespoons butter", @"2 tablespoons mayonnaise", @"8 thin slices deli ham", @"1 large tomato, sliced", @"1 small onion", @"8 eggs", @"8 slices cheddar cheese", nil];
-    
-    
-    trees = [NSArray arrayWithObjects:recipe1, recipe2, recipe3, recipe4, recipe5, nil];
-    
+    [database getTrees:^(NSArray *results, NSError *error) {
+
+        for (int i = 0; i < [results count]; i++) {
+            sgTree = [results objectAtIndex:i];
+            Tree *tree = [Tree new];
+            tree.name = sgTree.name;
+            tree.description = sgTree.description;
+            UIImage *img = sgTree.picture;
+            tree.image = img;
+            tree.info = [NSArray arrayWithObjects:@"1 unsliced loaf (1 pound) French bread", @"4 tablespoons butter", @"2 tablespoons mayonnaise", @"8 thin slices deli ham", @"1 large tomato, sliced", @"1 small onion", @"8 eggs", @"8 slices cheddar cheese", nil];
+            [treeArray addObject:tree];
+        }
+       trees = treeArray;
+       [self.tableView reloadData];
+       /*dispatch_async(dispatch_get_main_queue(), ^ {
+            [self.tableView reloadData];
+        });
+        //[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+    */
+    }];
+
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -93,8 +84,8 @@
         cell = [[TreeTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    // Display recipe in the table cell
-    Tree *tree = nil;
+    // Display tree in the table cell
+    Tree *tree;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         tree = [searchResults objectAtIndex:indexPath.row];
     } else {
@@ -102,7 +93,7 @@
     }
     
     cell.nameLabel.text = tree.name;
-    cell.thumbnailImageView.image = [UIImage imageNamed:tree.image];
+    cell.thumbnailImageView.image = tree.image;
     cell.prepTimeLabel.text = tree.description;
     
     return cell;
