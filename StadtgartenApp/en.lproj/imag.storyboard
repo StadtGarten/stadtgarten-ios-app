@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="i7x-g5-hh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="i7x-g5-hh1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -780,7 +780,7 @@
     <resources>
         <image name="add-2_44" width="22" height="22"/>
         <image name="appl_tree_sample.png" width="22" height="22"/>
-        <image name="bookmark.png" width="22" height="22"/>
+        <image name="bookmark.png" width="23" height="23"/>
         <image name="cross-hair.png" width="128" height="128"/>
         <image name="edit.png" width="22" height="22"/>
         <image name="list-2_44" width="22" height="22"/>
@@ -788,7 +788,7 @@
         <image name="logo_font" width="423" height="118"/>
         <image name="photo-frame.png" width="22" height="22"/>
         <image name="profile-1_44" width="22" height="22"/>
-        <image name="rate.png" width="22" height="22"/>
+        <image name="rate.png" width="27" height="27"/>
         <image name="tree_white" width="513" height="548"/>
     </resources>
     <color key="tintColor" red="0.015686274510000001" green="0.57647058819999997" blue="0.44705882349999998" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
@@ -800,7 +800,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="wED-mI-Qul"/>
         <segue reference="LmC-9d-aua"/>
-        <segue reference="GLN-Zh-qre"/>
-        <segue reference="E3h-S6-Tly"/>
+        <segue reference="0qN-oA-sXO"/>
+        <segue reference="fz1-5Y-KY7"/>
     </inferredMetricsTieBreakers>
 </document>
