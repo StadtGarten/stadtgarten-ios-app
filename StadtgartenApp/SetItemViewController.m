@@ -26,8 +26,8 @@
 @synthesize ddMenuShowButton;
 @synthesize imageView;
 
-// *newTree = [[StoreTreeData alloc] init];
 
+// only continue to OverviewController if the form is completely filled, else show alertView
 -(IBAction)shouldContinue:(id)sender{
     if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddMenuShowButton.titleLabel.text isEqualToString:@"Baumart wählen"] ){
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
@@ -37,22 +37,18 @@
                                             otherButtonTitles:nil];
        [alert show];
     }else{
+        // go to Overview- View
             [self performSegueWithIdentifier:@"showOverview" sender:self];
         }
     
 }
 
+// if segue "showOverview" is chosen, instantiate overviewController and set attributes to treeObject
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
    if([segue.identifier isEqualToString:@"showOverview"]){
        OverviewController *overviewController = (OverviewController *)segue.destinationViewController ;
-    //overviewController.name = nameTextField.text;
-    //overviewController.description = descriptionTextArea.text;
-    //overviewController.tags = ddMenuShowButton.titleLabel.text;
-    //overviewController.image = image;
        
     overviewController.image = self.tree.picture;
-    
-    
     self.tree.name = nameTextField.text;
     self.tree.description = descriptionTextArea.text;
     self.tree.tag = ddMenuShowButton.titleLabel.text;
@@ -94,7 +90,6 @@ shouldChangeTextInRange: (NSRange) range
 
 // Drop Down List for selecting Tags
 
-
 - (IBAction)ddMenuShow:(UIButton *)sender
 {
     if (sender.tag == 0) {
@@ -107,27 +102,14 @@ shouldChangeTextInRange: (NSRange) range
         [sender setTitle:@"Baumart wählen" forState:UIControlStateNormal];
     }
 }
+
+// set ButtonTitle to selected option
 - (IBAction)ddMenuSelectionMade:(UIButton *)sender
 {
     [self.ddMenuShowButton setTitle:sender.titleLabel.text forState:UIControlStateNormal];
-    //[self.ddMenuShowButton setTitle:@"▼" forState:UIControlStateNormal];
     self.ddMenuShowButton.tag = 0;
     self.ddMenu.hidden = YES;
-    //switch (sender.tag) {
-    //    case 1:
-            //self.view.backgroundColor = [UIColor redColor];
-     //       break;
-     //   case 2:
-            //self.view.backgroundColor = [UIColor blueColor];
-     //       break;
-     //   case 3:
-            //self.view.backgroundColor = [UIColor greenColor];
-      //      break;
-            
-     //   default:
-     //       break;
-    //}
-}
+    }
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

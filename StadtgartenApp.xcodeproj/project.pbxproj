@@ -41,6 +41,7 @@
 		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
 		702F48B7195476D400BF49BF /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 702F48B6195476D400BF49BF /* SGUser.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
+		703F14551957566300593B89 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
 		708B2FE6195032DA0075F53B /* SGTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 708B2FE5195032DA0075F53B /* SGTree.m */; };
 		7092DB90191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
 		7092DB92191A55B500190338 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB91191A55B500190338 /* CoreGraphics.framework */; };
@@ -525,8 +526,8 @@
 				3405602B19519A430057E46F /* OverviewController.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
 				341C15931950345E00690D42 /* SetItemViewController.m in Sources */,
+				703F14551957566300593B89 /* ProfileViewController.m in Sources */,
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
-				0488C3011947B90700EC00DE /* ProfileViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

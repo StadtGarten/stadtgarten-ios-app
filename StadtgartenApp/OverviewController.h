@@ -25,9 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *tagsLabel;
 
-@property NSString *name;
-@property NSString *description;
-@property NSString *tags;
 @property UIImage *image;
 
 @end

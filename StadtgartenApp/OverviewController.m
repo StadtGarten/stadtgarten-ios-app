@@ -22,7 +22,7 @@
 @synthesize imageView;
 
 
-
+// this method stores the data from the form into parse
 -(IBAction)storeData:(id)sender{
     // get FacebookUserID
     [[FBRequest requestForMe] startWithCompletionHandler:
@@ -30,20 +30,19 @@
          if (!error) {
              NSLog(@"User id %@",[aUser objectForKey:@"id"]);
 
-        
+             
+        // get data from treeObject
          Database *db = [[Database alloc] init];
-         //double latitude = 47.1;
-         //double longitude = 11.1;
-             UIImage *test = _image;
-         //[db writeTree:[aUser objectForKey:@"id"] baumname:_name tag:_tags beschreibung:_description bild:_image latitude: latitude longitude:longitude];
              
              [db writeTree:[aUser objectForKey:@"id"] baumname:self.tree.name tag:self.tree.tag beschreibung:self.tree.description bild:self.tree.picture latitude:self.tree.latitude longitude:self.tree.longitude];
+        // alertView that tree is sucessfully stored
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
                                                          message:@"Der Baum wurde gespeichert"
                                                         delegate:nil
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles:nil];
          [alert show];
+        // go to mapView
          [self performSegueWithIdentifier:@"showMapView" sender:self];
          }
      }];
@@ -87,16 +86,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //NSLog(@"%@", _name);
     nameLabel.text = self.tree.name;
     descriptionLabel.text = self.tree.description;
     tagsLabel.text = self.tree.tag;
     imageView.image = self.tree.picture;
-    //nameLabel.text = _name;
-    //descriptionLabel.text = _description;
-    //tagsLabel.text = _tags;
-    //imageView.image = _image;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -116,9 +110,4 @@
  }
  */
 
-//- (IBAction)doneSettingUpNewTree:(id)sender {
-    
-//    [self performSegueWithIdentifier:@"showMap" sender:sender];
-    
-//}
 @end
