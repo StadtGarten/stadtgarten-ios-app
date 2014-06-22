@@ -21,7 +21,7 @@
 @synthesize descriptionTextArea;
 @synthesize nameTextField;
 @synthesize image;
-@synthesize ddMenu, ddText;
+@synthesize ddMenu;
 @synthesize ddMenuShowButton;
 @synthesize imageView;
 
@@ -30,7 +30,7 @@
 -(IBAction)shouldContinue:(id)sender{
     if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddMenuShowButton.titleLabel.text isEqualToString:@"Baumart wählen"] ){
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
-                                                       message:@"Bitte fuellen Sie das Formular vollständig aus"
+                                                       message:@"Bitte füllen Sie das Formular vollständig aus"
                                                       delegate:self
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];
