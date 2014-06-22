@@ -17,6 +17,8 @@
 
 @implementation TreeDetailViewController
 
+Database *db;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,7 +41,7 @@
 
     [self registerForKeyboardNotifications];
     
-    Database *db = [[Database alloc] init];
+    db = [[Database alloc] init];
     ////////////////FIXME treeid +userid übergeben!!
     NSString* userid = self.treeObject.userid;
     NSString* treeid = self.treeObject.id;
@@ -162,7 +164,7 @@
     //Save Changes in DB
 }
 
--(void)bookmarkTree:(id)sender{
+-(IBAction)bookmarkTree:(id)sender{
     
     if (![FBSession activeSession].isOpen) {
         
@@ -174,7 +176,15 @@
         [theAlert show];
         
     }else{
-        
+        // get FacebookUserID
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError *error) {
+             if (!error) {
+                 NSLog(@"User id %@",[aUser objectForKey:@"id"]);
+                 
+                 
+             }
+         }];
     }
 }
 

@@ -267,13 +267,12 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="bookmark.png" id="bLH-rg-390"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MZL-Ja-lWa"/>
-                                    <barButtonItem image="rate.png" id="cG7-sL-f4F">
+                                    <barButtonItem image="bookmark.png" id="bLH-rg-390">
                                         <connections>
-                                            <action selector="showColorsActionSheet:" destination="tm3-ej-o9v" id="AFf-qt-YPk"/>
+                                            <action selector="bookmarkTree:" destination="tm3-ej-o9v" id="4MH-y0-jAg"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="MZL-Ja-lWa"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="8tQ-IF-Bte"/>
                                     <barButtonItem image="edit.png" id="HbB-DT-u3y">
                                         <connections>
@@ -421,7 +420,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cross-hair.png" translatesAutoresizingMaskIntoConstraints="NO" id="4gb-hi-pb5">
-                                <rect key="frame" x="136" y="231" width="49" height="47"/>
+                                <rect key="frame" x="136" y="270" width="49" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vy5-mb-qd7">
@@ -881,7 +880,6 @@
         <image name="logo_font" width="423" height="118"/>
         <image name="photo-frame.png" width="22" height="22"/>
         <image name="profile-1_44" width="22" height="22"/>
-        <image name="rate.png" width="27" height="27"/>
         <image name="tree_white" width="513" height="548"/>
     </resources>
     <color key="tintColor" red="0.015686274510000001" green="0.57647058819999997" blue="0.44705882349999998" alpha="0.65000000000000002" colorSpace="calibratedRGB"/>
@@ -895,5 +893,6 @@
         <segue reference="LmC-9d-aua"/>
         <segue reference="0qN-oA-sXO"/>
         <segue reference="fz1-5Y-KY7"/>
+        <segue reference="wED-mI-Qul"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -164,6 +164,30 @@
     }];
 };
 
+-(void)bookmarkTree:(NSString *)treeid user:(NSString *)userid {
+    PFQuery *query = [PFQuery queryWithClassName:@"UserClass"];
+    [query whereKey:@"fbId" equalTo:userid];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        
+        PFObject *userObject;
+        if (results.count > 0) {
+            userObject = results[0];
+            NSMutableArray *favouriteTrees = userObject[@"favouriteTrees"];
+            [favouriteTrees addObject:treeid];
+        } else {
+            userObject = [PFObject objectWithClassName:@"UserClass"];
+            userObject[@"fbId"] = userid;
+            userObject[@"favouriteTrees"] = [[NSMutableArray alloc] initWithObjects:treeid, nil];
+        }
+
+        [userObject saveInBackground];
+        
+    }];
+}
 
 -(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)rating{
     __block NSNumber* currentRating;
