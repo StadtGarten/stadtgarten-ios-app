@@ -295,7 +295,9 @@
         
         CLLocation *myLocation = location;
         CLLocation *treeLocation = [[CLLocation alloc] initWithLatitude:tree.latitude longitude:tree.longitude];
-        CLLocationDistance distance = [myLocation distanceFromLocation: treeLocation];
+        CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:myLocation.coordinate.latitude longitude:myLocation.coordinate.longitude];
+        CLLocationDistance distance = [currentLocation distanceFromLocation: treeLocation];
+        NSLog(@"distnace, %f", distance);
         callback([NSNumber numberWithDouble:distance], NULL);
     }];
 };

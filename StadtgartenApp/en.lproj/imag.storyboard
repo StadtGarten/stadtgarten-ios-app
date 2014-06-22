@@ -641,11 +641,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo-frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="fhd-0l-irm">
-                                <rect key="frame" x="192" y="71" width="108" height="100"/>
+                                <rect key="frame" x="192" y="71" width="108" height="104"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5a-KD-OyI">
-                                <rect key="frame" x="202" y="75" width="89" height="89"/>
+                                <rect key="frame" x="202" y="74" width="89" height="89"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -694,7 +694,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDa-5P-0FH">
-                                <rect key="frame" x="11" y="524" width="320" height="44"/>
+                                <rect key="frame" x="3" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Verwerfen" id="Acb-J8-ESs">
@@ -898,7 +898,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="LmC-9d-aua"/>
-        <segue reference="GLN-Zh-qre"/>
         <segue reference="nPe-A9-TWB"/>
         <segue reference="hd9-t3-d7m"/>
         <segue reference="fz1-5Y-KY7"/>
