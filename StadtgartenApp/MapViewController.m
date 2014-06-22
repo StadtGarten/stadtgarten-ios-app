@@ -108,6 +108,11 @@ NSArray *trees;
         [self setMarker];
         
         //NSLog(@"result Trees: %@ %@", [trees objectAtIndex:0], [results objectAtIndex:0]);
+        
+        
+        
+        [self setMapConfig];
+        
     }];
     
     //NSLog(@"Trees: %@", [trees objectAtIndex:@"tag"]);
@@ -130,6 +135,27 @@ NSArray *trees;
     _mapView.delegate = self;
     
     [self.view addSubview:_mapView];
+    
+}
+
+- (void)setMapConfig {
+
+    MKCoordinateRegion region;
+    
+    if(CENTER_IN_MUNICH) {
+        //NSLog(@"CENTER_IN_MUNICH");
+        region.center.latitude = lat;
+        region.center.longitude = lon;
+    }
+    
+    if(ZOOM) {
+        //NSLog(@"ZOOM");
+        region.span.latitudeDelta = 0.2;
+        region.span.longitudeDelta = 0.2;
+    }
+    
+    
+    [_mapView setRegion:region animated:YES];
     
 }
 
@@ -190,18 +216,7 @@ NSArray *trees;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    MKCoordinateRegion region;
-    
-    if(ZOOM) {
-        region.span.latitudeDelta = 0.1;
-        region.span.longitudeDelta = 0.1;
-    }
-    
-    if(CENTER_IN_MUNICH) {
-        region.center.latitude = lat;
-        region.center.longitude = lon;
-    }
-    [_mapView setRegion:region animated:YES];
+
 }
 
 

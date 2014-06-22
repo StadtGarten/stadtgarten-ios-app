@@ -7,9 +7,9 @@
 
 #import "TreeTableViewController.h"
 #import "TreeTableCell.h"
-#import "Tree.h"
 #import "TreeDetailViewController.h"
 #import "Database.h"
+#import "SGTree.h"
 
 @interface TreeTableViewController ()
 
@@ -33,13 +33,13 @@
 
         for (int i = 0; i < [results count]; i++) {
             sgTree = [results objectAtIndex:i];
-            Tree *tree = [Tree new];
+            /*Tree *tree = [Tree new];
             tree.name = sgTree.name;
             tree.description = sgTree.tag;
             UIImage *img = sgTree.picture;
             tree.image = img;
-            tree.info = [NSArray arrayWithObjects:@"1 unsliced loaf (1 pound) French bread", @"4 tablespoons butter", @"2 tablespoons mayonnaise", @"8 thin slices deli ham", @"1 large tomato, sliced", @"1 small onion", @"8 eggs", @"8 slices cheddar cheese", nil];
-            [treeArray addObject:tree];
+            tree.info = [NSArray arrayWithObjects:@"1 unsliced loaf (1 pound) French bread", @"4 tablespoons butter", @"2 tablespoons mayonnaise", @"8 thin slices deli ham", @"1 large tomato, sliced", @"1 small onion", @"8 eggs", @"8 slices cheddar cheese", nil];*/
+            [treeArray addObject:sgTree];
         }
        trees = treeArray;
        [self.tableView reloadData];
@@ -85,7 +85,7 @@
     }
     
     // Display tree in the table cell
-    Tree *tree;
+    SGTree *tree;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         tree = [searchResults objectAtIndex:indexPath.row];
     } else {
@@ -93,8 +93,8 @@
     }
     
     cell.nameLabel.text = tree.name;
-    cell.thumbnailImageView.image = tree.image;
-    cell.prepTimeLabel.text = tree.description;
+    cell.thumbnailImageView.image = tree.picture;
+    cell.prepTimeLabel.text = tree.tag;
     
     return cell;
 }
@@ -104,7 +104,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showTreeDetail"]) {
         NSIndexPath *indexPath = nil;
-        Tree *selectedTree = nil;
+        SGTree *selectedTree = nil;
         
         if (self.searchDisplayController.active) {
             indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
@@ -115,7 +115,7 @@
         }
         
         TreeDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.treeName = selectedTree;
+        destViewController.treeObject = selectedTree;
         
     }
 }
@@ -123,7 +123,7 @@
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSLog(@"filterContentForSearchText");
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"description contains[c] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"tag contains[c] %@", searchText];
     searchResults = [trees filteredArrayUsingPredicate:resultPredicate];
 }
 
