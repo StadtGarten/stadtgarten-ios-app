@@ -8,6 +8,8 @@
 
 #import <Parse/Parse.h>
 #import "SGTree.h"
+#import "SGUser.h"
+
 
 typedef void (^PFNumberResultBlock)(NSNumber* number, NSError *error);
 typedef void (^PFTreeResultBlock)(SGTree* tree, NSError *error);

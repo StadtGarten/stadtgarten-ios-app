@@ -29,6 +29,7 @@
 		56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */; };
 		56E7C5381952F32F008293D9 /* pear_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5371952F32F008293D9 /* pear_pin@2x.png */; };
 		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
+		702F48B7195476D400BF49BF /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 702F48B6195476D400BF49BF /* SGUser.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
 		708B2FE6195032DA0075F53B /* SGTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 708B2FE5195032DA0075F53B /* SGTree.m */; };
 		7092DB90191A55B500190338 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7092DB8F191A55B500190338 /* Foundation.framework */; };
@@ -112,6 +113,8 @@
 		56E7C5371952F32F008293D9 /* pear_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pear_pin@2x.png"; sourceTree = "<group>"; };
 		700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
+		702F48B5195476D400BF49BF /* SGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGUser.h; sourceTree = "<group>"; };
+		702F48B6195476D400BF49BF /* SGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGUser.m; sourceTree = "<group>"; };
 		70329A6D1941AE74002F7742 /* cross-hair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross-hair.png"; sourceTree = "<group>"; };
 		708B2FE4195032DA0075F53B /* SGTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTree.h; sourceTree = "<group>"; };
 		708B2FE5195032DA0075F53B /* SGTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTree.m; sourceTree = "<group>"; };
@@ -309,6 +312,8 @@
 				848875B819524A0200DFBEAD /* RateView.m */,
 				842877E919487E1700533407 /* Database.h */,
 				842877EA19487E1700533407 /* Database.m */,
+				702F48B5195476D400BF49BF /* SGUser.h */,
+				702F48B6195476D400BF49BF /* SGUser.m */,
 				7092DB99191A55B500190338 /* StadtgartenApp-Info.plist */,
 				7092DB9A191A55B500190338 /* InfoPlist.strings */,
 				341C15911950345E00690D42 /* SetItemViewController.h */,
@@ -466,6 +471,7 @@
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				848875B919524A0200DFBEAD /* RateView.m in Sources */,
 				708B2FE6195032DA0075F53B /* SGTree.m in Sources */,
+				702F48B7195476D400BF49BF /* SGUser.m in Sources */,
 				842877EB19487E1700533407 /* Database.m in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,

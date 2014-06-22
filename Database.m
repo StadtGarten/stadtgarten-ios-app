@@ -34,7 +34,31 @@
         NSArray *result = (NSArray *)trees;
         
         callback(result, NULL);
+        
+    }];
+};
 
+-(void)getUser:(NSString *)userid callback:(void(^)(SGUser * user))callback {
+    PFQuery *query = [PFQuery queryWithClassName:@"UserClass"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+            PFObject *user = evaluatedObject;
+            BOOL equal = [user[@"fbid"] isEqualToString:userid];
+            return equal;
+        }];
+        NSArray *filteredUsers = [results filteredArrayUsingPredicate:filter];
+        
+        SGUser * user;
+        if (filteredUsers.count > 0) {
+            user = filteredUsers[0];
+        } else {
+            // if no user was found, create a new one
+            user = [[SGUser alloc] init];
+        }
+        
+        callback(user);
+        
     }];
 };
 /*  Database * db=[[Database alloc]init];
@@ -44,22 +68,33 @@
  */
 
 -(void)getUserTrees:(NSString*)userid callback:(PFArrayResultBlock)callback {
-    //getAlltress filter for userid
-    
-    
     [self getTrees:^(NSArray *trees, NSError *error) {
         NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
             SGTree *tree = evaluatedObject;
             BOOL equal = [tree.userid isEqualToString:userid];
-            NSLog(@"Tree %@ %@ %@", userid, tree.userid, equal? @"YES" : @"NO");
             return equal;
         }];
         NSArray *filteredTrees = [trees filteredArrayUsingPredicate:filter];
         callback(filteredTrees, error);
     }];
-    
 };
 
+-(void)getUserFavourites:(NSString*)userid with:(PFArrayResultBlock)callback {
+    [self getTrees:^(NSArray *trees, NSError *error) {
+        [self getUser:userid callback:^void(SGUser *user) {
+            NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+//                SGTree *tree = evaluatedObject;
+//                BOOL equal = [tree.userId isEqualToString:userid];
+//                return equal;
+                
+                // todo, filter logic
+                return true;
+            }];
+            NSArray *filteredTrees = [trees filteredArrayUsingPredicate:filter];
+            callback(filteredTrees, error);
+        }];
+    }];
+}
 
 -(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude{
 

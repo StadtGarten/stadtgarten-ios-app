@@ -99,7 +99,7 @@ NSMutableArray* trees;
     }
     
 //    cell.textLabel.text
-    SGTree *tree = trees[indexPath.row];
+    SGTree *tree = tableData[indexPath.row];
     cell.textLabel.text = tree.name;
     
 //    @"TESTETSETUE";
