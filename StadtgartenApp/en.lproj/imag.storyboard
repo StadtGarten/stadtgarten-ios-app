@@ -696,17 +696,10 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ps4-pE-e0h"/>
-                                    <barButtonItem style="plain" id="H2d-Yr-WzI">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TbQ-F4-bQb">
-                                            <rect key="frame" x="231" y="6" width="73" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Speichern">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="storeData:" destination="eAk-O6-G3Z" eventType="touchUpInside" id="zKN-Cv-7JV"/>
-                                            </connections>
-                                        </button>
+                                    <barButtonItem title="Speichern" id="0zP-9K-MTb">
+                                        <connections>
+                                            <action selector="storeData:" destination="eAk-O6-G3Z" id="5W7-HX-gw3"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
