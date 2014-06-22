@@ -48,22 +48,33 @@
  */
 
 -(void)getUserTrees:(NSString*)userid callback:(PFArrayResultBlock)callback {
-    //getAlltress filter for userid
-    
-    
     [self getTrees:^(NSArray *trees, NSError *error) {
         NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
             SGTree *tree = evaluatedObject;
             BOOL equal = [tree.userid isEqualToString:userid];
-            NSLog(@"Tree %@ %@ %@", userid, tree.userid, equal? @"YES" : @"NO");
             return equal;
         }];
         NSArray *filteredTrees = [trees filteredArrayUsingPredicate:filter];
         callback(filteredTrees, error);
     }];
-    
 };
 
+-(void)getUserFavourites:(NSString*)userid with:(PFArrayResultBlock)callback {
+    [self getTrees:^(NSArray *trees, NSError *error) {
+        [self getUser:userid callback:^void(SGUser *user) {
+            NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+//                SGTree *tree = evaluatedObject;
+//                BOOL equal = [tree.userId isEqualToString:userid];
+//                return equal;
+                
+                // todo, filter logic
+                return true;
+            }];
+            NSArray *filteredTrees = [trees filteredArrayUsingPredicate:filter];
+            callback(filteredTrees, error);
+        }];
+    }];
+}
 
 -(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude{
 
