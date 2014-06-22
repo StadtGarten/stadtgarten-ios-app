@@ -264,13 +264,19 @@
 };
 
 -(void)getDistance:(NSString*)treeid location:(CLLocation*)location callback:(PFNumberResultBlock)callback{
+    
+    
     [self getTreeInfo:treeid callback:^(SGTree *tree, NSError *error){
+        
+        
         CLLocation *myLocation = location;
         CLLocation *treeLocation = [[CLLocation alloc] initWithLatitude:tree.latitude longitude:tree.longitude];
         CLLocationDistance distance = [myLocation distanceFromLocation: treeLocation];
         callback([NSNumber numberWithDouble:distance], NULL);
     }];
 };
+
+
 
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RateView.h"
+#import "SGTree.h"
 
 
 @interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, RateViewDelegate,UIAlertViewDelegate>
