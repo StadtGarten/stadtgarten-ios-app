@@ -132,11 +132,11 @@
 
     [treeObject saveInBackground];
 
-    /* AUFRUF: -database.h einbinden nicht vergessen! Bild einfügen
+    /* AUFRUF: -database.h einbinden nicht vergessen!
      
-     UIImage *temp = [UIImage imageNamed:@"Assets/tree.jpg"];
      Database * db=[[Database alloc]init];
-     [db writeTree:@"user" baumname:@"Apfelbaum1" tag:@"Apfel" beschreibung:@"Baum - toll" bild:temp];
+     UIImage *bild = [UIImage imageNamed:@"tree.jpg"];
+     [db writeTree:@"user" baumname:@"Birnbaum33" tag:@"Birne" beschreibung:@"text" bild:bild latitude:47.2 longitude:11.0];
      //[self.view addSubview:_navigationBar];
      */
 
@@ -167,6 +167,30 @@
     }];
 };
 
+-(void)bookmarkTree:(NSString *)treeid user:(NSString *)userid {
+    PFQuery *query = [PFQuery queryWithClassName:@"UserClass"];
+    [query whereKey:@"fbId" equalTo:userid];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        
+        PFObject *userObject;
+        if (results.count > 0) {
+            userObject = results[0];
+            NSMutableArray *favouriteTrees = userObject[@"favouriteTrees"];
+            [favouriteTrees addObject:treeid];
+        } else {
+            userObject = [PFObject objectWithClassName:@"UserClass"];
+            userObject[@"fbId"] = userid;
+            userObject[@"favouriteTrees"] = [[NSMutableArray alloc] initWithObjects:treeid, nil];
+        }
+
+        [userObject saveInBackground];
+        
+    }];
+}
 
 -(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)rating{
     __block NSNumber* currentRating;
@@ -267,13 +291,21 @@
 };
 
 -(void)getDistance:(NSString*)treeid location:(CLLocation*)location callback:(PFNumberResultBlock)callback{
+    
+    
     [self getTreeInfo:treeid callback:^(SGTree *tree, NSError *error){
+        
+        
         CLLocation *myLocation = location;
         CLLocation *treeLocation = [[CLLocation alloc] initWithLatitude:tree.latitude longitude:tree.longitude];
-        CLLocationDistance distance = [myLocation distanceFromLocation: treeLocation];
+        CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:myLocation.coordinate.latitude longitude:myLocation.coordinate.longitude];
+        CLLocationDistance distance = [currentLocation distanceFromLocation: treeLocation];
+        NSLog(@"distnace, %f", distance);
         callback([NSNumber numberWithDouble:distance], NULL);
     }];
 };
+
+
 
 
 @end
