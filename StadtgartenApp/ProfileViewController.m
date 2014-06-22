@@ -20,12 +20,7 @@ Database * db;
 
 NSArray *tableData;
 NSString *userId;
-
-SGTree* tree1;
-SGTree* tree2;
-SGTree* tree3;
-SGTree* tree4;
-NSMutableArray* trees;
+int selectedList = 1; // own trees or favorites
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +30,6 @@ NSMutableArray* trees;
     }
     return self;
 }
-
 
 - (void)viewDidLoad
 {
@@ -56,31 +50,38 @@ NSMutableArray* trees;
     [_profilePicture addGestureRecognizer:singleTap];
     
     
-    // Initalize table view
-    
-    // TODO REMOVE SAMPLE DATA
-//    tree1 = [[SGTree alloc] initWithName:@"Test1" description:@"blabla bla" tag:@"apfel" picture:@"aoheutnshaoens" latitude:0.1 longitude:0.1];
-//    tree2 = [[SGTree alloc] initWithName:@"Test2" description:@"blabla bla" tag:@"apfel" picture:@"aoheutnshaoens" latitude:0.1 longitude:0.1];
-//    tree3 = [[SGTree alloc] initWithName:@"Test3" description:@"blabla bla" tag:@"apfel" picture:@"aoheutnshaoens" latitude:0.1 longitude:0.1];
-//    tree4 = [[SGTree alloc] initWithName:@"Test4" description:@"blabla bla" tag:@"apfel" picture:@"aoheutnshaoens" latitude:0.1 longitude:0.1];
-//    trees = [[NSMutableArray alloc] initWithObjects:tree1, tree2, tree3, tree4, nil];
-////
-//    tableData = trees;
-//    self.tableView.dataSource = self;
-    
-    
     db = [[Database alloc]init];
     self.tableView.dataSource = self;
 
     
+    _segmentControl = [[UISegmentedControl alloc] init];
+    [self.segmentControl addTarget:self
+                         action:@selector(selectedControlChange:)
+               forControlEvents:UIControlEventValueChanged];
+    
+}
+- (IBAction)segmentedControlChanged:(UISegmentedControl *)sender {
+    
+    NSInteger clickedSegment = [sender selectedSegmentIndex];
+    
+    selectedList = (int)clickedSegment;
+    [self fetchTableData];
     
 }
 
 - (void) fetchTableData {
-    [db getUserTrees:userId callback:^(NSArray *objects, NSError *error) {
-        tableData = objects;
-        [self.tableView reloadData];
-    }];
+    if (selectedList == 0) {
+        [db getUserTrees:userId callback:^(NSArray *objects, NSError *error) {
+            tableData = objects;
+            [self.tableView reloadData];
+        }];
+    } else {
+        [db getUserFavourites:userId with:^(NSArray *objects, NSError *error) {
+            tableData = objects;
+            [self.tableView reloadData];
+        }];
+    }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

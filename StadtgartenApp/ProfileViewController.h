@@ -17,4 +17,8 @@
 @property (strong, nonatomic) IBOutlet FBLoginView *loginButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentControl;
+
+
+
 @end

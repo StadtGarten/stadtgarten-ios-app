@@ -29,16 +29,44 @@
             PFFile *imageFile = [treeObject objectForKey:@"bild"];
             [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 UIImage *bild = [UIImage imageWithData:data];
-                SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:bild rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
+                SGTree *tree = [[SGTree alloc] initWithId:treeObject.objectId user:treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:bild rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
                 [trees addObject:tree];
                 
                 if (i==(results.count-1)){
-                NSArray *result = (NSArray *)trees;
-                
-                callback(result, NULL);
+                    NSArray *result = (NSArray *)trees;
+                    callback(result, NULL);
                 }
             }];
         }
+        
+        NSArray *result = (NSArray *)trees;
+        
+        callback(result, NULL);
+        
+    }];
+};
+
+-(void)getUser:(NSString *)userid callback:(void(^)(SGUser * user))callback {
+    PFQuery *query = [PFQuery queryWithClassName:@"UserClass"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+            PFObject *user = evaluatedObject;
+            NSString *remoteFbId = user[@"fbId"];
+            BOOL equal = [remoteFbId isEqualToString:userid];
+            NSLog(@"Finding user %@ is %@: %f", remoteFbId, userid, (float)equal);
+            return equal;
+        }];
+        NSArray *filteredUsers = [results filteredArrayUsingPredicate:filter];
+        
+        SGUser * user;
+        if (filteredUsers.count > 0) {
+            user = [[SGUser alloc] initFromDict:filteredUsers[0] ];
+        } else {
+            // if no user was found, create a new one
+            user = [[SGUser alloc] init];
+        }
+        callback(user);
     }];
 };
 /*  Database * db=[[Database alloc]init];
@@ -63,12 +91,17 @@
     [self getTrees:^(NSArray *trees, NSError *error) {
         [self getUser:userid callback:^void(SGUser *user) {
             NSPredicate *filter = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-//                SGTree *tree = evaluatedObject;
-//                BOOL equal = [tree.userId isEqualToString:userid];
-//                return equal;
                 
-                // todo, filter logic
-                return true;
+                SGTree *tree = evaluatedObject;
+                
+                for (int pos = 0; pos < user.favouriteTrees.count; pos++) {
+                    NSString *favouriteTreeId = user.favouriteTrees[pos];
+                    NSLog(@"Find favourite tree %@ in %@", favouriteTreeId, tree.id);
+                    if ([tree.id isEqualToString:favouriteTreeId]) {
+                        return true;
+                    }
+                }
+                return false;
             }];
             NSArray *filteredTrees = [trees filteredArrayUsingPredicate:filter];
             callback(filteredTrees, error);
@@ -123,7 +156,7 @@
             PFFile *imageFile = [treeObject objectForKey:@"bild"];
             [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     UIImage *bild = [UIImage imageWithData:data];
-                    SGTree *tree = [[SGTree alloc] initWithUser: treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:bild rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
+                SGTree *tree = [[SGTree alloc]initWithId:treeObject.objectId user:treeObject[@"userid"] name:treeObject[@"baumname"] description: treeObject[@"beschreibung"] tag:treeObject[@"tag"] picture:bild rating:treeObject[@"rating"] latitude:latitude longitude:longitude];
             //name = tree[@"baumname"];
                     callback(tree, NULL);
             }];

@@ -20,6 +20,7 @@ typedef void (^PFTreeResultBlock)(SGTree* tree, NSError *error);
 
 -(void)getTrees:(PFArrayResultBlock)callback;
 -(void)getUserTrees:(NSString*)userid callback:(PFArrayResultBlock)callback;
+-(void)getUserFavourites:(NSString*)userid with:(PFArrayResultBlock)callback;
 -(void)getTreeInfo:(NSString*)treeid callback:(PFTreeResultBlock)callback;
 
 -(void)getRaterCount:(NSString*)treeid callback:(PFIntegerResultBlock)callback;

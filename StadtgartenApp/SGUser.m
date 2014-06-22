@@ -19,7 +19,8 @@
 
 -(id)initFromDict:(NSDictionary *)dict {
     if (self = [self init]) {
-        self.fbId = dict[@"fbid"];
+        self.fbId = dict[@"fbId"];
+        _favouriteTrees = dict[@"favouriteTrees"];
     }
     return self;
 }
