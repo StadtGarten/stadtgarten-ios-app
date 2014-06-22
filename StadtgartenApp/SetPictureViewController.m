@@ -9,6 +9,7 @@
 
 #import "SetPictureViewController.h"
 #import "SetItemViewController.h"
+#import "SGTree.h"
 
 @interface SetPictureViewController ()
 
@@ -39,7 +40,11 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"showDescription"]){
         SetItemViewController *itemController = (SetItemViewController *)segue.destinationViewController ;
-        itemController.image= imageView.image;
+        self.tree.picture = imageView.image;
+        //itemController.image= imageView.image;
+        itemController.image = self.tree.picture;
+        itemController.tree = self.tree;
+        
     }
 }
 

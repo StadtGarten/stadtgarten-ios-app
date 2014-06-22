@@ -18,6 +18,8 @@
 
 @implementation TreeDetailViewController
 
+Database *db;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,10 +42,10 @@
 
     [self registerForKeyboardNotifications];
     
-    Database *db = [[Database alloc] init];
+    db = [[Database alloc] init];
     ////////////////FIXME treeid +userid übergeben!!
-    NSString* userid = @"user1";
-    NSString* treeid = @"zDtjT5lRWH";
+    NSString* userid = self.treeObject.userid;
+    NSString* treeid = self.treeObject.id;
     CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:47.1 longitude:11.0];;
     //[db getTreeRating:^(NSArray *trees, NSError *error);
     __block NSNumber* treeRating;
@@ -165,7 +167,7 @@
     //Save Changes in DB
 }
 
--(void)bookmarkTree:(id)sender{
+-(IBAction)bookmarkTree:(id)sender{
     
     if (![FBSession activeSession].isOpen) {
         
@@ -177,7 +179,15 @@
         [theAlert show];
         
     }else{
-        
+        // get FacebookUserID
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError *error) {
+             if (!error) {
+                 NSLog(@"User id %@",[aUser objectForKey:@"id"]);
+                 
+                 
+             }
+         }];
     }
 }
 
@@ -308,20 +318,30 @@ shouldChangeTextInRange: (NSRange) range
 }
 
 -(void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
-    Database* db = [[Database alloc ]  init ];
-    //
-    NSString* userid = @"user1";
-    NSString* treeid = @"zDtjT5lRWH";
-    NSNumber* newRating = [NSNumber numberWithFloat:rating];
-    [db rateTree:userid treeid:treeid rating:newRating];
-    [db getRaterCount:treeid callback:^(int number, NSError *error){
-        self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
-    }];
-    [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
-        self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
-    }];
+    if (![FBSession activeSession].isOpen) {
+        
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Rating"
+                                                           message:@"Sie müssen eingeloggt sein um den Baum zu bewerten."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Abbrechen"
+                                                 otherButtonTitles:@"zum Login", nil];
+        [theAlert show];
+    }
+    else{
+        Database* db = [[Database alloc ]  init ];
+        //
+        NSString* userid = self.treeObject.userid;
+        NSString* treeid = self.treeObject.id;
+        NSNumber* newRating = [NSNumber numberWithFloat:rating];
+        [db rateTree:userid treeid:treeid rating:newRating];
+        [db getRaterCount:treeid callback:^(int number, NSError *error){
+            self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
+        }];
+        [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
+            self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
+        }];
     //[rateView setNeedsLayout];
-
+    }
 }
 
 #pragma mark - UIAlert method implementation

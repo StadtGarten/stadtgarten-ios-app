@@ -9,6 +9,7 @@
 #import "SetItemViewController.h"
 #import "OverviewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SGTree.h"
 
 @interface SetItemViewController ()
 
@@ -21,7 +22,7 @@
 @synthesize descriptionTextArea;
 @synthesize nameTextField;
 @synthesize image;
-@synthesize ddMenu, ddText;
+@synthesize ddMenu;
 @synthesize ddMenuShowButton;
 @synthesize imageView;
 
@@ -30,7 +31,7 @@
 -(IBAction)shouldContinue:(id)sender{
     if([nameTextField.text isEqualToString:@""] || [descriptionTextArea.text isEqualToString: @""] || [ddMenuShowButton.titleLabel.text isEqualToString:@"Baumart wählen"] ){
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fehler"
-                                                       message:@"Bitte fuellen Sie das Formular vollständig aus"
+                                                       message:@"Bitte füllen Sie das Formular vollständig aus"
                                                       delegate:self
                                             cancelButtonTitle:@"OK"
                                             otherButtonTitles:nil];
@@ -44,10 +45,19 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
    if([segue.identifier isEqualToString:@"showOverview"]){
        OverviewController *overviewController = (OverviewController *)segue.destinationViewController ;
-    overviewController.name = nameTextField.text;
-    overviewController.description = descriptionTextArea.text;
-    overviewController.tags = ddMenuShowButton.titleLabel.text;
-    overviewController.image = image;
+    //overviewController.name = nameTextField.text;
+    //overviewController.description = descriptionTextArea.text;
+    //overviewController.tags = ddMenuShowButton.titleLabel.text;
+    //overviewController.image = image;
+       
+    overviewController.image = self.tree.picture;
+    
+    
+    self.tree.name = nameTextField.text;
+    self.tree.description = descriptionTextArea.text;
+    self.tree.tag = ddMenuShowButton.titleLabel.text;
+    overviewController.tree = self.tree;
+
     }
 
 }

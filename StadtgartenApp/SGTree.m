@@ -17,7 +17,7 @@
         self.name = @"";
         self.description = @"";
         self.tag = @"";
-//        self.picture = @"";
+        self.picture = nil;
         self.latitude = 0;
         self.longitude = 0;
     }
