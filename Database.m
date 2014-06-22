@@ -129,11 +129,11 @@
 
     [treeObject saveInBackground];
 
-    /* AUFRUF: -database.h einbinden nicht vergessen! Bild einfügen
+    /* AUFRUF: -database.h einbinden nicht vergessen!
      
-     UIImage *temp = [UIImage imageNamed:@"Assets/tree.jpg"];
      Database * db=[[Database alloc]init];
-     [db writeTree:@"user" baumname:@"Apfelbaum1" tag:@"Apfel" beschreibung:@"Baum - toll" bild:temp];
+     UIImage *bild = [UIImage imageNamed:@"tree.jpg"];
+     [db writeTree:@"user" baumname:@"Birnbaum33" tag:@"Birne" beschreibung:@"text" bild:bild latitude:47.2 longitude:11.0];
      //[self.view addSubview:_navigationBar];
      */
 
