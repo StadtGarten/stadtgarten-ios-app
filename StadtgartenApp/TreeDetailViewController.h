@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "RateView.h"
+#import "SGTree.h"
 
 
 @interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, RateViewDelegate,UIAlertViewDelegate>
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *raterCount;
 
+@property (strong, nonatomic) IBOutlet SGTree *treeObject;
 @property (strong, nonatomic) IBOutlet UITextField *treeName;
 @property (strong, nonatomic) IBOutlet UITextField *treeTag;
 @property (strong, nonatomic) IBOutlet UILabel *treeDistance;
