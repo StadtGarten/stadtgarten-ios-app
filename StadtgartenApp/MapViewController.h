@@ -14,6 +14,10 @@
 @interface MapViewController : UIViewController< MKMapViewDelegate>
 
 - (void) centerOn:(CLLocationCoordinate2D)location;
+- (IBAction)onProfileTap:(id)sender;
+- (IBAction)onTreeListTap:(id)sender;
+- (IBAction)onAddTreeTap:(id)sender;
+
 
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
