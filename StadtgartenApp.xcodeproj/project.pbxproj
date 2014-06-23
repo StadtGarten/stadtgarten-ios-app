@@ -447,6 +447,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = StadtGarten;
 				TargetAttributes = {
+					7092DB8B191A55B500190338 = {
+						DevelopmentTeam = C7PLUFBAM2;
+					};
 					7092DBAB191A55B500190338 = {
 						TestTargetID = 7092DB8B191A55B500190338;
 					};
@@ -664,7 +667,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Ka Wi (4E2CTFC2ED)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tobiaskeinath/Documents/FacebookSDK,
@@ -689,6 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: de.stadtgarten.StadtgartenApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tobiaskeinath/Documents/FacebookSDK,

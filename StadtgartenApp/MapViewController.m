@@ -39,7 +39,7 @@ NSMutableArray *markers;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getTreeFromDatabase];
+    //[self getTreeFromDatabase];
     
 }
 
@@ -115,7 +115,7 @@ NSMutableArray *markers;
         region.span.latitudeDelta = 0.2;
         region.span.longitudeDelta = 0.2;
     }
-    [_mapView setRegion:region animated:YES];
+    //[_mapView setRegion:region animated:YES];
 }
 
 -(void)centerOn:(CLLocationCoordinate2D)location {
@@ -191,7 +191,7 @@ NSMutableArray *markers;
     
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
+    [self getTreeFromDatabase];    
 }
 
 
