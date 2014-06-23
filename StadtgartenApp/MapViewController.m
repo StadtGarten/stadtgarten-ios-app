@@ -10,6 +10,8 @@
 
 
 #import "MapViewController.h"
+#import "TreeDetailViewController.h"
+#import "SGTree.h"
 
 @interface MapViewController ()
 
@@ -140,10 +142,44 @@ NSMutableArray *markers;
         myAnnotation.image = [UIImage imageNamed:@"pear_pin.png"];
     }
     
+    myAnnotation.canShowCallout= YES;
+    //UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[detailButton setImage:[UIImage imageNamed:@"apple_pin.png"] forState: UIControlStateNormal];
+    //annotationView.rightCalloutAccessoryView = detailButton;
+    myAnnotation.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return myAnnotation;
 }
 
 
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+   // TreeDetailViewController *treeDetailViewController = [[TreeDetailViewController alloc]initWithNibName:@"treeDetailView" bundle:nil];
+    //[self.navigationController pushViewController:treeDetailViewController animated:YES];
+    int index = 0;
+    for (int i = 0; i < markers.count - 1; i++) {
+        MKPointAnnotation *pA = markers[i];
+        if (pA.coordinate.latitude == view.annotation.coordinate.latitude && pA.coordinate.longitude == view.annotation.coordinate.longitude) {
+        
+        index = i;
+        }
+    
+    }
+    SGTree* tree = [trees objectAtIndex:index];
+    [self performSegueWithIdentifier:@"treeDetailView" sender:tree];
+
+};
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"treeDetailView"])
+    {
+        //SGTree* tree = sender;
+        //[segue.destinationViewController setObject:@"NlU2yP62C9" forKey:@"treeObject"];
+        TreeDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.treeObject = sender;
+    }
+}
+    
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 

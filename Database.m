@@ -222,7 +222,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
         else {
-            int count = [results count];
+            int count = (int)[results count];
             for (int i = 0; i < count; i++){
                 PFObject* treeobject = results[i];
                 //falls der user bereits abgestimmt hat, count reduzieren, damit nicht immer höhere anzahl
