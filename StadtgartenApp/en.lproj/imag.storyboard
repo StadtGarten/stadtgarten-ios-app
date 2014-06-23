@@ -766,6 +766,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qKv-XW-yFk">
+                                <rect key="frame" x="200" y="536" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -773,6 +777,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="7T6-eP-4Fx" id="ciK-6c-254"/>
                         <outlet property="imageView" destination="qRe-oM-X1Y" id="agr-SP-08C"/>
+                        <outlet property="loadingIndicator" destination="qKv-XW-yFk" id="e1J-tc-dbs"/>
                         <outlet property="nameLabel" destination="bw3-do-ZoT" id="D44-Rv-vPY"/>
                         <outlet property="speicherKnopf" destination="0zP-9K-MTb" id="AZM-ab-Vo0"/>
                         <outlet property="tagsLabel" destination="Bdr-Gj-QrL" id="4NI-Ga-wcr"/>

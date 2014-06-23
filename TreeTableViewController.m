@@ -21,10 +21,13 @@
     NSArray *searchResults;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self getDataFromDatabase];
 }
 
@@ -50,7 +53,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 //ruckgabe der anzahl der felder
