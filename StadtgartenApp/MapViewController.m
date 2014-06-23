@@ -67,7 +67,7 @@ NSMutableArray *markers;
     
     markers = [[NSMutableArray alloc] initWithCapacity:numberOfElements];
     
-    for(int i=0; i<(numberOfElements-1); i++) {
+    for(int i=0; i<(numberOfElements); i++) {
         SGTree* tree = [trees objectAtIndex:i];
         annotationCoord.latitude = tree.latitude;
         annotationCoord.longitude = tree.longitude;
