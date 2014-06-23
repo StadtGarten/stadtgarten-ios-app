@@ -73,8 +73,10 @@ NSString* userid;
         self.rateView.rating = rating;
     }];
     [db getDistance:treeid location:myLocation callback:^(NSNumber *distance, NSError *error){
+
     
         self.treeDistance.text = [NSString stringWithFormat:@"%.02fkm", [distance floatValue]/1000];
+
     }];
     
     [[FBRequest requestForMe] startWithCompletionHandler:
@@ -329,7 +331,7 @@ shouldChangeTextInRange: (NSRange) range
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *fbUser, NSError *error) {
              userid = [fbUser objectForKey:@"id"];
-             //userid = @"testuser1";
+             //userid = @"testuser2";
              NSString* treeid = self.treeObject.id;
              NSNumber* newRating = [NSNumber numberWithFloat:rating];
              [db rateTree:userid treeid:treeid rating:newRating];

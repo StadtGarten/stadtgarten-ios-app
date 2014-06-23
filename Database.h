@@ -16,8 +16,10 @@ typedef void (^PFTreeResultBlock)(SGTree* tree, NSError *error);
 
 @interface Database : PFQuery
 
--(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude;
+
 -(void)updateTree: (NSString*)treeid baumname:(NSString*)baumname beschreibung:(NSString*)beschreibung;
+
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude callback:(void(^)())callback;
 -(void)bookmarkTree:(NSString *)treeid user:(NSString *)userid callback:(void(^)(BOOL succeeded, NSError *error))callback;
 
 -(void)getTrees:(PFArrayResultBlock)callback;

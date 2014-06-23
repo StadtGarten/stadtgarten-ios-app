@@ -11,6 +11,7 @@
 #import "SGTree.h"
 
 @interface OverviewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *speicherKnopf;
 
 @end
 
@@ -24,6 +25,8 @@
 
 // this method stores the data from the form into parse
 -(IBAction)storeData:(id)sender{
+    self.speicherKnopf.enabled = false;
+    
     // get FacebookUserID
     [[FBRequest requestForMe] startWithCompletionHandler:
      ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError *error) {
@@ -31,19 +34,26 @@
              NSLog(@"User id %@",[aUser objectForKey:@"id"]);
 
              
-        // get data from treeObject
-         Database *db = [[Database alloc] init];
+             // get data from treeObject
+             Database *db = [[Database alloc] init];
              
-             [db writeTree:[aUser objectForKey:@"id"] baumname:self.tree.name tag:self.tree.tag beschreibung:self.tree.description bild:self.tree.picture latitude:self.tree.latitude longitude:self.tree.longitude];
-        // alertView that tree is sucessfully stored
-         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                         message:@"Der Baum wurde gespeichert"
-                                                        delegate:nil
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles:nil];
-         [alert show];
-        // go to mapView
-         [self performSegueWithIdentifier:@"showMapView" sender:self];
+             
+             [db writeTree:[aUser objectForKey:@"id"] baumname:self.tree.name tag:self.tree.tag beschreibung:self.tree.description bild:self.tree.picture latitude:self.tree.latitude longitude:self.tree.longitude callback:^{
+                 
+                 // alertView that tree is sucessfully stored
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                                 message:@"Der Baum wurde gespeichert"
+                                                                delegate:nil
+                                                       cancelButtonTitle:@"OK"
+                                                       otherButtonTitles:nil];
+                 [alert show];
+                 // go to mapView
+                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                     [self.navigationController popToRootViewControllerAnimated:YES];
+                 });
+                 
+             }];
+             
          }
      }];
     

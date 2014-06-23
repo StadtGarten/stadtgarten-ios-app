@@ -20,11 +20,13 @@
 
 @implementation MapViewController
 
+const int ZOOM_FACTOR = 11;
+
 const int LATITUDE = 0;
 const int LONGITUDE = 1;
 
-const bool CENTER_IN_MUNICH = YES;
-const bool ZOOM = YES;
+const bool CENTER_IN_MUNICH = NO;
+const bool ZOOM = NO;
 
 //GPS of Munich
 float lat = 48.133;
@@ -40,10 +42,13 @@ NSMutableArray *markers;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self getTreeFromDatabase];
-    
+    self.locationManager = [CLLocationManager new];
+    // Highest accuracy to place the tree
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    [self.locationManager startUpdatingLocation];
+    [self setMap];
+    [self startTrackingLocation:_mapView];
 }
-
 
 //Holt die Daten aus der Datenbank
 - (void)getTreeFromDatabase {
@@ -52,9 +57,9 @@ NSMutableArray *markers;
     
     [database getTrees:^(NSArray *results, NSError *error) {
         trees = results;
-        [self setMap];
-        [self setMapConfig];
+        //[self setMapConfig];
         [self setMarker];
+        //[self.mapView reloadInputViews];
     }];
 }
 
@@ -68,7 +73,7 @@ NSMutableArray *markers;
     
     markers = [[NSMutableArray alloc] initWithCapacity:numberOfElements];
     
-    for(int i=0; i<(numberOfElements-1); i++) {
+    for(int i=0; i<(numberOfElements); i++) {
         SGTree* tree = [trees objectAtIndex:i];
         annotationCoord.latitude = tree.latitude;
         annotationCoord.longitude = tree.longitude;
@@ -82,9 +87,26 @@ NSMutableArray *markers;
         [markers addObject:annotationPoint];
         [_mapView addAnnotation:annotationPoint];
 
+        //to location
+        //[self.locationManager setDelegate:self];
+
     }
 }
 
+
+//
+// Location Update Functions
+//
+
+- (IBAction)startTrackingLocation:(id)sender {
+    [self.locationManager setDelegate:self];
+}
+
+- (void) stopTrackingLocation
+{
+    [self.locationManager setDelegate:nil];
+    //self.myLocationButton.enabled = true;
+}
 
 //setzt die Map
 - (void)setMap {
@@ -156,6 +178,9 @@ NSMutableArray *markers;
     }
 }
 
+- (IBAction)setCurrentLocation:(id)sender {
+}
+
 -(BOOL)isLoggedInFacebook{
     
     return [FBSession activeSession].isOpen;
@@ -184,7 +209,7 @@ NSMutableArray *markers;
     MKAnnotationView *myAnnotation =  [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
 
     int index = 0;
-    for (int i = 0; i < markers.count - 1; i++) {
+    for (int i = 0; i < markers.count; i++) {
         MKPointAnnotation *pA = markers[i];
         if (pA.coordinate.latitude == annotation.coordinate.latitude && pA.coordinate.longitude == annotation.coordinate.longitude) {
             
@@ -211,7 +236,7 @@ NSMutableArray *markers;
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     int index = 0;
-    for (int i = 0; i < markers.count - 1; i++) {
+    for (int i = 0; i < markers.count; i++) {
         MKPointAnnotation *pA = markers[i];
         if (pA.coordinate.latitude == view.annotation.coordinate.latitude && pA.coordinate.longitude == view.annotation.coordinate.longitude) {
         
@@ -236,7 +261,17 @@ NSMutableArray *markers;
     
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getTreeFromDatabase];    
+    [self getTreeFromDatabase];
+    //[self startTrackingLocation];
+}
+
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *lastLocation = locations.lastObject;
+    [_mapView setCenterCoordinate:lastLocation.coordinate zoomLevel:(int)ZOOM_FACTOR animated:true];
+    [self stopTrackingLocation];
 }
 
 
