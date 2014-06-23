@@ -190,10 +190,12 @@ shouldChangeTextInRange: (NSRange) range
     // If active text field is hidden by keyboard, scroll it so it's visible
     // Your app might not need or want this behavior.
     CGRect aRect = self.view.frame;
+    
     aRect.size.height -= kbSize.height;
     if (!CGRectContainsPoint(aRect, self.descriptionTextArea.frame.origin) ) {
         [self.scrollView scrollRectToVisible:   self.descriptionTextArea.frame animated:YES];
     }
+    
 }
 
 // Called when the UIKeyboardWillHideNotification is sent
