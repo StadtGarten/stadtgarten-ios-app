@@ -15,7 +15,7 @@
 
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property NSInteger tree;
+//@property NSInteger tree;
 
 
 
