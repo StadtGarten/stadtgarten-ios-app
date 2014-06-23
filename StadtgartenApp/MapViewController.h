@@ -13,6 +13,8 @@
 
 @interface MapViewController : UIViewController< MKMapViewDelegate>
 
+- (void) centerOn:(CLLocationCoordinate2D)location;
+
 @property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 //@property NSInteger tree;

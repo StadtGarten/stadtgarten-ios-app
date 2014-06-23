@@ -261,6 +261,16 @@
                                         <rect key="frame" x="18" y="17" width="140" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F87-cI-sgu">
+                                        <rect key="frame" x="18" y="17" width="140" height="135"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goToMap:" destination="tm3-ej-o9v" eventType="touchUpInside" id="b3g-dZ-noH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="CWn-mS-fw7" secondAttribute="bottom" id="Vs6-tn-je8"/>
@@ -324,7 +334,7 @@
                         <outlet property="statusLabel" destination="WnK-Pi-RnJ" id="Fdf-qV-3ju"/>
                         <outlet property="treeDistance" destination="n7G-nM-HnS" id="Cyh-2h-dav"/>
                         <outlet property="treeName" destination="1F4-kG-BmS" id="xQo-Zm-AIj"/>
-                        <outlet property="treePicture" destination="okD-og-Jeu" id="G5P-Nw-3UQ"/>
+                        <outlet property="treePicture" destination="okD-og-Jeu" id="oPL-hG-ZvJ"/>
                         <outlet property="treeTag" destination="6fl-O9-ESU" id="Wgc-43-FA3"/>
                         <segue destination="0yl-cU-Q04" kind="push" identifier="showSetPicture" id="LmC-9d-aua"/>
                         <segue destination="HX4-ni-7C2" kind="push" identifier="showSetLocation" id="fz1-5Y-KY7"/>
@@ -891,7 +901,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="hd9-t3-d7m"/>
         <segue reference="LmC-9d-aua"/>
-        <segue reference="igN-vE-6Hd"/>
-        <segue reference="E3h-S6-Tly"/>
+        <segue reference="0qN-oA-sXO"/>
+        <segue reference="fz1-5Y-KY7"/>
     </inferredMetricsTieBreakers>
 </document>

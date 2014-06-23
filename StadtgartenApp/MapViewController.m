@@ -118,6 +118,13 @@ NSMutableArray *markers;
     [_mapView setRegion:region animated:YES];
 }
 
+-(void)centerOn:(CLLocationCoordinate2D)location {
+    MKCoordinateRegion region;
+    region.center = location;
+    region.span.latitudeDelta = 0.01;
+    region.span.longitudeDelta = 0.01;
+    [self.mapView setRegion:region animated:YES];
+}
 
 //setzt das entsprechende Bild, ordnet den Pins ein Bild zu
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation

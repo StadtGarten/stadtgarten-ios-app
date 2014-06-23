@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "Database.h"
+#import "MapViewController.h"
 
 
 @interface TreeDetailViewController ()
@@ -21,6 +22,7 @@
 @implementation TreeDetailViewController
 
 Database *db;
+CLLocationCoordinate2D treeLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +61,9 @@ Database *db;
         self.description.text = tree.description;
         UIImage *img = tree.picture;
         self.treePicture.image = img;
+        treeLocation.latitude = tree.latitude;
+        treeLocation.longitude = tree.longitude;
+        
     }];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
         self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
@@ -70,10 +75,7 @@ Database *db;
         self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
     }];
     
-    
-    
-    
-    self.treeName.delegate = self;
+
     self.treeTag.delegate = self;
     // graphical tweaks
     _description.clipsToBounds = YES;
@@ -117,6 +119,15 @@ Database *db;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goToMap:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    MapViewController *mapView = self.navigationController.viewControllers[0];
+    
+    [mapView centerOn:treeLocation];
+    
 }
 
 -(void)tapOnTreePicture{
