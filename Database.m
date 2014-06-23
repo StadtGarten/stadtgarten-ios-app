@@ -112,7 +112,7 @@
     }];
 }
 
--(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude{
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude callback:(void(^)())callback {
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
     treeObject[@"userid"] = userid;
@@ -131,7 +131,10 @@
     treeObject[@"location"] = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
 
     [treeObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        // call callback
+        callback();
         
+
         /*
         // Send a notification to all devices subscribed to the "Trees" channel.
         PFPush *push = [[PFPush alloc] init];
