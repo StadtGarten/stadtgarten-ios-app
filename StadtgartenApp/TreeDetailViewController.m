@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "Database.h"
+#import "MapViewController.h"
 
 
 @interface TreeDetailViewController ()
@@ -60,6 +61,9 @@ NSString* userid;
         self.description.text = tree.description;
         UIImage *img = tree.picture;
         self.treePicture.image = img;
+        treeLocation.latitude = tree.latitude;
+        treeLocation.longitude = tree.longitude;
+        
     }];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
         self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
@@ -131,6 +135,15 @@ NSString* userid;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goToMap:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    MapViewController *mapView = self.navigationController.viewControllers[0];
+    
+    [mapView centerOn:treeLocation];
+    
 }
 
 -(void)tapOnTreePicture{
