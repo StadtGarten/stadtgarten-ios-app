@@ -41,9 +41,7 @@ NSMutableArray *markers;
 {
     [super viewDidLoad];
     //[self getTreeFromDatabase];
-    
 }
-
 
 //Holt die Daten aus der Datenbank
 - (void)getTreeFromDatabase {
@@ -55,6 +53,7 @@ NSMutableArray *markers;
         [self setMap];
         [self setMapConfig];
         [self setMarker];
+        [self.mapView reloadInputViews];
     }];
 }
 
