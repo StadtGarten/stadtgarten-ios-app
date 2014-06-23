@@ -22,6 +22,7 @@
 @implementation TreeDetailViewController
 
 Database *db;
+CLLocationCoordinate2D treeLocation;
 NSString* userid;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
