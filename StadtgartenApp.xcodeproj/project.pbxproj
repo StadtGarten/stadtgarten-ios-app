@@ -28,10 +28,11 @@
 		049E1CBE19576524002BC0B0 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBD19576524002BC0B0 /* gallery.png */; };
 		049E1CC0195766F0002BC0B0 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBF195766F0002BC0B0 /* arrow_right.png */; };
 		049E1CC219576702002BC0B0 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CC119576702002BC0B0 /* arrow_right@2x.png */; };
-		3405602B19519A430057E46F /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3405602A19519A430057E46F /* OverviewController.m */; };
-		341C15931950345E00690D42 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
-		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		5608CF3F19583FEB00E83405 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
+		5608CF4019584FE400E83405 /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3405602A19519A430057E46F /* OverviewController.m */; };
+		5608CF411958504000E83405 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
+		5608CF421958555C00E83405 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
+		5608CF431958576600E83405 /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		5676F2E0193F4CDD003846F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */; };
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
 		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
@@ -41,7 +42,6 @@
 		56E7C5341952F23D008293D9 /* apple_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5331952F23D008293D9 /* apple_pin@2x.png */; };
 		56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */; };
 		56E7C5381952F32F008293D9 /* pear_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5371952F32F008293D9 /* pear_pin@2x.png */; };
-		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
 		702F48B7195476D400BF49BF /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 702F48B6195476D400BF49BF /* SGUser.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
 		703F14551957566300593B89 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
@@ -518,6 +518,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5608CF431958576600E83405 /* SetPictureViewController.m in Sources */,
+				848875C21952C9FC00DFBEAD /* TreeDetailViewController.m in Sources */,
+				5608CF421958555C00E83405 /* MKMapView+ZoomLevel.m in Sources */,
+				5608CF411958504000E83405 /* SetItemViewController.m in Sources */,
+				5608CF4019584FE400E83405 /* OverviewController.m in Sources */,
 				5608CF3F19583FEB00E83405 /* TreeTableViewController.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				848875B919524A0200DFBEAD /* RateView.m in Sources */,
@@ -531,9 +536,7 @@
 				048E6DAD195884A70005DBB0 /* TreeDetailViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
 				56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */,
-				3405602B19519A430057E46F /* OverviewController.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
-				341C15931950345E00690D42 /* SetItemViewController.m in Sources */,
 				703F14551957566300593B89 /* ProfileViewController.m in Sources */,
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,

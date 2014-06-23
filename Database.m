@@ -137,7 +137,7 @@
         [push setChannel:@"Trees"];
         
         
-        NSString *message = [@"Neuer Baum hochgeladen. Sorte: " stringByAppendingString:treeObject[@"Tag"]];
+        NSString *message = [@"Neuer Baum hochgeladen. Sorte: " stringByAppendingString:treeObject[@"tag"]];
         
         [push setMessage:message];
         [push sendPushInBackground];
