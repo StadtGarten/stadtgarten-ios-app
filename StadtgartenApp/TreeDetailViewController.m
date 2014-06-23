@@ -73,7 +73,8 @@ NSString* userid;
         self.rateView.rating = rating;
     }];
     [db getDistance:treeid location:myLocation callback:^(NSNumber *distance, NSError *error){
-        self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
+    
+        self.treeDistance.text = [NSString stringWithFormat:@"%.02fkm", [distance floatValue]/1000];
     }];
     
     [[FBRequest requestForMe] startWithCompletionHandler:
@@ -84,39 +85,31 @@ NSString* userid;
              
              UIImage *img = [UIImage imageNamed:@"edit.png"];
              UIImage* imageForRendering = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-             self.editButton.image = imageForRendering;
-             self.editButton.tintColor = [UIColor grayColor];
-             self.editButton.enabled = NO;
+
              
          }
      }];
     
     
     self.treeName.delegate = self;
-    self.treeTag.delegate = self;
+  
     // graphical tweaks
     _description.clipsToBounds = YES;
     _description.layer.cornerRadius = 4.0f;
     
     _treeName.clipsToBounds = YES;
     _treeName.layer.cornerRadius = 4.0f;
-
-    _treeTag.clipsToBounds = YES;
-    _treeTag.layer.cornerRadius = 4.0f;
-    
-    _locationBGView.clipsToBounds = YES;
-    _locationBGView.layer.cornerRadius = 4.0f;
-    
     
     // Register taps on tree pricture and location
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnTreePicture)];
+   /* UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnTreePicture)];
     singleTap.numberOfTapsRequired = 1;
-    [_treePicture addGestureRecognizer:singleTap];
+    [_treePicture addGestureRecognizer:singleTap];*/
     
+    /*
      UITapGestureRecognizer *singleTapLocation = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnLaction)];
     singleTapLocation.numberOfTapsRequired = 1;
     [_treeDistance addGestureRecognizer:singleTapLocation];
-    
+    */
     
     [self updateBookmarkStatus];
 }
@@ -147,11 +140,6 @@ NSString* userid;
     
 }
 
--(void)tapOnTreePicture{
-    NSLog(@"Tap on TreePicture");
-    [self performSegueWithIdentifier:@"showSetPicture" sender:self];
-}
-
 -(void)tapOnLaction{
     NSLog(@"Tap on Location");
     [self performSegueWithIdentifier:@"showSetLocation" sender:self];
@@ -159,24 +147,15 @@ NSString* userid;
 
 //Change background when editing and make the elements editable
 - (IBAction)tapEdit:(id)sender {
-             if (![FBSession activeSession].isOpen) {
-             
-             UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
-                                                                message:@"Sie müssen eingeloggt sein um den Baum zu bearbeiten."
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Abbrechen"
-                                                      otherButtonTitles:@"zum Login", nil];
-             [theAlert show];
-             
+    self.editButton.enabled=NO;
+    if (![FBSession activeSession].isOpen) {
+        [self connectWithFacebook];
+        
         }else{
              
              self.description.editable = YES;
-             _treePicture.userInteractionEnabled = YES;
-             _treeTag.enabled = YES;
              _treeName.enabled=YES;
-             _treeDistance.userInteractionEnabled = YES;
-             
-             
+            
              [_backgroundView setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1]];
              [_doneButton setHidden:NO];
              
@@ -187,27 +166,22 @@ NSString* userid;
 - (IBAction)doneEditing:(id)sender {
     [self.view endEditing:YES];
     self.description.editable = NO;
-    _treePicture.userInteractionEnabled = NO;
-    _treeTag.enabled = YES;
-    _treeName.enabled=YES;
-    _treeDistance.userInteractionEnabled = YES;
+    _treeName.enabled=NO;
+     self.editButton.enabled=YES;
     [_backgroundView setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     [_doneButton setHidden:YES];
     
     //Save Changes in DB
+    
+     db = [[Database alloc] init];
+    [db updateTree:self.treeObject.id baumname:self.treeName.text beschreibung:self.description.text];
+    
 }
 
 -(IBAction)bookmarkTree:(id)sender{
     
     if (![FBSession activeSession].isOpen) {
-        
-        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
-                                                           message:@"Sie müssen eingeloggt sein um den Baum zu bookmarken."
-                                                          delegate:self
-                                                 cancelButtonTitle:@"Abbrechen"
-                                                 otherButtonTitles:@"zum Login", nil];
-        [theAlert show];
-        
+        [self connectWithFacebook];
     }else{
         // get FacebookUserID
         [[FBRequest requestForMe] startWithCompletionHandler:
@@ -300,18 +274,6 @@ shouldChangeTextInRange: (NSRange) range
         return NO;
     }
     return YES;
-}
-
-- (IBAction)showRatingActionSheet:(id)sender{
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Bewerten Sie diesen Baum:"
-                                                             delegate:self
-                                                    cancelButtonTitle:@"Abbrechen"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"1 Stern", @"2 Sterne", @"3 Sterne", @"4 Sterne", @"5 Sterne", nil];
-    
-    [actionSheet showInView:self.view];
-    actionSheet.tag = 100;
 }
 
 #pragma mark - UIActionSheet method implementation

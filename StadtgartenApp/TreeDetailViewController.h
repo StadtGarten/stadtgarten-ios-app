@@ -18,7 +18,6 @@
 
 - (IBAction)bookmarkTree:(id)sender;
 
-- (IBAction)showRatingActionSheet:(id)sender;
 - (void) connectWithFacebook;
 
 
@@ -31,7 +30,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *treeName;
 @property (strong, nonatomic) IBOutlet UITextField *treeTag;
 @property (strong, nonatomic) IBOutlet UILabel *treeDistance;
-@property (strong, nonatomic) IBOutlet UIView *locationBGView;
 @property (strong, nonatomic) IBOutlet UITextView *description;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
