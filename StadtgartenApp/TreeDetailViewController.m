@@ -366,7 +366,7 @@ shouldChangeTextInRange: (NSRange) range
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *fbUser, NSError *error) {
              userid = [fbUser objectForKey:@"id"];
-             //userid = @"testuser1";
+             //userid = @"testuser2";
              NSString* treeid = self.treeObject.id;
              NSNumber* newRating = [NSNumber numberWithFloat:rating];
              [db rateTree:userid treeid:treeid rating:newRating];

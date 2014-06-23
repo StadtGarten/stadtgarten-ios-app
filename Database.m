@@ -204,16 +204,16 @@
     }];
 }
 
--(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)newUserRating{
+-(void)rateTree:(NSString*)userid treeid:(NSString*)treeid rating:(NSNumber*)newRating{
     __block NSNumber* currentTreeRating;
     __block NSNumber* newTreeRating;
     __block NSNumber* userRating;
     __block NSNumber* raterCount;
-    __block float sum;
+    __block float sum = 0.0;
     __block Boolean alreadyRated = false;
     __block PFObject *object;
-    __block int newRater;
-    __block int ratingsCount;
+    __block int newRater = 0;
+    __block int ratingsCount = 0;
     [self getTreeInfo:treeid callback:^(SGTree *tree, NSError *error){
         currentTreeRating = tree.rating;
         //alle ratingsabfragen
@@ -227,55 +227,53 @@
             }
             else {
                 ratingsCount = (int)[results count];
+                newRater = 1;
+                sum = ([currentTreeRating floatValue] * ratingsCount) + [newRating floatValue];
                 for (int i = 0; i < ratingsCount; i++){
                     PFObject* treeobject = results[i];
                     //falls der user bereits abgestimmt hat, count reduzieren, damit nicht immer höhere anzahl
                     if ([treeobject[@"userid"] isEqualToString: userid])
                     {
+                        alreadyRated = true;
                         userRating = treeobject[@"rating"];
                         object = treeobject;
-                        alreadyRated = true;
                         newRater = 0;
                         //count = count - 1;
                         //save userrating
-                        object[@"rating"] = newUserRating;
+                        object[@"rating"] = newRating;
                         [object saveInBackground];
-                        sum = ([currentTreeRating floatValue] * ratingsCount) - [userRating floatValue] + [newUserRating floatValue];
+                        sum = ([currentTreeRating floatValue] * ratingsCount) - [userRating floatValue] + [newRating floatValue];
+                        break;
                     }
-                    else{
-                        newRater = 1;
-                        sum = ([currentTreeRating floatValue] * ratingsCount) + [newUserRating floatValue];
-                    }
-                
+                }
                 raterCount = [NSNumber numberWithInt:ratingsCount];
                 newTreeRating = @(sum/([raterCount floatValue]+newRater));
-                
                 //save userrating, if new rating
-                }
                 if (!alreadyRated){
                     PFObject *newUserRating = [PFObject objectWithClassName:@"Ratings"];
                     PFRelation *relation = [newUserRating relationforKey:@"treeid"];
                     [relation addObject:[PFObject objectWithoutDataWithClassName:@"TreeObject" objectId:treeid]];
                     newUserRating[@"userid"] = userid;
-                    newUserRating[@"rating"] = newUserRating;
+                    newUserRating[@"rating"] = newRating;
                     [newUserRating saveInBackground];
                 }
-            }
-            
-            //save treerating
-            PFQuery *treeQuery = [PFQuery queryWithClassName:@"TreeObject"];
-            [treeQuery whereKey:@"objectId" equalTo:treeid];
-            [treeQuery findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
-                if (error) {
-                    NSLog(@"Error: %@ %@", error, [error userInfo]);
-                }
-                else{
-                    PFObject* tree = [results firstObject];
-                    tree[@"rating"] = newTreeRating;
-                    [tree saveInBackground];
                 
-                }
-            }];
+                
+                //save treerating
+                PFQuery *treeQuery = [PFQuery queryWithClassName:@"TreeObject"];
+                [treeQuery whereKey:@"objectId" equalTo:treeid];
+                [treeQuery findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+                    if (error) {
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    }
+                    else{
+                        PFObject* tree = [results firstObject];
+                        tree[@"rating"] = newTreeRating;
+                        [tree saveInBackground];
+                        
+                    }
+                }];
+            }
         }];
     }];
 };
