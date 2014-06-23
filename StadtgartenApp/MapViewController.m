@@ -12,6 +12,7 @@
 #import "MapViewController.h"
 #import "TreeDetailViewController.h"
 #import "SGTree.h"
+#import "SGAppDelegate.h"
 
 @interface MapViewController ()
 
@@ -125,6 +126,50 @@ NSMutableArray *markers;
     region.span.longitudeDelta = 0.01;
     [self.mapView setRegion:region animated:YES];
 }
+
+- (IBAction)onProfileTap:(id)sender {
+    
+   if ([self isLoggedInFacebook ]) {
+    [self performSegueWithIdentifier:@"showProfile" sender:self];
+    }
+   else{
+       [self connectWithFacebook];
+   }
+}
+
+- (IBAction)onTreeListTap:(id)sender {
+    if ([self isLoggedInFacebook ]) {
+        [self performSegueWithIdentifier:@"showTreeList" sender:self];
+    }
+    else{
+        [self connectWithFacebook];
+    }
+}
+
+- (IBAction)onAddTreeTap:(id)sender {
+    
+    if ([self isLoggedInFacebook ]) {
+        [self performSegueWithIdentifier:@"showAddTree" sender:self];
+    }
+    else{
+        [self connectWithFacebook];
+    }
+}
+
+-(BOOL)isLoggedInFacebook{
+    
+    return [FBSession activeSession].isOpen;
+}
+
+- (void) connectWithFacebook {
+    // The user has initiated a login, so call the openSession method
+    // and show the login UI if necessary << Only if user has never
+    // logged in or ir requesting new permissions.
+    SGAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate openSessionWithAllowLoginUI:YES];
+}
+
+
 
 //setzt das entsprechende Bild, ordnet den Pins ein Bild zu
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
