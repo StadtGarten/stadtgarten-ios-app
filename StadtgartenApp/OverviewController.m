@@ -11,6 +11,7 @@
 #import "SGTree.h"
 
 @interface OverviewController ()
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *speicherKnopf;
 
 @end
 
@@ -24,6 +25,8 @@
 
 // this method stores the data from the form into parse
 -(IBAction)storeData:(id)sender{
+    self.speicherKnopf.enabled = false;
+    
     // get FacebookUserID
     [[FBRequest requestForMe] startWithCompletionHandler:
      ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *aUser, NSError *error) {
@@ -33,6 +36,7 @@
              
              // get data from treeObject
              Database *db = [[Database alloc] init];
+             
              
              [db writeTree:[aUser objectForKey:@"id"] baumname:self.tree.name tag:self.tree.tag beschreibung:self.tree.description bild:self.tree.picture latitude:self.tree.latitude longitude:self.tree.longitude callback:^{
                  

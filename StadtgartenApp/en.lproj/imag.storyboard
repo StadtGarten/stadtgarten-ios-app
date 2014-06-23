@@ -780,6 +780,7 @@
                         <outlet property="descriptionLabel" destination="7T6-eP-4Fx" id="ciK-6c-254"/>
                         <outlet property="imageView" destination="qRe-oM-X1Y" id="agr-SP-08C"/>
                         <outlet property="nameLabel" destination="bw3-do-ZoT" id="D44-Rv-vPY"/>
+                        <outlet property="speicherKnopf" destination="0zP-9K-MTb" id="AZM-ab-Vo0"/>
                         <outlet property="tagsLabel" destination="Bdr-Gj-QrL" id="4NI-Ga-wcr"/>
                         <segue destination="pgQ-g5-dAC" kind="push" identifier="showMapView" id="hd9-t3-d7m"/>
                     </connections>
