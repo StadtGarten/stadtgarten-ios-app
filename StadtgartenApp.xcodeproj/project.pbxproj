@@ -27,10 +27,10 @@
 		049E1CBE19576524002BC0B0 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBD19576524002BC0B0 /* gallery.png */; };
 		049E1CC0195766F0002BC0B0 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBF195766F0002BC0B0 /* arrow_right.png */; };
 		049E1CC219576702002BC0B0 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CC119576702002BC0B0 /* arrow_right@2x.png */; };
-		04F7BD6B19530178007B5E94 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
 		3405602B19519A430057E46F /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3405602A19519A430057E46F /* OverviewController.m */; };
 		341C15931950345E00690D42 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
 		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
+		5608CF3F19583FEB00E83405 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
 		5676F2E0193F4CDD003846F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */; };
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
 		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
@@ -524,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5608CF3F19583FEB00E83405 /* TreeTableViewController.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				848875B919524A0200DFBEAD /* RateView.m in Sources */,
 				708B2FE6195032DA0075F53B /* SGTree.m in Sources */,
@@ -536,7 +537,6 @@
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
 				56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */,
-				04F7BD6B19530178007B5E94 /* TreeTableViewController.m in Sources */,
 				56780F161952CD9C007218C8 /* Tree.m in Sources */,
 				3405602B19519A430057E46F /* OverviewController.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
