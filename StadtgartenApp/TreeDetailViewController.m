@@ -73,7 +73,7 @@ NSString* userid;
         self.rateView.rating = rating;
     }];
     [db getDistance:treeid location:myLocation callback:^(NSNumber *distance, NSError *error){
-        self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
+        self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]/1000];
     }];
     
     [[FBRequest requestForMe] startWithCompletionHandler:
