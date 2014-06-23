@@ -151,21 +151,31 @@ NSMutableArray *markers;
     } else if([tr.tag isEqual: @"Birne"]) {
         myAnnotation.image = [UIImage imageNamed:@"pear_pin.png"];
     }
-
-    annotationView.canShowCallout= YES;
+    
+    myAnnotation.canShowCallout= YES;
     //UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //[detailButton setImage:[UIImage imageNamed:@"apple_pin.png"] forState: UIControlStateNormal];
     //annotationView.rightCalloutAccessoryView = detailButton;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    return annotationView;
+    myAnnotation.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    return myAnnotation;
 }
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    TreeDetailViewController *treeDetailViewController = [[TreeDetailViewController alloc]initWithNibName:@"treeDetailView" bundle:nil];
+   // TreeDetailViewController *treeDetailViewController = [[TreeDetailViewController alloc]initWithNibName:@"treeDetailView" bundle:nil];
     //[self.navigationController pushViewController:treeDetailViewController animated:YES];
-    [self performSegueWithIdentifier:@"treeDetailView" sender:self];
+    int index = 0;
+    for (int i = 0; i < markers.count - 1; i++) {
+        MKPointAnnotation *pA = markers[i];
+        if (pA.coordinate.latitude == view.annotation.coordinate.latitude && pA.coordinate.longitude == view.annotation.coordinate.longitude) {
+        
+        index = i;
+        }
+    
+    }
+    SGTree* tree = [trees objectAtIndex:index];
+    [self performSegueWithIdentifier:@"treeDetailView" sender:tree];
 
 };
 
@@ -173,10 +183,10 @@ NSMutableArray *markers;
 {
     if ([segue.identifier isEqualToString:@"treeDetailView"])
     {
-        SGTree *tree = [[SGTree alloc]initWithId:@"NlU2yP62C9" user:@"userid" name:@"apfelbaum" description:@"beschreibung" tag:@"Apfel" picture:[UIImage imageNamed:@"tree.jpg"] rating:0 latitude:47.1 longitude:11.1];
+        //SGTree* tree = sender;
         //[segue.destinationViewController setObject:@"NlU2yP62C9" forKey:@"treeObject"];
         TreeDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.treeObject = tree;
+        destViewController.treeObject = sender;
     }
 }
     
