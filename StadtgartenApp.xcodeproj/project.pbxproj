@@ -23,25 +23,25 @@
 		04869DD219573768005F9A43 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 04869DD119573768005F9A43 /* logo.png */; };
 		0489C26519472DEB009BD670 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C26419472DEB009BD670 /* LoginViewController.m */; };
 		0489C26719473CFD009BD670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489C26619473CFD009BD670 /* Images.xcassets */; };
+		048E6DAD195884A70005DBB0 /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B6DD41952D82D009FC517 /* TreeDetailViewController.m */; };
 		049E1CBC19576512002BC0B0 /* gallery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBB19576512002BC0B0 /* gallery@2x.png */; };
 		049E1CBE19576524002BC0B0 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBD19576524002BC0B0 /* gallery.png */; };
 		049E1CC0195766F0002BC0B0 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBF195766F0002BC0B0 /* arrow_right.png */; };
 		049E1CC219576702002BC0B0 /* arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CC119576702002BC0B0 /* arrow_right@2x.png */; };
-		04F7BD6B19530178007B5E94 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
-		3405602B19519A430057E46F /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3405602A19519A430057E46F /* OverviewController.m */; };
-		341C15931950345E00690D42 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
-		34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
+		5608CF3F19583FEB00E83405 /* TreeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F051952C5C2007218C8 /* TreeTableViewController.m */; };
+		5608CF4019584FE400E83405 /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3405602A19519A430057E46F /* OverviewController.m */; };
+		5608CF411958504000E83405 /* SetItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 341C15921950345E00690D42 /* SetItemViewController.m */; };
+		5608CF421958555C00E83405 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
+		5608CF431958576600E83405 /* SetPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3263C193DF219008B1D2F /* SetPictureViewController.m */; };
 		5676F2E0193F4CDD003846F0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5676F2DF193F4CDD003846F0 /* FacebookSDK.framework */; };
 		5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */; };
 		56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2B19238FF200FEDFDA /* MapViewController.m */; };
-		56780F161952CD9C007218C8 /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F151952CD9C007218C8 /* Tree.m */; };
 		56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F181952CDC0007218C8 /* TreeTableCell.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		56E7C52E1952E911008293D9 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C52C1952E911008293D9 /* imag.storyboard */; };
 		56E7C5341952F23D008293D9 /* apple_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5331952F23D008293D9 /* apple_pin@2x.png */; };
 		56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */; };
 		56E7C5381952F32F008293D9 /* pear_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5371952F32F008293D9 /* pear_pin@2x.png */; };
-		700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */; };
 		702F48B7195476D400BF49BF /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 702F48B6195476D400BF49BF /* SGUser.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
 		703F14551957566300593B89 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
@@ -77,7 +77,6 @@
 		848875BD19524F3E00DFBEAD /* star_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 848875BA19524F3E00DFBEAD /* star_empty.png */; };
 		848875BE19524F3E00DFBEAD /* star_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 848875BB19524F3E00DFBEAD /* star_half.png */; };
 		848875BF19524F3E00DFBEAD /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = 848875BC19524F3E00DFBEAD /* star-full.png */; };
-		848875C21952C9FC00DFBEAD /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848875C11952C9FC00DFBEAD /* TreeDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +126,6 @@
 		5676F2E1193F4D7E003846F0 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		56780F041952C5C2007218C8 /* TreeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableViewController.h; sourceTree = "<group>"; };
 		56780F051952C5C2007218C8 /* TreeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTableViewController.m; sourceTree = "<group>"; };
-		56780F141952CD9C007218C8 /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
-		56780F151952CD9C007218C8 /* Tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tree.m; sourceTree = "<group>"; };
 		56780F171952CDC0007218C8 /* TreeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableCell.h; sourceTree = "<group>"; };
 		56780F181952CDC0007218C8 /* TreeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeTableCell.m; sourceTree = "<group>"; };
 		56B53D2A19238FF200FEDFDA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -181,8 +178,6 @@
 		848875BA19524F3E00DFBEAD /* star_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_empty.png; sourceTree = "<group>"; };
 		848875BB19524F3E00DFBEAD /* star_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_half.png; sourceTree = "<group>"; };
 		848875BC19524F3E00DFBEAD /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-full.png"; sourceTree = "<group>"; };
-		848875C11952C9FC00DFBEAD /* TreeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreeDetailViewController.m; sourceTree = "<group>"; };
-		8491A24A1952F6EB00F5A6A3 /* TreeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TreeDetailViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,8 +258,6 @@
 		56780EEB194F0226007218C8 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				56780F141952CD9C007218C8 /* Tree.h */,
-				56780F151952CD9C007218C8 /* Tree.m */,
 				56780F041952C5C2007218C8 /* TreeTableViewController.h */,
 				56780F051952C5C2007218C8 /* TreeTableViewController.m */,
 				56780F171952CDC0007218C8 /* TreeTableCell.h */,
@@ -378,8 +371,6 @@
 				0461FE81193F19250005251D /* AuthentificationViewController.m */,
 				700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */,
 				700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */,
-				8491A24A1952F6EB00F5A6A3 /* TreeDetailViewController.h */,
-				848875C11952C9FC00DFBEAD /* TreeDetailViewController.m */,
 				3405602919519A430057E46F /* OverviewController.h */,
 				3405602A19519A430057E46F /* OverviewController.m */,
 			);
@@ -452,6 +443,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = StadtGarten;
 				TargetAttributes = {
+					7092DB8B191A55B500190338 = {
+						DevelopmentTeam = C7PLUFBAM2;
+					};
 					7092DBAB191A55B500190338 = {
 						TestTargetID = 7092DB8B191A55B500190338;
 					};
@@ -524,6 +518,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5608CF431958576600E83405 /* SetPictureViewController.m in Sources */,
+				848875C21952C9FC00DFBEAD /* TreeDetailViewController.m in Sources */,
+				5608CF421958555C00E83405 /* MKMapView+ZoomLevel.m in Sources */,
+				5608CF411958504000E83405 /* SetItemViewController.m in Sources */,
+				5608CF4019584FE400E83405 /* OverviewController.m in Sources */,
+				5608CF3F19583FEB00E83405 /* TreeTableViewController.m in Sources */,
 				7092DBA5191A55B500190338 /* StadtgartenApp.xcdatamodeld in Sources */,
 				848875B919524A0200DFBEAD /* RateView.m in Sources */,
 				708B2FE6195032DA0075F53B /* SGTree.m in Sources */,
@@ -532,15 +532,11 @@
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
 				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
 				700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */,
-				848875C21952C9FC00DFBEAD /* TreeDetailViewController.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
+				048E6DAD195884A70005DBB0 /* TreeDetailViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
 				56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */,
-				04F7BD6B19530178007B5E94 /* TreeTableViewController.m in Sources */,
-				56780F161952CD9C007218C8 /* Tree.m in Sources */,
-				3405602B19519A430057E46F /* OverviewController.m in Sources */,
 				56780EE7194EE8EF007218C8 /* MapViewController.m in Sources */,
-				341C15931950345E00690D42 /* SetItemViewController.m in Sources */,
 				703F14551957566300593B89 /* ProfileViewController.m in Sources */,
 				0489C26519472DEB009BD670 /* LoginViewController.m in Sources */,
 				7092DB9E191A55B500190338 /* main.m in Sources */,
@@ -670,6 +666,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tobiaskeinath/Documents/FacebookSDK,
@@ -684,6 +682,7 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -694,6 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: de.stadtgarten.StadtgartenApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tobiaskeinath/Documents/FacebookSDK,
@@ -708,6 +708,7 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

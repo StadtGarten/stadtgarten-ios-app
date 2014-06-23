@@ -36,7 +36,7 @@
                     NSArray *result = (NSArray *)trees;
                     callback(result, NULL);
                 }
-                NSLog(@"Database: %@", treeObject);
+                //NSLog(@"Database: %@", treeObject);
             }];
         }
         
@@ -112,7 +112,7 @@
     }];
 }
 
--(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude{
+-(void)writeTree:(NSString*)userid baumname:(NSString*)baumname tag:(NSString*)tag beschreibung:(NSString*)beschreibung bild:(UIImage*)bild latitude:(double)latitude longitude:(double)longitude callback:(void(^)())callback {
 
     PFObject *treeObject = [PFObject objectWithClassName:@"TreeObject"];
     treeObject[@"userid"] = userid;
@@ -130,7 +130,33 @@
     treeObject[@"rating"] = @0.0;
     treeObject[@"location"] = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
 
-    [treeObject saveInBackground];
+    [treeObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        // call callback
+        callback();
+        
+
+        /*
+        // Send a notification to all devices subscribed to the "Trees" channel.
+        PFPush *push = [[PFPush alloc] init];
+        [push setChannel:@"Trees"];
+        
+        
+        NSString *message = [@"Neuer Baum hochgeladen. Sorte: " stringByAppendingString:treeObject[@"tag"]];
+        
+        [push setMessage:message];
+        [push sendPushInBackground];
+         */
+        
+        // Create our Installation query
+        PFQuery *pushQuery = [PFInstallation query];
+        [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+        
+        // Send push notification to query
+        NSString *message = [@"Neuer Baum hochgeladen. Sorte: " stringByAppendingString:treeObject[@"tag"]];
+        [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                       withMessage:message];
+                
+    }];
 
     /* AUFRUF: -database.h einbinden nicht vergessen!
      

@@ -25,33 +25,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self getDataFromDatabase];
+}
+
+
+//gets the tree data from database
+- (void)getDataFromDatabase
+{
     Database *database = [[Database alloc] init];
     __block SGTree *sgTree;
     __block NSMutableArray *treeArray = [[NSMutableArray alloc] init];
     
     [database getTrees:^(NSArray *results, NSError *error) {
-
+        
         for (int i = 0; i < [results count]; i++) {
             sgTree = [results objectAtIndex:i];
-            /*Tree *tree = [Tree new];
-            tree.name = sgTree.name;
-            tree.description = sgTree.tag;
-            UIImage *img = sgTree.picture;
-            tree.image = img;
-            tree.info = [NSArray arrayWithObjects:@"1 unsliced loaf (1 pound) French bread", @"4 tablespoons butter", @"2 tablespoons mayonnaise", @"8 thin slices deli ham", @"1 large tomato, sliced", @"1 small onion", @"8 eggs", @"8 slices cheddar cheese", nil];*/
             [treeArray addObject:sgTree];
         }
-       trees = treeArray;
-       [self.tableView reloadData];
-       /*dispatch_async(dispatch_get_main_queue(), ^ {
-            [self.tableView reloadData];
-        });
-        //[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
-    */
+        trees = treeArray;
+        [self.tableView reloadData];
     }];
-
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,6 +53,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//ruckgabe der anzahl der felder
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
@@ -69,6 +64,7 @@
     }
 }
 
+//ruckgabe der hohe eines feldes
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 71;
@@ -79,7 +75,7 @@
     static NSString *CellIdentifier = @"CustomTableCell";
     TreeTableCell *cell = (TreeTableCell *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    // Configure
     if (cell == nil) {
         cell = [[TreeTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
@@ -92,6 +88,7 @@
         tree = [trees objectAtIndex:indexPath.row];
     }
     
+    //show labels and image
     cell.nameLabel.text = tree.name;
     cell.thumbnailImageView.image = tree.picture;
     cell.prepTimeLabel.text = tree.tag;
@@ -100,7 +97,7 @@
 }
 
 
-
+//Ausgewaehltes Item weiergeben und naechsten View aufrufen
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showTreeDetail"]) {
         NSIndexPath *indexPath = nil;
@@ -120,6 +117,7 @@
     }
 }
 
+//Filtern
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     NSLog(@"filterContentForSearchText");

@@ -9,6 +9,4 @@
 
 @interface TreeTableViewController : UITableViewController
 
-//@property (nonatomic, strong) UITableView *tableView;
-
 @end
