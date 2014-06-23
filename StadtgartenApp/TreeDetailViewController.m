@@ -83,10 +83,7 @@ NSString* userid;
          NSString* fbid = [fbUser objectForKey:@"id"];
          if (![fbid isEqual: userid]) {
              
-             UIImage *img = [UIImage imageNamed:@"edit.png"];
-             UIImage* imageForRendering = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-
-             
+             self.editButton.enabled = NO;
          }
      }];
     
@@ -110,6 +107,8 @@ NSString* userid;
     singleTapLocation.numberOfTapsRequired = 1;
     [_treeDistance addGestureRecognizer:singleTapLocation];
     */
+    
+
     
     [self updateBookmarkStatus];
 }
@@ -148,6 +147,7 @@ NSString* userid;
 //Change background when editing and make the elements editable
 - (IBAction)tapEdit:(id)sender {
     self.editButton.enabled=NO;
+    self.treePictureButton.enabled = NO;
     if (![FBSession activeSession].isOpen) {
         [self connectWithFacebook];
         
@@ -167,6 +167,7 @@ NSString* userid;
     [self.view endEditing:YES];
     self.description.editable = NO;
     _treeName.enabled=NO;
+      self.treePictureButton.enabled = YES;
      self.editButton.enabled=YES;
     [_backgroundView setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1]];
     [_doneButton setHidden:YES];

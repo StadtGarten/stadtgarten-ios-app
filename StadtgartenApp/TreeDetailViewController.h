@@ -20,6 +20,7 @@
 
 - (void) connectWithFacebook;
 
+@property (strong, nonatomic) IBOutlet UIButton *treePictureButton;
 
 @property (weak, nonatomic) IBOutlet RateView *rateView;
 

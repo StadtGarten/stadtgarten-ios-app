@@ -242,7 +242,6 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1T-2d-tTX" customClass="RateView">
                                                 <rect key="frame" x="175" y="88" width="144" height="38"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -338,6 +337,7 @@
                         <outlet property="treeDistance" destination="n7G-nM-HnS" id="Cyh-2h-dav"/>
                         <outlet property="treeName" destination="1F4-kG-BmS" id="xQo-Zm-AIj"/>
                         <outlet property="treePicture" destination="okD-og-Jeu" id="oPL-hG-ZvJ"/>
+                        <outlet property="treePictureButton" destination="F87-cI-sgu" id="uwg-Gw-TSE"/>
                         <outlet property="treeTag" destination="6fl-O9-ESU" id="Wgc-43-FA3"/>
                         <segue destination="0yl-cU-Q04" kind="push" identifier="showSetPicture" id="LmC-9d-aua"/>
                         <segue destination="HX4-ni-7C2" kind="push" identifier="showSetLocation" id="fz1-5Y-KY7"/>
