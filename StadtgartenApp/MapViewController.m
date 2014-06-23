@@ -47,7 +47,7 @@ NSMutableArray *markers;
 //Holt die Daten aus der Datenbank
 - (void)getTreeFromDatabase {
     Database *database = [[Database alloc] init];
-    __block SGTree *sgTree;
+    //__block SGTree *sgTree;
     
     [database getTrees:^(NSArray *results, NSError *error) {
         trees = results;
