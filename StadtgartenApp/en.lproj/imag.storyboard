@@ -16,19 +16,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo-frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="aZJ-Ie-oO2">
+                                <rect key="frame" x="20" y="74" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yU8-by-zbD" customClass="FBProfilePictureView">
-                                <rect key="frame" x="20" y="73" width="64" height="64"/>
+                                <rect key="frame" x="24" y="73" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxx-GX-isn">
-                                <rect key="frame" x="88" y="84" width="212" height="21"/>
+                                <rect key="frame" x="88" y="94" width="212" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWe-Zu-wzB">
-                                <rect key="frame" x="88" y="105" width="212" height="20"/>
+                                <rect key="frame" x="88" y="115" width="212" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +49,7 @@
                                     <action selector="segmentedControlChanged:" destination="X2M-hI-XjE" eventType="valueChanged" id="kg6-CX-gfl"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0n-HM-6jz" customClass="FBLoginView">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0n-HM-6jz" customClass="FBLoginView">
                                 <rect key="frame" x="60" y="87" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -169,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="65" width="320" height="529"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWn-mS-fw7" customClass="UIControl">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWn-mS-fw7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="529"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -206,12 +210,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                             </textView>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sRy-Vd-ekE">
-                                                <rect key="frame" x="219" y="182" width="90" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            </view>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="900 m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7G-nM-HnS">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7G-nM-HnS">
                                                 <rect key="frame" x="198" y="185" width="106" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -234,7 +233,6 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pink Lady" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6fl-O9-ESU">
                                                 <rect key="frame" x="11" y="209" width="179" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -248,7 +246,6 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f1T-2d-tTX" customClass="RateView">
                                                 <rect key="frame" x="175" y="88" width="144" height="38"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -256,9 +253,6 @@
                                             <constraint firstAttribute="height" constant="459" id="5WU-Ql-Bkk"/>
                                             <constraint firstAttribute="width" constant="320" id="Fen-WW-9qK"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="tapBackground:" destination="tm3-ej-o9v" eventType="touchDown" id="KAT-W3-Czw"/>
-                                        </connections>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo-frame.png" translatesAutoresizingMaskIntoConstraints="NO" id="vfL-ea-kzT">
                                         <rect key="frame" x="10" y="10" width="157" height="160"/>
@@ -340,7 +334,6 @@
                         <outlet property="description" destination="tZ1-To-mLE" id="oYL-Du-obz"/>
                         <outlet property="doneButton" destination="aSH-Ek-fcA" id="9IM-cB-6KQ"/>
                         <outlet property="editButton" destination="HbB-DT-u3y" id="l5A-6v-JNJ"/>
-                        <outlet property="locationBGView" destination="sRy-Vd-ekE" id="nsp-A6-hnS"/>
                         <outlet property="rateView" destination="f1T-2d-tTX" id="n56-Ev-4RZ"/>
                         <outlet property="raterCount" destination="Xdo-8r-dyZ" id="4x6-8T-7Aj"/>
                         <outlet property="scrollView" destination="RLe-Jy-kTC" id="yWu-gq-t2B"/>
@@ -348,6 +341,7 @@
                         <outlet property="treeDistance" destination="n7G-nM-HnS" id="Cyh-2h-dav"/>
                         <outlet property="treeName" destination="1F4-kG-BmS" id="xQo-Zm-AIj"/>
                         <outlet property="treePicture" destination="okD-og-Jeu" id="oPL-hG-ZvJ"/>
+                        <outlet property="treePictureButton" destination="F87-cI-sgu" id="uwg-Gw-TSE"/>
                         <outlet property="treeTag" destination="6fl-O9-ESU" id="Wgc-43-FA3"/>
                         <segue destination="0yl-cU-Q04" kind="push" identifier="showSetPicture" id="LmC-9d-aua"/>
                         <segue destination="HX4-ni-7C2" kind="push" identifier="showSetLocation" id="fz1-5Y-KY7"/>
@@ -949,7 +943,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="hd9-t3-d7m"/>
         <segue reference="LmC-9d-aua"/>
-        <segue reference="igN-vE-6Hd"/>
-        <segue reference="1JP-Tv-Rg2"/>
+        <segue reference="nPe-A9-TWB"/>
+        <segue reference="fz1-5Y-KY7"/>
     </inferredMetricsTieBreakers>
 </document>
