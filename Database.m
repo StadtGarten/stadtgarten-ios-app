@@ -36,7 +36,7 @@
                     NSArray *result = (NSArray *)trees;
                     callback(result, NULL);
                 }
-                NSLog(@"Database: %@", treeObject);
+                //NSLog(@"Database: %@", treeObject);
             }];
         }
         
