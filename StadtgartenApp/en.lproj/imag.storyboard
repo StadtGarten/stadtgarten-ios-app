@@ -317,6 +317,7 @@
                         <outlet property="bookmarkButton" destination="bLH-rg-390" id="PZ4-lU-PY3"/>
                         <outlet property="description" destination="tZ1-To-mLE" id="oYL-Du-obz"/>
                         <outlet property="doneButton" destination="aSH-Ek-fcA" id="9IM-cB-6KQ"/>
+                        <outlet property="editButton" destination="HbB-DT-u3y" id="l5A-6v-JNJ"/>
                         <outlet property="locationBGView" destination="sRy-Vd-ekE" id="nsp-A6-hnS"/>
                         <outlet property="rateView" destination="f1T-2d-tTX" id="n56-Ev-4RZ"/>
                         <outlet property="raterCount" destination="Xdo-8r-dyZ" id="4x6-8T-7Aj"/>
@@ -892,6 +893,6 @@
         <segue reference="hd9-t3-d7m"/>
         <segue reference="LmC-9d-aua"/>
         <segue reference="igN-vE-6Hd"/>
-        <segue reference="E3h-S6-Tly"/>
+        <segue reference="fz1-5Y-KY7"/>
     </inferredMetricsTieBreakers>
 </document>

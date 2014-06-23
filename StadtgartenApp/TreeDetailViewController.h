@@ -37,6 +37,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *doneButton;
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
 @property (strong, nonatomic) IBOutlet UIImageView *treePicture;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
 
 
 @end

@@ -21,6 +21,7 @@
 @implementation TreeDetailViewController
 
 Database *db;
+NSString* userid;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,7 +47,7 @@ Database *db;
     
     db = [[Database alloc] init];
     ////////////////FIXME treeid +userid übergeben!!
-    NSString* userid = self.treeObject.userid;
+    userid = self.treeObject.userid;
     NSString* treeid = self.treeObject.id;
     CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:47.1 longitude:11.0];;
     //[db getTreeRating:^(NSArray *trees, NSError *error);
@@ -70,7 +71,20 @@ Database *db;
         self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
     }];
     
-    
+    [[FBRequest requestForMe] startWithCompletionHandler:
+     ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *fbUser, NSError *error) {
+         
+         NSString* fbid = [fbUser objectForKey:@"id"];
+         if (![fbid isEqual: userid]) {
+             
+             UIImage *img = [UIImage imageNamed:@"edit.png"];
+             UIImage* imageForRendering = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+             self.editButton.image = imageForRendering;
+             self.editButton.tintColor = [UIColor grayColor];
+             self.editButton.enabled = NO;
+             
+         }
+     }];
     
     
     self.treeName.delegate = self;
@@ -131,30 +145,29 @@ Database *db;
 
 //Change background when editing and make the elements editable
 - (IBAction)tapEdit:(id)sender {
-    
-    if (![FBSession activeSession].isOpen) {
-        
-        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
-                                                           message:@"Sie müssen eingeloggt sein um den Baum zu bearbeiten."
-                                                          delegate:self
-                                                 cancelButtonTitle:@"Abbrechen"
-                                                 otherButtonTitles:@"zum Login", nil];
-        [theAlert show];
-        
-    }else{
-    
-    self.description.editable = YES;
-    _treePicture.userInteractionEnabled = YES;
-    _treeTag.enabled = YES;
-    _treeName.enabled=YES;
-    _treeDistance.userInteractionEnabled = YES;
-   
-    
-    [_backgroundView setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1]];
-    [_doneButton setHidden:NO];
-        
-    }
-    
+             if (![FBSession activeSession].isOpen) {
+             
+             UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
+                                                                message:@"Sie müssen eingeloggt sein um den Baum zu bearbeiten."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Abbrechen"
+                                                      otherButtonTitles:@"zum Login", nil];
+             [theAlert show];
+             
+        }else{
+             
+             self.description.editable = YES;
+             _treePicture.userInteractionEnabled = YES;
+             _treeTag.enabled = YES;
+             _treeName.enabled=YES;
+             _treeDistance.userInteractionEnabled = YES;
+             
+             
+             [_backgroundView setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1]];
+             [_doneButton setHidden:NO];
+             
+         }
+         
 }
 
 - (IBAction)doneEditing:(id)sender {
