@@ -130,7 +130,19 @@
     treeObject[@"rating"] = @0.0;
     treeObject[@"location"] = [PFGeoPoint geoPointWithLatitude:latitude longitude:longitude];
 
-    [treeObject saveInBackground];
+    [treeObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        // Send a notification to all devices subscribed to the "Trees" channel.
+        PFPush *push = [[PFPush alloc] init];
+        [push setChannel:@"Trees"];
+        
+        
+        NSString *message = [@"Neuer Baum hochgeladen. Sorte: %@" stringByAppendingFormat:treeObject[@"Tag"]];
+        
+        [push setMessage:message];
+        [push sendPushInBackground];
+        
+    }];
 
     /* AUFRUF: -database.h einbinden nicht vergessen!
      
