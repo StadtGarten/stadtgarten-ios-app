@@ -17,10 +17,6 @@
 
 @implementation MapViewController
 
-#define APPLE 0
-#define CHERRIE 1
-#define PEAR 2
-
 const int LATITUDE = 0;
 const int LONGITUDE = 1;
 
@@ -37,8 +33,6 @@ NSMutableArray *markers;
 
 - (void)viewDidLoad
 {
-    _tree = APPLE;
-
     [super viewDidLoad];
     [self getTreeFromDatabase];
     
@@ -55,7 +49,6 @@ NSMutableArray *markers;
         [self setMarker];
     }];
 }
-
 
 
 - (void)setMarker {
@@ -115,7 +108,7 @@ NSMutableArray *markers;
     [_mapView setRegion:region animated:YES];
 }
 
-//int j = 0;
+
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
@@ -137,16 +130,13 @@ NSMutableArray *markers;
         }
     }
     
-    SGTree* tr = [trees objectAtIndex:index];
-    NSLog(@"ANNOTATION INDEX %d", index);
+    SGTree* sgTree = [trees objectAtIndex:index];
     
-    
-    
-    if([tr.tag isEqual: @"Apfel"]) {
+    if([sgTree.tag isEqual: @"Apfel"]) {
         myAnnotation.image = [UIImage imageNamed:@"apple_pin.png"];
-    } else if([tr.tag isEqual: @"Kirsche"]) {
+    } else if([sgTree.tag isEqual: @"Kirsche"]) {
         myAnnotation.image = [UIImage imageNamed:@"cherrie_pin.png"];
-    } else if([tr.tag isEqual: @"Birne"]) {
+    } else if([sgTree.tag isEqual: @"Birne"]) {
         myAnnotation.image = [UIImage imageNamed:@"pear_pin.png"];
     }
     
