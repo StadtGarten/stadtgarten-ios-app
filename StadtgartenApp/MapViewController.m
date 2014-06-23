@@ -25,8 +25,8 @@ const int ZOOM_FACTOR = 11;
 const int LATITUDE = 0;
 const int LONGITUDE = 1;
 
-const bool CENTER_IN_MUNICH = YES;
-const bool ZOOM = YES;
+const bool CENTER_IN_MUNICH = NO;
+const bool ZOOM = NO;
 
 //GPS of Munich
 float lat = 48.133;

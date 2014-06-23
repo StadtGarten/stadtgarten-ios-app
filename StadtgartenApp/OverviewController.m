@@ -12,6 +12,7 @@
 
 @interface OverviewController ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *speicherKnopf;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 
 @end
 
@@ -26,6 +27,7 @@
 // this method stores the data from the form into parse
 -(IBAction)storeData:(id)sender{
     self.speicherKnopf.enabled = false;
+    [self.loadingIndicator startAnimating];
     
     // get FacebookUserID
     [[FBRequest requestForMe] startWithCompletionHandler:
@@ -39,6 +41,8 @@
              
              
              [db writeTree:[aUser objectForKey:@"id"] baumname:self.tree.name tag:self.tree.tag beschreibung:self.tree.description bild:self.tree.picture latitude:self.tree.latitude longitude:self.tree.longitude callback:^{
+                 
+                 [self.loadingIndicator stopAnimating];
                  
                  // alertView that tree is sucessfully stored
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""

@@ -169,6 +169,26 @@
     
 };
 
+-(void)updateTree: (NSString*)treeid baumname:(NSString*)baumname beschreibung:(NSString*)beschreibung{
+    
+    //save treerating
+    PFQuery *treeQuery = [PFQuery queryWithClassName:@"TreeObject"];
+    [treeQuery whereKey:@"objectId" equalTo:treeid];
+    [treeQuery findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else{
+            NSLog(@"Tree updated!");
+            PFObject* tree = [results firstObject];
+            tree[@"beschreibung"] = beschreibung;
+            tree[@"baumname"] = baumname;
+            [tree saveInBackground];
+        }
+    }];
+}
+
 -(void)getTreeInfo:(NSString*)treeid callback:(PFTreeResultBlock)callback{
     //__block NSString* name;
     PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
@@ -344,6 +364,7 @@
         
         
         CLLocation *myLocation = location;
+         NSLog(@"distnace, %f, %f", location.coordinate.latitude, location.coordinate.longitude);
         CLLocation *treeLocation = [[CLLocation alloc] initWithLatitude:tree.latitude longitude:tree.longitude];
         CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:myLocation.coordinate.latitude longitude:myLocation.coordinate.longitude];
         CLLocationDistance distance = [currentLocation distanceFromLocation: treeLocation];
