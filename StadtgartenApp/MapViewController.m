@@ -10,6 +10,8 @@
 
 
 #import "MapViewController.h"
+#import "TreeDetailViewController.h"
+#import "SGTree.h"
 
 @interface MapViewController ()
 
@@ -208,11 +210,33 @@ NSArray *trees;
     }
 
     annotationView.canShowCallout= YES;
-    
+    //UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[detailButton setImage:[UIImage imageNamed:@"apple_pin.png"] forState: UIControlStateNormal];
+    //annotationView.rightCalloutAccessoryView = detailButton;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return annotationView;
 }
 
 
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    TreeDetailViewController *treeDetailViewController = [[TreeDetailViewController alloc]initWithNibName:@"treeDetailView" bundle:nil];
+    //[self.navigationController pushViewController:treeDetailViewController animated:YES];
+    [self performSegueWithIdentifier:@"treeDetailView" sender:self];
+
+};
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"treeDetailView"])
+    {
+        SGTree *tree = [[SGTree alloc]initWithId:@"NlU2yP62C9" user:@"userid" name:@"apfelbaum" description:@"beschreibung" tag:@"Apfel" picture:[UIImage imageNamed:@"tree.jpg"] rating:0 latitude:47.1 longitude:11.1];
+        //[segue.destinationViewController setObject:@"NlU2yP62C9" forKey:@"treeObject"];
+        TreeDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.treeObject = tree;
+    }
+}
+    
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
