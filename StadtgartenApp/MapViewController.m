@@ -5,7 +5,7 @@
 //  Created by Katharina Winkler on 14.05.14.
 //  Copyright (c) 2014 StadtGarten. All rights reserved.
 //
-// Map, Marker/Pins setzen, Fokus setzen
+// Map, Pins setzen, Fokus setzen
 
 
 
@@ -29,7 +29,10 @@ const bool ZOOM = YES;
 float lat = 48.133;
 float lon = 11.567;
 
+//fur die Daten aus der Datenbank
 NSArray *trees;
+
+//Zuordung fuer Pins
 NSMutableArray *markers;
 
 
@@ -40,6 +43,8 @@ NSMutableArray *markers;
     
 }
 
+
+//Holt die Daten aus der Datenbank
 - (void)getTreeFromDatabase {
     Database *database = [[Database alloc] init];
     __block SGTree *sgTree;
@@ -53,6 +58,7 @@ NSMutableArray *markers;
 }
 
 
+//setzt die Marker
 - (void)setMarker {
     CLLocationCoordinate2D annotationCoord;
     
@@ -78,6 +84,8 @@ NSMutableArray *markers;
     }
 }
 
+
+//setzt die Map
 - (void)setMap {
 
     _mapView = [[MKMapView alloc]
@@ -111,7 +119,7 @@ NSMutableArray *markers;
 }
 
 
-
+//setzt das entsprechende Bild, ordnet den Pins ein Bild zu
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     NSString *annotationIdentifier = @"CustomViewAnnotation";
@@ -143,9 +151,6 @@ NSMutableArray *markers;
     }
     
     myAnnotation.canShowCallout= YES;
-    //UIButton *detailButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    //[detailButton setImage:[UIImage imageNamed:@"apple_pin.png"] forState: UIControlStateNormal];
-    //annotationView.rightCalloutAccessoryView = detailButton;
     myAnnotation.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return myAnnotation;
 }
@@ -153,8 +158,6 @@ NSMutableArray *markers;
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-   // TreeDetailViewController *treeDetailViewController = [[TreeDetailViewController alloc]initWithNibName:@"treeDetailView" bundle:nil];
-    //[self.navigationController pushViewController:treeDetailViewController animated:YES];
     int index = 0;
     for (int i = 0; i < markers.count - 1; i++) {
         MKPointAnnotation *pA = markers[i];
@@ -169,12 +172,11 @@ NSMutableArray *markers;
 
 };
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"treeDetailView"])
     {
-        //SGTree* tree = sender;
-        //[segue.destinationViewController setObject:@"NlU2yP62C9" forKey:@"treeObject"];
         TreeDetailViewController *destViewController = segue.destinationViewController;
         destViewController.treeObject = sender;
     }
