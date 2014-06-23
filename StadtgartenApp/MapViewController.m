@@ -20,6 +20,8 @@
 
 @implementation MapViewController
 
+const int ZOOM_FACTOR = 11;
+
 const int LATITUDE = 0;
 const int LONGITUDE = 1;
 
@@ -40,7 +42,12 @@ NSMutableArray *markers;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.locationManager = [CLLocationManager new];
+    // Highest accuracy to place the tree
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     [self.locationManager startUpdatingLocation];
+    [self setMap];
+    [self startTrackingLocation:_mapView];
 }
 
 //Holt die Daten aus der Datenbank
@@ -50,10 +57,9 @@ NSMutableArray *markers;
     
     [database getTrees:^(NSArray *results, NSError *error) {
         trees = results;
-        [self setMap];
-        [self setMapConfig];
+        //[self setMapConfig];
         [self setMarker];
-        [self.mapView reloadInputViews];
+        //[self.mapView reloadInputViews];
     }];
 }
 
@@ -81,9 +87,26 @@ NSMutableArray *markers;
         [markers addObject:annotationPoint];
         [_mapView addAnnotation:annotationPoint];
 
+        //to location
+        //[self.locationManager setDelegate:self];
+
     }
 }
 
+
+//
+// Location Update Functions
+//
+
+- (IBAction)startTrackingLocation:(id)sender {
+    [self.locationManager setDelegate:self];
+}
+
+- (void) stopTrackingLocation
+{
+    [self.locationManager setDelegate:nil];
+    //self.myLocationButton.enabled = true;
+}
 
 //setzt die Map
 - (void)setMap {
@@ -153,6 +176,9 @@ NSMutableArray *markers;
     else{
         [self connectWithFacebook];
     }
+}
+
+- (IBAction)setCurrentLocation:(id)sender {
 }
 
 -(BOOL)isLoggedInFacebook{
@@ -239,14 +265,13 @@ NSMutableArray *markers;
     //[self startTrackingLocation];
 }
 
-- (void)setCurrentLocation {
 
-}
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *lastLocation = locations.lastObject;
-    //[_mapView setCenterCoordinate:lastLocation.coordinate zoomLevel:16 animated:true];
+    [_mapView setCenterCoordinate:lastLocation.coordinate zoomLevel:(int)ZOOM_FACTOR animated:true];
+    [self stopTrackingLocation];
 }
 
 
