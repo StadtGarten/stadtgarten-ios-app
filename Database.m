@@ -16,7 +16,7 @@
 //gibt alle Bäume zurück
 -(void)getTrees:(PFArrayResultBlock)callback {
     PFQuery *query = [PFQuery queryWithClassName:@"TreeObject"];
-    
+    [query orderByAscending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         NSMutableArray *trees = [[NSMutableArray alloc] init];
         
@@ -36,8 +36,11 @@
                     NSArray *result = (NSArray *)trees;
                     callback(result, NULL);
                 }
+                NSLog(@"Database: %@", treeObject);
             }];
         }
+        
+        
         
         NSArray *result = (NSArray *)trees;
         

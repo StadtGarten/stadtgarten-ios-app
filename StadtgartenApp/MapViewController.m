@@ -33,95 +33,57 @@ const bool ZOOM = YES;
 float lat = 48.133;
 float lon = 11.567;
 
-/*
-NSDictionary *baum;
-double markerPosition[][2] = {47.0, 11.0,
-    47.1, 11.1,
-    47.15, 11.2,
-    48.15, 11.6,
-    48.2, 11.62,
-    48.15, 11.5,
-    48.13, 11.6,
-    48.14, 11.58,
-    48.22, 11.61,
-    48.1, 11.4,
-    48.2, 11.15,
-    48.0, 11.25,
-    47.2, 11.2};
-*/
- 
 NSArray *trees;
+NSMutableArray *markers;
 
 
 - (void)viewDidLoad
 {
-    NSLog(@"start MapViewController");
-
     _tree = APPLE;
 
-    
     [super viewDidLoad];
-    
-    /*
-    baum = [NSDictionary dictionaryWithObjectsAndKeys:
-            @"01", @"id",
-            @"Apfelbaum", @"baumname",
-            @"Das ist eine Beschreibung", @"beschreibung",
-            @"Apfel", @"tag",
-            @"Das ist ein Bild", @"bild",
-            nil];
-    
-    NSLog(@"%@", [baum objectForKey: @"tag"]);
-    */
-
-    
     [self getTreeFromDatabase];
     
-    }
-
+}
 
 - (void)getTreeFromDatabase {
-
     Database *database = [[Database alloc] init];
     __block SGTree *sgTree;
     
     [database getTrees:^(NSArray *results, NSError *error) {
         trees = results;
-        //sgTree = [trees firstObject];
-
-
-        for (int i = 0; i < results.count; i++) {
-  
-            sgTree = [results objectAtIndex:i];
-            if ([sgTree.tag  isEqual: @"Apfel"]){
-                _tree = APPLE;
-            } else if ([sgTree.tag  isEqual: @"Birne"]){
-                _tree = PEAR;
-            } else {
-                _tree = CHERRIE;
-            }
-            
-            NSLog(@"Tree: %@", sgTree);
-
-            [self setMap];
-
-        }
-        
-        [self setMarker];
-        
-        //NSLog(@"result Trees: %@ %@", [trees objectAtIndex:0], [results objectAtIndex:0]);
-        
-        
-        
+        [self setMap];
         [self setMapConfig];
-        
+        [self setMarker];
     }];
-    
-    //NSLog(@"Trees: %@", [trees objectAtIndex:@"tag"]);
-    //NSLog(@"Trees: %@", [trees objectAtIndex:0]);
-    //NSLog(@"Trees: %@", sgTree.tag);
 }
 
+
+
+- (void)setMarker {
+    CLLocationCoordinate2D annotationCoord;
+    
+    //Anzahl der Elemente
+    int const numberOfElements = (int)[trees count];
+    
+    markers = [[NSMutableArray alloc] initWithCapacity:numberOfElements];
+    
+    for(int i=0; i<(numberOfElements-1); i++) {
+        SGTree* tree = [trees objectAtIndex:i];
+        annotationCoord.latitude = tree.latitude;
+        annotationCoord.longitude = tree.longitude;
+        
+        
+        MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+        annotationPoint.coordinate = annotationCoord;
+        annotationPoint.title = tree.name;
+        annotationPoint.subtitle = tree.tag;
+        
+        [markers addObject:annotationPoint];
+        [_mapView addAnnotation:annotationPoint];
+
+    }
+}
 
 - (void)setMap {
 
@@ -137,7 +99,6 @@ NSArray *trees;
     _mapView.delegate = self;
     
     [self.view addSubview:_mapView];
-    
 }
 
 - (void)setMapConfig {
@@ -145,68 +106,50 @@ NSArray *trees;
     MKCoordinateRegion region;
     
     if(CENTER_IN_MUNICH) {
-        //NSLog(@"CENTER_IN_MUNICH");
         region.center.latitude = lat;
         region.center.longitude = lon;
     }
     
     if(ZOOM) {
-        //NSLog(@"ZOOM");
         region.span.latitudeDelta = 0.2;
         region.span.longitudeDelta = 0.2;
     }
-    
-    
     [_mapView setRegion:region animated:YES];
-    
 }
 
-
-- (void)setMarker {
-    CLLocationCoordinate2D annotationCoord;
-
-    //Anzahl der Elemente
-    int const numberOfElements = (int)[trees count];
-
-    for(int i=0; i<(numberOfElements-1); i++) {
-     
-        SGTree* tree = [trees objectAtIndex:i];
-        annotationCoord.latitude = tree.latitude;
-        annotationCoord.longitude = tree.longitude;
-        
-        MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
-        annotationPoint.coordinate = annotationCoord;
-        annotationPoint.title = tree.name;
-        annotationPoint.subtitle = tree.tag;
-
-        [_mapView addAnnotation:annotationPoint];
-    
-    }
-}
+//int j = 0;
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if([annotation isKindOfClass:[MKUserLocation class]]) {
+    NSString *annotationIdentifier = @"CustomViewAnnotation";
+    
+    if([annotation isKindOfClass:[MKUserLocation class]])
+    {
         return nil;
     }
     
-    NSString *annotationIdentifier = @"CustomViewAnnotation";
-    MKAnnotationView* annotationView = [_mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
-    if(!annotationView)
-    {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                      reuseIdentifier:annotationIdentifier];
+    MKAnnotationView *myAnnotation =  [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+
+    int index = 0;
+    for (int i = 0; i < markers.count - 1; i++) {
+        MKPointAnnotation *pA = markers[i];
+        if (pA.coordinate.latitude == annotation.coordinate.latitude && pA.coordinate.longitude == annotation.coordinate.longitude) {
+            
+            index = i;
+        }
     }
     
+    SGTree* tr = [trees objectAtIndex:index];
+    NSLog(@"ANNOTATION INDEX %d", index);
     
-    if(_tree == APPLE) {
-        annotationView.image = [UIImage imageNamed:@"apple_pin.png"];
-    }
-    if(_tree == CHERRIE) {
-        annotationView.image = [UIImage imageNamed:@"cherrie_pin.png"];
-    }
-    if(_tree == PEAR) {
-        annotationView.image = [UIImage imageNamed:@"pear_pin.png"];
+    
+    
+    if([tr.tag isEqual: @"Apfel"]) {
+        myAnnotation.image = [UIImage imageNamed:@"apple_pin.png"];
+    } else if([tr.tag isEqual: @"Kirsche"]) {
+        myAnnotation.image = [UIImage imageNamed:@"cherrie_pin.png"];
+    } else if([tr.tag isEqual: @"Birne"]) {
+        myAnnotation.image = [UIImage imageNamed:@"pear_pin.png"];
     }
 
     annotationView.canShowCallout= YES;
@@ -239,7 +182,6 @@ NSArray *trees;
     
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
 
 }
 
