@@ -664,6 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ka Wi (4E2CTFC2ED)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/tobiaskeinath/Documents/FacebookSDK,
