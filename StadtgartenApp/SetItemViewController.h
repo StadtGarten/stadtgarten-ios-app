@@ -29,7 +29,6 @@ IBOutlet UITextView *descriptionTextArea;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *next;
 
 @property UIImage *image;
-- (IBAction)shouldContinue1:(id)sender;
 
 - (IBAction)shouldContinue:(id)sender;
 
