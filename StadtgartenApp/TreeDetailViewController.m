@@ -24,6 +24,8 @@
 Database *db;
 CLLocationCoordinate2D treeLocation;
 NSString* userid;
+BOOL test;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -92,8 +94,8 @@ NSString* userid;
      }];
     
     
-    self.treeName.delegate = self;
-    self.treeTag.delegate = self;
+     self.treeName.delegate = self;
+     self.treeTag.delegate = self;
     // graphical tweaks
     _description.clipsToBounds = YES;
     _description.layer.cornerRadius = 4.0f;
@@ -361,7 +363,7 @@ shouldChangeTextInRange: (NSRange) range
         [theAlert show];
     }
     else{
-        Database* db = [[Database alloc ]  init ];
+        db = [[Database alloc ]  init ];
         __block NSString* userid;
         [[FBRequest requestForMe] startWithCompletionHandler:
          ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *fbUser, NSError *error) {
@@ -370,16 +372,29 @@ shouldChangeTextInRange: (NSRange) range
              NSString* treeid = self.treeObject.id;
              NSNumber* newRating = [NSNumber numberWithFloat:rating];
              [db rateTree:userid treeid:treeid rating:newRating];
-             [db getRaterCount:treeid callback:^(int number, NSError *error){
-                 self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
-             
-                 [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
-                     self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
-                 }];
-             }];
+             [self reloadView:treeid];
+             test = true;
         }];
-    //[rateView setNeedsLayout];
     }
+}
+
+-(void)reloadView:(NSString*)treeid{
+
+    db = [[Database alloc] init];
+    [db getRaterCount:treeid callback:^(int number, NSError *error){
+    self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
+    
+        [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
+            self.statusLabel.text = [NSString stringWithFormat:@"%.01f", [tree.rating floatValue]];
+            //fixme besserer fix fürs nachladen von neuen werten? 
+            if (test) {
+                [self reloadView:treeid];
+                test = false;
+                [self reloadView:treeid];
+        }
+        }];
+    }];
+
 }
 
 #pragma mark - UIAlert method implementation
