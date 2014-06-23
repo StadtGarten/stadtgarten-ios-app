@@ -132,6 +132,7 @@
 
     [treeObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
+        /*
         // Send a notification to all devices subscribed to the "Trees" channel.
         PFPush *push = [[PFPush alloc] init];
         [push setChannel:@"Trees"];
@@ -141,7 +142,17 @@
         
         [push setMessage:message];
         [push sendPushInBackground];
+         */
         
+        // Create our Installation query
+        PFQuery *pushQuery = [PFInstallation query];
+        [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+        
+        // Send push notification to query
+        NSString *message = [@"Neuer Baum hochgeladen. Sorte: " stringByAppendingString:treeObject[@"tag"]];
+        [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                       withMessage:message];
+                
     }];
 
     /* AUFRUF: -database.h einbinden nicht vergessen!
