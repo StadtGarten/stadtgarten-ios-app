@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "Database.h"
+#import "MapViewController.h"
 
 
 @interface TreeDetailViewController ()
@@ -21,6 +22,8 @@
 @implementation TreeDetailViewController
 
 Database *db;
+CLLocationCoordinate2D treeLocation;
+NSString* userid;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,7 +49,7 @@ Database *db;
     
     db = [[Database alloc] init];
     ////////////////FIXME treeid +userid übergeben!!
-    NSString* userid = self.treeObject.userid;
+    userid = self.treeObject.userid;
     NSString* treeid = self.treeObject.id;
     CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:47.1 longitude:11.0];;
     //[db getTreeRating:^(NSArray *trees, NSError *error);
@@ -59,6 +62,9 @@ Database *db;
         self.description.text = tree.description;
         UIImage *img = tree.picture;
         self.treePicture.image = img;
+        treeLocation.latitude = tree.latitude;
+        treeLocation.longitude = tree.longitude;
+        
     }];
     [db getRaterCount:treeid callback:^(int number, NSError *error){
         self.raterCount.text = [NSString stringWithFormat:@"%i insgesamt", number];
@@ -70,7 +76,20 @@ Database *db;
         self.treeDistance.text = [NSString stringWithFormat:@"%.02fm", [distance floatValue]];
     }];
     
-    
+    [[FBRequest requestForMe] startWithCompletionHandler:
+     ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *fbUser, NSError *error) {
+         
+         NSString* fbid = [fbUser objectForKey:@"id"];
+         if (![fbid isEqual: userid]) {
+             
+             UIImage *img = [UIImage imageNamed:@"edit.png"];
+             UIImage* imageForRendering = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+             self.editButton.image = imageForRendering;
+             self.editButton.tintColor = [UIColor grayColor];
+             self.editButton.enabled = NO;
+             
+         }
+     }];
     
     
     self.treeName.delegate = self;
@@ -119,6 +138,15 @@ Database *db;
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)goToMap:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    MapViewController *mapView = self.navigationController.viewControllers[0];
+    
+    [mapView centerOn:treeLocation];
+    
+}
+
 -(void)tapOnTreePicture{
     NSLog(@"Tap on TreePicture");
     [self performSegueWithIdentifier:@"showSetPicture" sender:self];
@@ -131,30 +159,29 @@ Database *db;
 
 //Change background when editing and make the elements editable
 - (IBAction)tapEdit:(id)sender {
-    
-    if (![FBSession activeSession].isOpen) {
-        
-        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
-                                                           message:@"Sie müssen eingeloggt sein um den Baum zu bearbeiten."
-                                                          delegate:self
-                                                 cancelButtonTitle:@"Abbrechen"
-                                                 otherButtonTitles:@"zum Login", nil];
-        [theAlert show];
-        
-    }else{
-    
-    self.description.editable = YES;
-    _treePicture.userInteractionEnabled = YES;
-    _treeTag.enabled = YES;
-    _treeName.enabled=YES;
-    _treeDistance.userInteractionEnabled = YES;
-   
-    
-    [_backgroundView setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1]];
-    [_doneButton setHidden:NO];
-        
-    }
-    
+             if (![FBSession activeSession].isOpen) {
+             
+             UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Login"
+                                                                message:@"Sie müssen eingeloggt sein um den Baum zu bearbeiten."
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Abbrechen"
+                                                      otherButtonTitles:@"zum Login", nil];
+             [theAlert show];
+             
+        }else{
+             
+             self.description.editable = YES;
+             _treePicture.userInteractionEnabled = YES;
+             _treeTag.enabled = YES;
+             _treeName.enabled=YES;
+             _treeDistance.userInteractionEnabled = YES;
+             
+             
+             [_backgroundView setBackgroundColor:[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1]];
+             [_doneButton setHidden:NO];
+             
+         }
+         
 }
 
 - (IBAction)doneEditing:(id)sender {
