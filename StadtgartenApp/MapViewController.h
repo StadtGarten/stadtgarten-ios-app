@@ -11,7 +11,7 @@
 #import "Database.h"
 #import "SGTree.h"
 
-@interface MapViewController : UIViewController< MKMapViewDelegate>
+@interface MapViewController : UIViewController< MKMapViewDelegate, CLLocationManagerDelegate>
 
 - (void) centerOn:(CLLocationCoordinate2D)location;
 - (IBAction)onProfileTap:(id)sender;

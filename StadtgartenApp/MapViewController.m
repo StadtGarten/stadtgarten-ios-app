@@ -40,7 +40,7 @@ NSMutableArray *markers;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self getTreeFromDatabase];
+    [self.locationManager startUpdatingLocation];
 }
 
 //Holt die Daten aus der Datenbank
@@ -67,7 +67,7 @@ NSMutableArray *markers;
     
     markers = [[NSMutableArray alloc] initWithCapacity:numberOfElements];
     
-    for(int i=0; i<(numberOfElements-1); i++) {
+    for(int i=0; i<(numberOfElements); i++) {
         SGTree* tree = [trees objectAtIndex:i];
         annotationCoord.latitude = tree.latitude;
         annotationCoord.longitude = tree.longitude;
@@ -183,7 +183,7 @@ NSMutableArray *markers;
     MKAnnotationView *myAnnotation =  [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
 
     int index = 0;
-    for (int i = 0; i < markers.count - 1; i++) {
+    for (int i = 0; i < markers.count; i++) {
         MKPointAnnotation *pA = markers[i];
         if (pA.coordinate.latitude == annotation.coordinate.latitude && pA.coordinate.longitude == annotation.coordinate.longitude) {
             
@@ -210,7 +210,7 @@ NSMutableArray *markers;
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     int index = 0;
-    for (int i = 0; i < markers.count - 1; i++) {
+    for (int i = 0; i < markers.count; i++) {
         MKPointAnnotation *pA = markers[i];
         if (pA.coordinate.latitude == view.annotation.coordinate.latitude && pA.coordinate.longitude == view.annotation.coordinate.longitude) {
         
@@ -235,10 +235,19 @@ NSMutableArray *markers;
     
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self getTreeFromDatabase];    
+    [self getTreeFromDatabase];
+    //[self startTrackingLocation];
 }
 
+- (void)setCurrentLocation {
 
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *lastLocation = locations.lastObject;
+    //[_mapView setCenterCoordinate:lastLocation.coordinate zoomLevel:16 animated:true];
+}
 
 
 
