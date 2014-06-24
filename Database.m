@@ -57,7 +57,7 @@
             PFObject *user = evaluatedObject;
             NSString *remoteFbId = user[@"fbId"];
             BOOL equal = [remoteFbId isEqualToString:userid];
-            NSLog(@"Finding user %@ is %@: %f", remoteFbId, userid, (float)equal);
+            //NSLog(@"Finding user %@ is %@: %f", remoteFbId, userid, (float)equal);
             return equal;
         }];
         NSArray *filteredUsers = [results filteredArrayUsingPredicate:filter];
@@ -99,7 +99,7 @@
                 
                 for (int pos = 0; pos < user.favouriteTrees.count; pos++) {
                     NSString *favouriteTreeId = user.favouriteTrees[pos];
-                    NSLog(@"Find favourite tree %@ in %@", favouriteTreeId, tree.id);
+                   // NSLog(@"Find favourite tree %@ in %@", favouriteTreeId, tree.id);
                     if ([tree.id isEqualToString:favouriteTreeId]) {
                         return true;
                     }
@@ -364,11 +364,11 @@
         
         
         CLLocation *myLocation = location;
-         NSLog(@"distnace, %f, %f", location.coordinate.latitude, location.coordinate.longitude);
+         NSLog(@"distance, %f, %f", location.coordinate.latitude, location.coordinate.longitude);
         CLLocation *treeLocation = [[CLLocation alloc] initWithLatitude:tree.latitude longitude:tree.longitude];
         CLLocation *currentLocation = [[CLLocation alloc] initWithLatitude:myLocation.coordinate.latitude longitude:myLocation.coordinate.longitude];
         CLLocationDistance distance = [currentLocation distanceFromLocation: treeLocation];
-        NSLog(@"distnace, %f", distance);
+        NSLog(@"distance, %f", distance);
         callback([NSNumber numberWithDouble:distance], NULL);
     }];
 };

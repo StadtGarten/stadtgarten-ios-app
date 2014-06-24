@@ -14,7 +14,7 @@
 #import "MapViewController.h"
 
 
-@interface TreeDetailViewController ()
+@interface TreeDetailViewController () 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *bookmarkButton;
 
 @end
@@ -25,6 +25,8 @@ Database *db;
 CLLocationCoordinate2D treeLocation;
 NSString* userid;
 BOOL test;
+CLLocation* myLocation;
+CLLocationManager *locationManager;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +41,15 @@ BOOL test;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    locationManager = [CLLocationManager new];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    //München
+    CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:48.1 longitude:11.6];
+    
     self.rateView.notSelectedImage = [UIImage imageNamed:@"star_empty.png"];
     self.rateView.halfSelectedImage = [UIImage imageNamed:@"star_half.png"];
     self.rateView.fullSelectedImage = [UIImage imageNamed:@"star-full.png"];
@@ -53,7 +64,7 @@ BOOL test;
     ////////////////FIXME treeid +userid übergeben!!
     userid = self.treeObject.userid;
     NSString* treeid = self.treeObject.id;
-    CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:47.1 longitude:11.0];;
+    
     //[db getTreeRating:^(NSArray *trees, NSError *error);
     __block NSNumber* treeRating;
     [db getTreeInfo:treeid callback:^(SGTree* tree, NSError *error){
@@ -117,6 +128,11 @@ BOOL test;
     [self updateBookmarkStatus];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    myLocation = [locations lastObject];
+        NSLog(@"lat%f - lon%f", myLocation.coordinate.latitude, myLocation.coordinate.longitude);
+        [locationManager stopUpdatingLocation];
+}
 /*
 #pragma mark - Navigation
 

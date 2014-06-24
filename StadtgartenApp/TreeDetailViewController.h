@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "RateView.h"
 #import "SGTree.h"
+#import	<CoreLocation/CoreLocation.h>
 
 
-@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, RateViewDelegate,UIAlertViewDelegate>
+
+@interface TreeDetailViewController : UIViewController <UIActionSheetDelegate, RateViewDelegate,UIAlertViewDelegate,CLLocationManagerDelegate>
 
 - (IBAction)tapEdit:(id)sender;
 - (IBAction)doneEditing:(id)sender;
