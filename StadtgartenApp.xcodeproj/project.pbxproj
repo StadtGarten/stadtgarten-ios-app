@@ -24,6 +24,9 @@
 		0489C26519472DEB009BD670 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489C26419472DEB009BD670 /* LoginViewController.m */; };
 		0489C26719473CFD009BD670 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0489C26619473CFD009BD670 /* Images.xcassets */; };
 		048E6DAD195884A70005DBB0 /* TreeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B6DD41952D82D009FC517 /* TreeDetailViewController.m */; };
+		048E6DAF1959619C0005DBB0 /* cherrie_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048E6DAE1959619C0005DBB0 /* cherrie_pin@2x.png */; };
+		048E6DB1195963F10005DBB0 /* apple_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048E6DB0195963F10005DBB0 /* apple_pin@2x.png */; };
+		048E6DB3195963FE0005DBB0 /* pear_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048E6DB2195963FE0005DBB0 /* pear_pin@2x.png */; };
 		049E1CBC19576512002BC0B0 /* gallery@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBB19576512002BC0B0 /* gallery@2x.png */; };
 		049E1CBE19576524002BC0B0 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBD19576524002BC0B0 /* gallery.png */; };
 		049E1CC0195766F0002BC0B0 /* arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 049E1CBF195766F0002BC0B0 /* arrow_right.png */; };
@@ -39,9 +42,6 @@
 		56780F191952CDC0007218C8 /* TreeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56780F181952CDC0007218C8 /* TreeTableCell.m */; };
 		56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B53D2E1923904900FEDFDA /* SetLocationViewController.m */; };
 		56E7C52E1952E911008293D9 /* imag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C52C1952E911008293D9 /* imag.storyboard */; };
-		56E7C5341952F23D008293D9 /* apple_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5331952F23D008293D9 /* apple_pin@2x.png */; };
-		56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */; };
-		56E7C5381952F32F008293D9 /* pear_pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56E7C5371952F32F008293D9 /* pear_pin@2x.png */; };
 		702F48B7195476D400BF49BF /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 702F48B6195476D400BF49BF /* SGUser.m */; };
 		70329A6E1941AE74002F7742 /* cross-hair.png in Resources */ = {isa = PBXBuildFile; fileRef = 70329A6D1941AE74002F7742 /* cross-hair.png */; };
 		703F14551957566300593B89 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488C3001947B90700EC00DE /* ProfileViewController.m */; };
@@ -110,6 +110,9 @@
 		0489C26319472DEB009BD670 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0489C26419472DEB009BD670 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0489C26619473CFD009BD670 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = StadtgartenApp/Images.xcassets; sourceTree = "<group>"; };
+		048E6DAE1959619C0005DBB0 /* cherrie_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cherrie_pin@2x.png"; sourceTree = "<group>"; };
+		048E6DB0195963F10005DBB0 /* apple_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple_pin@2x.png"; sourceTree = "<group>"; };
+		048E6DB2195963FE0005DBB0 /* pear_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pear_pin@2x.png"; sourceTree = "<group>"; };
 		049E1CBB19576512002BC0B0 /* gallery@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gallery@2x.png"; sourceTree = "<group>"; };
 		049E1CBD19576524002BC0B0 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gallery.png; sourceTree = "<group>"; };
 		049E1CBF195766F0002BC0B0 /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
@@ -133,9 +136,6 @@
 		56B53D2D1923904900FEDFDA /* SetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetLocationViewController.h; sourceTree = "<group>"; };
 		56B53D2E1923904900FEDFDA /* SetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetLocationViewController.m; sourceTree = "<group>"; };
 		56E7C52D1952E911008293D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/imag.storyboard; sourceTree = "<group>"; };
-		56E7C5331952F23D008293D9 /* apple_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple_pin@2x.png"; sourceTree = "<group>"; };
-		56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cherrie_pin@2x.png"; sourceTree = "<group>"; };
-		56E7C5371952F32F008293D9 /* pear_pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pear_pin@2x.png"; sourceTree = "<group>"; };
 		700645F11941A1AA00DF6281 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		700645F21941A1AA00DF6281 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		702F48B5195476D400BF49BF /* SGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGUser.h; sourceTree = "<group>"; };
@@ -248,9 +248,9 @@
 		56780EBF194DDACB007218C8 /* Pins */ = {
 			isa = PBXGroup;
 			children = (
-				56E7C5371952F32F008293D9 /* pear_pin@2x.png */,
-				56E7C5351952F32A008293D9 /* cherrie_pin@2x.png */,
-				56E7C5331952F23D008293D9 /* apple_pin@2x.png */,
+				048E6DB0195963F10005DBB0 /* apple_pin@2x.png */,
+				048E6DB2195963FE0005DBB0 /* pear_pin@2x.png */,
+				048E6DAE1959619C0005DBB0 /* cherrie_pin@2x.png */,
 			);
 			name = Pins;
 			sourceTree = "<group>";
@@ -476,6 +476,7 @@
 			files = (
 				04869DC21957268A005F9A43 /* bookmark@2x.png in Resources */,
 				049E1CC219576702002BC0B0 /* arrow_right@2x.png in Resources */,
+				048E6DB3195963FE0005DBB0 /* pear_pin@2x.png in Resources */,
 				049E1CC0195766F0002BC0B0 /* arrow_right.png in Resources */,
 				04869DC61957280E005F9A43 /* edit.png in Resources */,
 				04869DD219573768005F9A43 /* logo.png in Resources */,
@@ -483,14 +484,15 @@
 				848875BE19524F3E00DFBEAD /* star_half.png in Resources */,
 				04869DC4195726A3005F9A43 /* edit@2x.png in Resources */,
 				049E1CBE19576524002BC0B0 /* gallery.png in Resources */,
+				048E6DAF1959619C0005DBB0 /* cherrie_pin@2x.png in Resources */,
 				04869DC01957265A005F9A43 /* rate@2x.png in Resources */,
 				70329A6E1941AE74002F7742 /* cross-hair.png in Resources */,
 				842877ED194890EC00533407 /* tree.jpg in Resources */,
 				0489C26719473CFD009BD670 /* Images.xcassets in Resources */,
 				04869DCA19572826005F9A43 /* photo-frame@2x.png in Resources */,
-				56E7C5341952F23D008293D9 /* apple_pin@2x.png in Resources */,
 				04869DCE1957284E005F9A43 /* rate.png in Resources */,
 				04869DD019572862005F9A43 /* appl_tree_sample.png in Resources */,
+				048E6DB1195963F10005DBB0 /* apple_pin@2x.png in Resources */,
 				04869DC819572817005F9A43 /* photo-frame.png in Resources */,
 				04869DCC19572835005F9A43 /* rate.png in Resources */,
 				56E7C52E1952E911008293D9 /* imag.storyboard in Resources */,
@@ -498,8 +500,6 @@
 				7092DB9C191A55B500190338 /* InfoPlist.strings in Resources */,
 				848875BF19524F3E00DFBEAD /* star-full.png in Resources */,
 				5676F2E2193F4D7E003846F0 /* FBUserSettingsViewResources.bundle in Resources */,
-				56E7C5381952F32F008293D9 /* pear_pin@2x.png in Resources */,
-				56E7C5361952F32A008293D9 /* cherrie_pin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +519,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5608CF431958576600E83405 /* SetPictureViewController.m in Sources */,
-				848875C21952C9FC00DFBEAD /* TreeDetailViewController.m in Sources */,
 				5608CF421958555C00E83405 /* MKMapView+ZoomLevel.m in Sources */,
 				5608CF411958504000E83405 /* SetItemViewController.m in Sources */,
 				5608CF4019584FE400E83405 /* OverviewController.m in Sources */,
@@ -530,8 +529,6 @@
 				702F48B7195476D400BF49BF /* SGUser.m in Sources */,
 				842877EB19487E1700533407 /* Database.m in Sources */,
 				7092DBA2191A55B500190338 /* SGAppDelegate.m in Sources */,
-				34D3263D193DF219008B1D2F /* SetPictureViewController.m in Sources */,
-				700645F31941A1AA00DF6281 /* MKMapView+ZoomLevel.m in Sources */,
 				56B53D2F1923904900FEDFDA /* SetLocationViewController.m in Sources */,
 				048E6DAD195884A70005DBB0 /* TreeDetailViewController.m in Sources */,
 				0461FE82193F19250005251D /* AuthentificationViewController.m in Sources */,
