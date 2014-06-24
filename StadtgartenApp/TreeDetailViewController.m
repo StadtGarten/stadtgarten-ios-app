@@ -48,7 +48,7 @@ CLLocationManager *locationManager;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     //München
-    CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:48.1 longitude:11.6];
+    CLLocation* myLocation = [[CLLocation alloc] initWithLatitude:48.14922 longitude:11.59529];
     
     self.rateView.notSelectedImage = [UIImage imageNamed:@"star_empty.png"];
     self.rateView.halfSelectedImage = [UIImage imageNamed:@"star_half.png"];
